@@ -1,59 +1,85 @@
 body {
-    background-color: lightblue;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
+  background-color: rgb(242, 242, 242);
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+
+.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 13px 16px;
+  overflow: hidden;
+  background-color: rgb(71, 71, 71);
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 15px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
 
 div.gallery {
-    margin: 5px;
-    /*border: 1px solid #ccc;*/
-    float: left;
-    width: 180px;
-  }
-  
-  div.gallery:hover {
-    /*border: 1px solid #777;*/
-  }
-  
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
-  
-  div.desc {
-    padding: 15px;
-    text-align: center;
-  }
+  margin: 5px;
+  /*border: 1px solid #ccc;*/
+  float: left;
+  width: 180px;
+}
 
-  .center-text {
-      text-align: center;
-  }
+div.gallery:hover {
+  /*border: 1px solid #777;*/
+}
 
-  .project-title {
-      font-size: 70px;
-  }
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
 
-  .title-spacer {
-      margin-top: 20px;
-  }
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
 
-  .logo-img {
-      margin-top: 20px;
-      margin-bottom: 15px;
-      height: 200px;
-  }
+.center-text {
+  text-align: center;
+}
 
-  .team-img {
-      border: 1px solid black;
-      border-radius: 30px;
-  }
+.project-title {
+  font-size: 70px;
+}
 
-  .report-link {
-      color: #23a5f6;
-      text-decoration: none;
-  }
+.title-spacer {
+  margin-top: 20px;
+}
+
+.logo-img {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  height: 200px;
+}
+
+.team-img {
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.report-link {
+  color: #23a5f6;
+  text-decoration: none;
+}
 
 .report-link:hover {
-      color: #23a5f6;
-      text-decoration: none;
-  }
+  color: #23a5f6;
+  text-decoration: none;
+}
