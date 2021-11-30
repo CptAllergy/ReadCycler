@@ -12,8 +12,65 @@ body {
   background-color: rgb(71, 71, 71);
 }
 
-li {
+/*.navbar {*/
+/*  width: 100%;*/
+/*  padding: 13px 16px;*/
+/*  overflow: hidden;*/
+/*  background-color: rgb(71, 71, 71);*/
+/*}*/
+
+.navbar {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: rgb(71, 71, 71);
+}
+
+.navbar-title {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.navbar-item {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  /*float: right;*/
+}
+
+.nav-right {
+  text-align: right;
+}
+
+.navbar a:hover {
+  color: red;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+.right-nav {
   float: right;
+}
+
+.carousel-circle {
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.homepage-title {
+
+}
+
+.hr-recommended {
+  width: 20%;
+}
+
+.left-nav {
+  float: left;
 }
 
 li a {
@@ -29,6 +86,21 @@ li a:hover {
   color: black;
 }
 
+.banner-img {
+  width: 100%;
+  height: 380px;
+  background-image: url("homepage_banner.png");
+  text-align: center;
+}
+
+.search-bar {
+  margin-top: 150px;
+  width: 400px;
+  height: 45px;
+  border-radius: 50px;
+  border: 1px solid gray;
+  color: gray;
+}
 
 div.gallery {
   margin: 5px;
