@@ -36,6 +36,9 @@ body {
   color: white;
   text-decoration: none;
   font-size: 16px;
+  text-align: center;
+  position: relative;
+  top: 25%;
   /*float: right;*/
 }
 
@@ -62,7 +65,8 @@ a:hover {
 }
 
 .homepage-title {
-
+  padding-top: 15px;
+  font-size: 25px;
 }
 
 .hr-recommended {
@@ -100,6 +104,8 @@ li a:hover {
   border-radius: 50px;
   border: 1px solid gray;
   color: gray;
+  outline: none;
+  padding: 10px 35px 10px 15px;
 }
 
 .search-button {
@@ -167,4 +173,20 @@ div.desc {
 .report-link:hover {
   color: #23a5f6;
   text-decoration: none;
+}
+
+.container {
+  margin: 200px auto;
+  width: 500px;
+  height: 60px
+}
+
+/* The point of this tutorial is here */
+
+.search-field {
+  width: 100%;
+  padding: 10px 35px 10px 15px;
+  border: none;
+  border-radius: 100px;
+  outline: none;
 }
