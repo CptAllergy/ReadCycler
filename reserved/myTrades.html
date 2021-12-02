@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="myTrades.css" />
     <link rel="stylesheet" href="owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <script src="scripts.js"></script>
@@ -28,8 +29,10 @@
                         </button>
                     </div>
                     <span class="col-lg-6 nav-right">
-                        <button class="btn btn-link navbar-item" id="logIn"><i class="fas fa-plus"></i> New Trade</button>
-                        <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-exchange-alt"></i> My Trades</button>
+                        <button class="btn btn-link navbar-item" id="logIn"><i class="fas fa-plus"></i> New
+                            Trade</button>
+                        <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-exchange-alt"></i> My
+                            Trades</button>
                         <button class="btn btn-link navbar-item" id="signUp"><i class="far fa-bookmark"></i></button>
                         <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-bell"></i></button>
                         <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-comments"></i></button>
@@ -41,12 +44,90 @@
     </div>
 
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 pull-left">
+                <h1 class="myTradesLeft">My Trades</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2 pull-right">
+                <button type="button" class="newTradeRight">New Trade</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2 center-text">
+
+                <div class="row tableColumns">
+                    <span class="col">Trade ID</span>
+                    <span class="col">Book</span>
+                    <span class="col">Status</span>
+                    <span class="col">With</span>
+                    <span class="col">Date</span>
+                    <span class="col"></span>
+                </div>
+
+
+                <div x-data="tradeHistory()" class="table-trades">
+                    <template x-for="trade in trades">
+                        <div class="row trade">
+                            <span class="col tradeId" x-text="trade.tradeId"></span>
+                            <span class="col book" x-text="trade.book"></span>
+                            <span class="col status" x-text="trade.status"></span>
+                            <span class="col with" x-text="trade.with"></span>
+                            <span class="col date" x-text="trade.date"></span>
+                            <span class="col checkbox"><input type="checkbox"></input></span>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
 
 
 </body>
+
+<script charset="utf-8">
+    function tradeHistory() {
+        const trades = [
+            {
+                tradeId: "013567",
+                book: "A Game of Thrones",
+                status: "Accepted",
+                with: "Joaquim Barreiros",
+                date: "10/11/2020",
+            },
+            {
+                tradeId: "03267",
+                book: "Lord of The Rings",
+                status: "Pending",
+                with: "Carlos Notas",
+                date: "08/11/2020",
+            },
+            {
+                tradeId: "023567",
+                book: "A Game of Thrones",
+                status: "Declined",
+                with: "Carlos Notas",
+                date: "05/10/2020",
+            },
+        ];
+
+        // initially set items on localstorage
+        const encodedBooks = JSON.stringify(trades);
+
+        // get items from localStorage
+        const storedBooks = localStorage.getItem("trades");
+
+        return {
+            trades: trades,
+        };
+    }
+</script>
 
 <!--STYLE -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

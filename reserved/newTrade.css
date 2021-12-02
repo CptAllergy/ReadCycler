@@ -74,50 +74,73 @@ button img {
     border-radius: 50%;
 }
 
-.center-text {
-    text-align: center;
-}
-
-.trades {
-    padding-top: 15px;
+.newTradeTitle {
+    background-color: rgb(252, 199, 101);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 25px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     font-size: 25px;
+    border: none;
 }
 
-.trade {
-    margin-top: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: rgb(0, 0, 0);
-    background: rgb(255, 255, 255);
-    font-size: 16px;
+.image-placeholder {
+    background-color: Silver;
+    display: flex;
+    height: 300px;
+    margin: 5px;
+    width: 300px;
 }
 
-.myTradesLeft {
-    margin-top: 100px;
-    font-size: 24px;
-    text-decoration: underline;
+.image-placeholder>h4 {
+    align-self: center;
+    text-align: center;
+    width: 100%;
 }
 
-.newTradeRight {
-    float: right;
+.createTrade {
+    margin-top: 30px;
     background-color: rgb(252, 199, 101);
     padding-left: 25px;
     padding-right: 25px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 18px;
     border: none;
 }
 
-.with{
-    color: RoyalBlue;
+.input-field {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    color: gray;
+    outline: none;
+    padding: 10px 35px 10px 15px;
 }
 
-.tradeId{
-    color: RoyalBlue;
+.input-field-textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 125px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    color: gray;
+    outline: none;
+    padding: 10px 35px 10px 15px;
 }
 
-.tableColumns {
-    margin-top: 20px;
-    font-size: 18px;
+.radios{
+    margin-top: 5px;
+    margin-bottom: 5px; 
+    margin-right: 5px; 
+}
+
+.center-text {
+    text-align: center;
 }
