@@ -147,7 +147,7 @@ div.desc {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 350px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -163,7 +163,7 @@ div.desc {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 30%;
 }
 
 /* The Close Button */
@@ -179,4 +179,40 @@ div.desc {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal-text {
+  color: grey;
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+.modal-input {
+  width: 80%;
+  height: 40px;
+  border: 1px solid gray;
+  color: gray;
+  border-radius: 50px;
+}
+
+.margin-modal {
+  margin-top: 20px;
+}
+
+.modal-btn {
+  background-color: #2b2b2b;
+  border: 1px solid #2b2b2b;
+  color: whitesmoke;
+  padding: 15px 130px;
+  border-radius: 10px;
+}
+
+.modal-href {
+  color: gray;
+  text-decoration: underline;
+}
+
+.modal-href:hover {
+  color: darkgray;
+  text-decoration: underline;
 }

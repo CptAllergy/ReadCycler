@@ -7,7 +7,7 @@
 });
 
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("signUpModal");
 
 // Get the button that opens the modal
 var btnSignUp = document.getElementById("signUp");
@@ -32,3 +32,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+
