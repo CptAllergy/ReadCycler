@@ -35,6 +35,11 @@ body {
     color: red;
 }
 
+.navbar a:hover {
+    color: red;
+    text-decoration: none;
+}
+
 .navbar button:hover {
     color: red;
     text-decoration: none;
@@ -107,7 +112,14 @@ button img {
     padding-bottom: 2px;
     font-size: 18px;
     border: none;
+    color: black;
 }
+
+a.newTradeRight:hover {
+    color: black;
+}
+
+
 
 .with{
     color: RoyalBlue;
