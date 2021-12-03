@@ -51,10 +51,6 @@
             </div>
         </div>
 
-
-
-
-
         <div class="row">
             <div class="col-md-8 offset-md-2 center-text">
                 <div class="row">
@@ -77,14 +73,16 @@
                         <input type="text" placeholder="Book Title" class="input-field">
                         <input type="text" placeholder="Author" class="input-field">
                         <input type="text" placeholder="Book Condition" class="input-field">
+
                         <input type="radio" id="Trade" name="trades" value="Trade" class="radios">
                         <label for="Trade">Trade</label>
-                        <input type="radio" id="Offer" name="trades" value="Offer" class="radios">
+                        <input type="radio" id="Offer" name="trades" value="Offer" style="margin-left: 20%"
+                            class="radios">
                         <label for="Offer">Offer</label>
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="genre">Genre:</label>
-                                <select name="genres" id="genres">
+                                <select name="genres" id="genres" class="selectGenre">
+                                    <option value="" disabled selected hidden>Genre</option>
                                     <option value="Romance">Romance</option>
                                     <option value="Biography">Biography</option>
                                     <option value="Fiction">Fiction</option>
@@ -92,12 +90,19 @@
                                 </select>
                             </div>
                         </div>
-                        <label for="Offer">Would you like the book back after the trade?</label>
-                        <input type="checkbox" id="BookBack" name="BookBack" value="BookBack" class="radios">
+
                     </div>
                     <div class="col-md-4">
                         <textarea type="text" placeholder="Additional Information"
                             class="input-field-textarea"></textarea>
+                        <div class="row">
+                            <div class="col-md-10 bookBackText">
+                                <label for="Offer">Would you like the book back after the trade?</label>
+                            </div>
+                            <div class="col-md-2 bookBackCheckbox">
+                                <input type="checkbox" id="BookBack" name="BookBack" value="BookBack">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
