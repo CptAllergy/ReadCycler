@@ -53,6 +53,24 @@ window.onclick = function(event) {
 // }
 
 
+function searchFunction(){
+  var resultsForSearch;
+  var input, location, genre, resultsForSearch;
+
+  showingResultsForSearch = document.getElementById("showing-results-for-search");
+  input = document.getElementById("search-input");
+  location = document.getElementById("location-input");
+  genre = document.getElementById("genre-input");
+  resultsForSearch = document.getElementById("result-for-search")
+
+  if(input.value != ""){
+    var string = 'Showing results for: "' + input.value +'"';
+    resultsForSearch.textContent = string;
+  }
+
+}
+
+
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */
