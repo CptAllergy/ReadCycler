@@ -63,9 +63,11 @@ function searchFunction(){
   genre = document.getElementById("genre-input");
   resultsForSearch = document.getElementById("result-for-search")
 
-  showingResultsForSearch.style.display="block";
+  if(input.value != ""){
+    var string = 'Showing results for: "' + input.value +'"';
+    resultsForSearch.textContent = string;
+  }
 
-  resultsForSearch.textContent = input.value;
 }
 
 

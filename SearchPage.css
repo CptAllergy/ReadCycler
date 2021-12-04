@@ -77,9 +77,12 @@ button img {
   margin-bottom: 4%;
 }
 
-#showing-results-for-search{
-  display: none;
+.bottom-border{
+  border-bottom: 1px solid;
+  border-color: rgb(165, 165, 165);
 }
+
+
 
 
 
