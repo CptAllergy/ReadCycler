@@ -402,29 +402,17 @@ div.desc {
 
 
 
-.hidden-checkbox {
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
+.report-text {
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 250px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    color: gray;
+    outline: none;
+    padding: 10px 35px 10px 15px;
 }
 
-.hidden-checkbox+label {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
-    color: #000;
-    display: inline-block;
-    /* or block */
-    line-height: normal;
-    cursor: pointer;
-    padding: 6px 20px;
-    background-color: #EFEFEF;
-    border-radius: 4px;
-    border: 1px solid #D0D0D0;
-}
 
-.hidden-checkbox:checked+label {
-    border-color: #000;
-    background-color: rgb(252, 199, 101);
-    color: #000;
-}
+
