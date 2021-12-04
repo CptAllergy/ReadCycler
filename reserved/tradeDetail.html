@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="tradeDetail.css" />
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<script src="scripts.js"></script>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div w3-include-html="../snippets/navbar.html"></div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="newTradeTitle"></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2 center-text">
+                <div class="row">
+
+                    <div class="col-md-7">
+                        <div class="image-placeholder">
+                            <img src="../book_placerholder.jpeg" class="image-display">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="image-placeholder-desc">
+                                    <p  class="small-word">Posted Yesterday 16:48</p>
+                                    <div class="title">Harry Potter</div>
+                                    <div class="average">Book by Book</div>
+                                    <div class="average">Book back after trade: No</div>
+                                    <div class="small-word">Condition: Used</div>
+                                    <div class="small-word">Genre: Fantasy</div>
+                                    <div class="title">Description:</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-5">
+                        <div class="image-placeholder-perfil">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="../discord.png" class="image-perfil">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="title">Yoda Amogus</div>
+                                    <div class="small-word">User Since 2021</div>
+                                    <div class="small-word">Last Seen: Today</div>
+                                    <div class="underline">More Trades From This User</div>
+
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="center-text">
+                                        <span type="button">Rating: </i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div style="text-align: left; margin-left: 10%;"> 4.7/5<i class="fas fa-star"></i></div>
+                                </div>
+                            </div>
+                            
+                            <div class="center-text">
+                                <button type="button" class="send-request" style="margin-top: 70px;">Send Request</button>
+                            </div>
+
+                        </div>
+
+                        <div class="image-placeholder-loc">
+                            <h2 class="name" style="text-align: left; margin-left: 10%; padding-top: 10px;">Location</h2>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <script charset="utf-8">
+        function tradeHistory() {
+            const trades = [
+                {
+                    tradeId: "013567",
+                    book: "A Game of Thrones",
+                    status: "Accepted",
+                    with: "Joaquim Barreiros",
+                    date: "10/11/2020",
+                },
+                {
+                    tradeId: "03267",
+                    book: "Lord of The Rings",
+                    status: "Pending",
+                    with: "Carlos Notas",
+                    date: "08/11/2020",
+                },
+                {
+                    tradeId: "023567",
+                    book: "A Game of Thrones",
+                    status: "Declined",
+                    with: "Carlos Notas",
+                    date: "05/10/2020",
+                },
+            ];
+
+            // initially set items on localstorage
+            const encodedBooks = JSON.stringify(trades);
+
+            // get items from localStorage
+            const storedBooks = localStorage.getItem("trades");
+
+            return {
+                trades: trades,
+            };
+        }
+    </script>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+
+<!--STYLE -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="../owl-carousel/owl.carousel.min.js"></script>
+<script type="text/javascript" src="../scripts.js"></script>
+<script>includeHTML();</script>
+<!--END STYLE-->
+
+</html>
