@@ -72,14 +72,41 @@ button img {
 
 
 
+
 .large-search-bar {
   margin-top: 4%;
   margin-bottom: 4%;
 }
 
+.search-result-element{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background: white;
+  color: rgb(35, 35, 35);
+  font-size: 16;
+}
+
+.search-result-img{
+  width: auto;
+  height: 120px;
+}
+
 .bottom-border{
   border-bottom: 1px solid;
   border-color: rgb(165, 165, 165);
+}
+
+.rc-button {
+  float: right;
+  background-color: rgb(252, 199, 101);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 18px;
+  border: none;
+  color: black;
 }
 
 

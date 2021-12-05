@@ -55,7 +55,7 @@
 
           <input type="text" class="form-control" placeholder="Location" id="location-input">
 
-          <select name="genre" id="genre-input" class="selectGenre form-control">
+          <select name="genre" id="genre-input" class="form-control">
             <option value="" disabled selected hidden>Genre</option>
             <option value="Romance">Romance</option>
             <option value="Biography">Biography</option>
@@ -63,7 +63,7 @@
             <option value="Sci-fi">Sci-fi</option>
           </select>
 
-          <div class="input-group-btn">
+          <div class="input-group-append input-group-btn">
             <button class="btn btn-secondary" type="button" onclick="searchFunction()">Go!</button>
           </div>
         </div>
@@ -75,12 +75,104 @@
 
     <div class="container-fluid">
       <div class="row justify-content-center">
-          <div class="col-lg-6 pull-left">
-              <div id="showing-results-for-search" class="bottom-border">
+          <div class="col-lg-3 pull-left bottom-border">
+              <div class="align-bottom" id="showing-results-for-search">
                 <span id="result-for-search">&nbsp</span>
               </div>
           </div>
+
+          <div class="col-lg-3 bottom-border">
+            <div class="row">
+              
+              <div class="col">
+                <div class="float-right">
+                  Ordered by:
+                </div>
+              </div>
+
+              <div class="col auto">
+                <select name="sortBy" id="sort-by" class="form-control">
+                  <option value="mostRecent" selected >Most Recent</option>
+                  <option value="Romance">Most Checked</option>
+                  <option value="Biography">Closest</option>
+                </select>
+              </div>
+    
+            </div>
+          </div>
       </div>
+
+      <div class= "row justify-content-center">
+        <div class= "col-lg-6">
+
+          <!-- Start of placeholder code for search result elements -->
+          <div class= "row search-result-element">
+            
+            <div class = "col-lg-2">
+              <img class = "search-result-img" src="book_placerholder.jpeg" alt="">
+            </div>
+
+            <div class = "col pull-left">
+              <div class="row">
+                Title
+              </div>
+              <div class="row">
+                Condition
+              </div>
+              <div class="row">
+                Category
+              </div>
+              <div class="row">
+                By
+              </div>
+              <div class="row">
+                Location
+              </div>
+            </div>
+
+            <div class = "col pull-right">
+              <a type="button" href="index.html" class="rc-button">Check Trade</a>
+            </div>
+
+          </div>
+
+          <div class= "row search-result-element">
+            
+            <div class = "col-lg-2">
+              <img class = "search-result-img" src="book_placerholder.jpeg" alt="">
+            </div>
+
+            <div class = "col pull-left">
+              <div class="row">
+                Title
+              </div>
+              <div class="row">
+                Condition
+              </div>
+              <div class="row">
+                Category
+              </div>
+              <div class="row">
+                By
+              </div>
+              <div class="row">
+                Location
+              </div>
+            </div>
+
+            <div class = "col pull-right">
+              <a type="button" href="index.html" class="rc-button">Check Trade</a>
+            </div>
+
+          </div>
+
+          <!-- End of placeholder code -->
+
+
+
+        </div>
+      </div>
+
     </div>
 
 </body>
