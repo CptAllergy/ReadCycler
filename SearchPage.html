@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="SearchPage.css" />
   <link rel="stylesheet" href="owl-carousel/owl.carousel.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <script src="scripts.js"></script>
@@ -17,38 +18,38 @@
   <!-- Navigation Bar -->
   <div class="container-fluid">
     <div class="row navbar">
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-6">
-                    <a class="navbar-title" href="index.html">ReadCycler</a>
-                    <!-- Search and Banner Image -->
-                    <input type="search" placeholder="Search..." style="margin-left: 50px" class="search-bar">
-                    <button type="submit" class="search-button">
-                        <img src="search.png">
-                    </button>
-                </div>
-                <span class="col-lg-6 nav-right">
-                    <button class="btn btn-link navbar-item" id="logIn"><i class="fas fa-plus"></i> New
-                        Trade</button>
-                    <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-exchange-alt"></i> My
-                        Trades</button>
-                    <button class="btn btn-link navbar-item" id="signUp"><i class="far fa-bookmark"></i></button>
-                    <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-bell"></i></button>
-                    <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-comments"></i></button>
-                    <button class="btn btn-link navbar-item" id="signUp"><img src="discord.png" /></button>
-                </span>
-            </div>
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-6">
+            <a class="navbar-title" href="index.html">ReadCycler</a>
+            <!-- Search and Banner Image -->
+            <input type="search" placeholder="Search..." style="margin-left: 50px" class="search-bar">
+            <button type="submit" class="search-button">
+              <img src="search.png">
+            </button>
+          </div>
+          <span class="col-lg-6 nav-right">
+            <button class="btn btn-link navbar-item" id="logIn"><i class="fas fa-plus"></i> New
+              Trade</button>
+            <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-exchange-alt"></i> My
+              Trades</button>
+            <button class="btn btn-link navbar-item" id="signUp"><i class="far fa-bookmark"></i></button>
+            <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-bell"></i></button>
+            <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-comments"></i></button>
+            <button class="btn btn-link navbar-item" id="signUp"><img src="discord.png" /></button>
+          </span>
         </div>
+      </div>
     </div>
   </div>
 
 
-  
+
 
   <!---Search Bar-->
   <div class="container-fluid">
     <div class="row justify-content-center">
-      
+
       <div class="col-lg-6 large-search-bar">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search for..." id="search-input">
@@ -69,50 +70,90 @@
         </div>
       </div>
 
-      
+
     </div>
 
 
     <div class="container-fluid">
       <div class="row justify-content-center">
-          <div class="col-lg-3 pull-left bottom-border">
-              <div class="align-bottom" id="showing-results-for-search">
-                <span id="result-for-search">&nbsp</span>
-              </div>
+        <div class="col-lg-3 pull-left bottom-border">
+          <div class="align-bottom" id="showing-results-for-search">
+            <span id="result-for-search">&nbsp</span>
           </div>
+        </div>
 
-          <div class="col-lg-3 bottom-border">
-            <div class="row">
-              
-              <div class="col">
-                <div class="float-right">
-                  Ordered by:
-                </div>
-              </div>
+        <div class="col-lg-3 bottom-border">
+          <div class="row">
 
-              <div class="col auto">
-                <select name="sortBy" id="sort-by" class="form-control">
-                  <option value="mostRecent" selected >Most Recent</option>
-                  <option value="Romance">Most Checked</option>
-                  <option value="Biography">Closest</option>
-                </select>
+            <div class="col">
+              <div class="float-right">
+                Ordered by:
               </div>
-    
             </div>
+
+            <div class="col auto">
+              <select name="sortBy" id="sort-by" class="form-control">
+                <option value="mostRecent" selected>Most Recent</option>
+                <option value="Romance">Most Checked</option>
+                <option value="Biography">Closest</option>
+              </select>
+            </div>
+
           </div>
+        </div>
       </div>
 
-      <div class= "row justify-content-center">
-        <div class= "col-lg-6">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+
+
+          <div x-data="tradeResults()" class="table-trades">
+            <template x-for="trade in trades">
+              <div class="row search-result-element">
+
+                <div class="col-lg-2">
+                  <img class="search-result-img" src="book_placerholder.jpeg" alt="">
+                </div>
+
+                <div class="col pull-left">
+                  <div class="row">
+                    Title: <span x-text="trade.title"></span>
+                  </div>
+                  <div class="row">
+                    Condition: <span x-text="trade.condition"></span>
+                  </div>
+                  <div class="row">
+                    Genre: <span x-text="trade.genre"></span>
+                  </div>
+                  <div class="row">
+                    By: <span x-text="trade.by"></span>
+                  </div>
+                  <div class="row">
+                    Location: <span x-text="trade.location"></span>
+                  </div>
+                </div>
+
+                <div class="col pull-right">
+                  <a type="button" href="index.html" class="rc-button">Check Trade</a>
+                </div>
+
+              </div>
+            </template>
+          </div>
+
+
+
+
+
 
           <!-- Start of placeholder code for search result elements -->
-          <div class= "row search-result-element">
-            
-            <div class = "col-lg-2">
-              <img class = "search-result-img" src="book_placerholder.jpeg" alt="">
+          <div class="row search-result-element">
+
+            <div class="col-lg-2">
+              <img class="search-result-img" src="book_placerholder.jpeg" alt="">
             </div>
 
-            <div class = "col pull-left">
+            <div class="col pull-left">
               <div class="row">
                 Title
               </div>
@@ -130,19 +171,19 @@
               </div>
             </div>
 
-            <div class = "col pull-right">
+            <div class="col pull-right">
               <a type="button" href="index.html" class="rc-button">Check Trade</a>
             </div>
 
           </div>
 
-          <div class= "row search-result-element">
-            
-            <div class = "col-lg-2">
-              <img class = "search-result-img" src="book_placerholder.jpeg" alt="">
+          <div class="row search-result-element">
+
+            <div class="col-lg-2">
+              <img class="search-result-img" src="book_placerholder.jpeg" alt="">
             </div>
 
-            <div class = "col pull-left">
+            <div class="col pull-left">
               <div class="row">
                 Title
               </div>
@@ -160,7 +201,7 @@
               </div>
             </div>
 
-            <div class = "col pull-right">
+            <div class="col pull-right">
               <a type="button" href="index.html" class="rc-button">Check Trade</a>
             </div>
 
@@ -177,6 +218,26 @@
 
 </body>
 
+<script charset="utf-8">
+
+  let object;
+  let httpRequest = new XMLHttpRequest(); // asynchronous request
+  httpRequest.open("GET", "reserved/allTrades.json", true);
+  httpRequest.send();
+  httpRequest.addEventListener("readystatechange", function () {
+    if (this.readyState === this.DONE) {
+      // when the request has completed
+      object = JSON.parse(this.response);
+    }
+  });
+
+  function tradeResults() {
+
+    return object;
+  }
+
+</script>
+
 <!-- STYLE -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -184,6 +245,7 @@
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="scripts.js"></script>
 <!--END STYLE-->
 
 </html>

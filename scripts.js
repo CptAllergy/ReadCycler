@@ -100,3 +100,9 @@ function includeHTML() {
 }
 
 
+function getJSONObject(filepath) {
+  console.log(filepath);
+  return JSON.parse(FileSystem.readFileSync(filepath));
+}
+
+
