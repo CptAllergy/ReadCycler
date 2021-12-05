@@ -90,3 +90,37 @@ button img {
 .profile-img {
     border-radius: 110px;
 }
+
+.profile-name {
+    color: white;
+    font-size: 30px;
+}
+
+.profile-job {
+    font-size: 15px;
+}
+
+.profile-location {
+    color: #6d93cb;
+    font-size: 23px;
+}
+
+.profile-likes {
+    color: white;
+    font-size: 20px;
+}
+
+.space-top {
+    margin-top: 20px;
+}
+
+.profile-description {
+    color: white;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.profile-rating {
+    color: #6d93cb;
+    font-size: 22px;
+}
