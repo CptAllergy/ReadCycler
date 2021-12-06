@@ -11,8 +11,6 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<script src="scripts.js"></script>
-
 <body>
 
     <!-- Navigation Bar -->
@@ -68,7 +66,7 @@
 
 <script charset="utf-8">
     function tradeHistory() {
-        const trades = [
+        const myTrades = [
             {
                 tradeId: "013567",
                 book: "A Game of Thrones",
@@ -92,11 +90,14 @@
             },
         ];
 
-        // initially set items on localstorage
-        const encodedBooks = JSON.stringify(trades);
+        if (localStorage.getItem("myTrades") == null) {
+            // initially set items on localstorage
+            var encodedBooks = JSON.stringify(myTrades);
+            localStorage.setItem("myTrades", encodedBooks);
+        }
 
         // get items from localStorage
-        const storedBooks = localStorage.getItem("trades");
+        var trades = JSON.parse(localStorage.getItem("myTrades"));
 
         return {
             trades: trades,

@@ -86,6 +86,45 @@ if (span3 != null) {
   }
 }
 
+
+
+//New trade functions
+function addBookToLocalStorage() {
+  let title = document.getElementById("bookTitleId").value;
+  let condition = document.getElementById("bookConditionId").value;
+  let genre = document.getElementById("genres").value;
+  let withvar = "";
+  let status = "Pending"
+  let id = "82302"
+  //date
+  let today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1;
+  var yyyy = today.getFullYear();
+  if (dd < 10) {
+    dd = '0' + dd;
+  }
+  if (mm < 10) {
+    mm = '0' + mm;
+  }
+  today = dd + '/' + mm + '/' + yyyy;
+
+  var book = {
+    tradeId: id,
+    book: title,
+    status: status,
+    with: withvar,
+    date: today,
+  };
+
+  var trades = JSON.parse(localStorage.getItem("myTrades"));
+  trades.unshift(book);
+  localStorage.setItem("myTrades", JSON.stringify(trades));
+}
+
+
+
+
 function searchFunction() {
   var resultsForSearch;
   var input, location, genre, resultsForSearch;
