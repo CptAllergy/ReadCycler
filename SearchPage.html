@@ -107,7 +107,7 @@
         <div class="col-lg-6">
 
 
-          <div x-data="tradeResults()" class="table-trades">
+          <div x-data="readJSON()" class="table-trades">
             <template x-for="trade in trades">
               <div class="row search-result-element">
 
@@ -218,25 +218,7 @@
 
 </body>
 
-<script charset="utf-8">
 
-  let object;
-  let httpRequest = new XMLHttpRequest(); // asynchronous request
-  httpRequest.open("GET", "reserved/allTrades.json", true);
-  httpRequest.send();
-  httpRequest.addEventListener("readystatechange", function () {
-    if (this.readyState === this.DONE) {
-      // when the request has completed
-      object = JSON.parse(this.response);
-    }
-  });
-
-  function tradeResults() {
-
-    return object;
-  }
-
-</script>
 
 <!-- STYLE -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -246,6 +228,15 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="scripts.js"></script>
+<script src="reserved/allTrades.js"></script>
+<script>
+  function readJSON() {
+
+    return {
+      trades: trades,
+    };
+  }
+</script>
 <!--END STYLE-->
 
 </html>
