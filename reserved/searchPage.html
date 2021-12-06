@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="SearchPage.css" />
+  <link rel="stylesheet" type="text/css" href="reserved.css" />
   <link rel="stylesheet" href="owl-carousel/owl.carousel.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -16,32 +16,7 @@
 <body>
 
   <!-- Navigation Bar -->
-  <div class="container-fluid">
-    <div class="row navbar">
-      <div class="col-lg-12">
-        <div class="row">
-          <div class="col-lg-6">
-            <a class="navbar-title" href="index.html">ReadCycler</a>
-            <!-- Search and Banner Image -->
-            <input type="search" placeholder="Search..." style="margin-left: 50px" class="search-bar">
-            <button type="submit" class="search-button">
-              <img src="search.png">
-            </button>
-          </div>
-          <span class="col-lg-6 nav-right">
-            <button class="btn btn-link navbar-item" id="logIn"><i class="fas fa-plus"></i> New
-              Trade</button>
-            <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-exchange-alt"></i> My
-              Trades</button>
-            <button class="btn btn-link navbar-item" id="signUp"><i class="far fa-bookmark"></i></button>
-            <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-bell"></i></button>
-            <button class="btn btn-link navbar-item" id="signUp"><i class="fas fa-comments"></i></button>
-            <button class="btn btn-link navbar-item" id="signUp"><img src="discord.png" /></button>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div w3-include-html="../snippets/navbar.html"></div>
 
 
 
@@ -112,7 +87,7 @@
               <div class="row search-result-element">
 
                 <div class="col-lg-2">
-                  <img class="search-result-img" src="book_placerholder.jpeg" alt="">
+                  <img class="search-result-img" src="../assets/book_placerholder.jpeg" alt="">
                 </div>
 
                 <div class="col pull-left">
@@ -144,78 +119,11 @@
 
 
 
-
-
-          <!-- Start of placeholder code for search result elements -->
-          <div class="row search-result-element">
-
-            <div class="col-lg-2">
-              <img class="search-result-img" src="book_placerholder.jpeg" alt="">
-            </div>
-
-            <div class="col pull-left">
-              <div class="row">
-                Title
-              </div>
-              <div class="row">
-                Condition
-              </div>
-              <div class="row">
-                Category
-              </div>
-              <div class="row">
-                By
-              </div>
-              <div class="row">
-                Location
-              </div>
-            </div>
-
-            <div class="col pull-right">
-              <a type="button" href="index.html" class="rc-button">Check Trade</a>
-            </div>
-
-          </div>
-
-          <div class="row search-result-element">
-
-            <div class="col-lg-2">
-              <img class="search-result-img" src="book_placerholder.jpeg" alt="">
-            </div>
-
-            <div class="col pull-left">
-              <div class="row">
-                Title
-              </div>
-              <div class="row">
-                Condition
-              </div>
-              <div class="row">
-                Category
-              </div>
-              <div class="row">
-                By
-              </div>
-              <div class="row">
-                Location
-              </div>
-            </div>
-
-            <div class="col pull-right">
-              <a type="button" href="index.html" class="rc-button">Check Trade</a>
-            </div>
-
-          </div>
-
-          <!-- End of placeholder code -->
-
-
-
         </div>
       </div>
 
     </div>
-
+  </div>
 </body>
 
 
@@ -227,8 +135,9 @@
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script type="text/javascript" src="scripts.js"></script>
-<script src="reserved/allTrades.js"></script>
+<script type="text/javascript" src="../scripts.js"></script>
+<script>includeHTML();</script>
+<script src="allTrades.js"></script>
 <script>
   function readJSON() {
 

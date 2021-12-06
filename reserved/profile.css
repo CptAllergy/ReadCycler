@@ -81,7 +81,7 @@ button img {
 /* PROFILE PAGE CSS */
 
 .background-gradient {
-    background-image: url("../profile_banner.png");
+    background-image: url("../assets/profile_banner.png");
     width: 100%;
     height: 375px;
     padding-top: 60px;
