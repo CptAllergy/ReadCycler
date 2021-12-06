@@ -1,9 +1,9 @@
-﻿$(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
-        loop : true,
-        margin : 10,
-        nav : true,
-    });
+﻿$(document).ready(function () {
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+  });
 });
 
 // Get the modal
@@ -19,29 +19,37 @@ var span = document.getElementsByClassName("close")[0];
 var span2 = document.getElementsByClassName("close")[1];
 
 // When the user clicks the button, open the modal 
-btnSignUp.onclick = function() {
-  modal.style.display = "block";
+if (btnSignUp != null) {
+  btnSignUp.onclick = function () {
+    modal.style.display = "block";
+  }
 }
-btnLogIn.onclick = function() {
+if (btnLogIn != null) {
+  btnLogIn.onclick = function () {
     modalLogin.style.display = "block";
+  }
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+if (span != null) {
+  span.onclick = function () {
+    modal.style.display = "none";
     modalLogin.style.display = "none";
+  }
 }
 // When the user clicks on <span> (x), close the modal
-span2.onclick = function() {
-  modal.style.display = "none";
+if (span2 != null) {
+  span2.onclick = function () {
+    modal.style.display = "none";
     modalLogin.style.display = "none";
+  }
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal || event.target == modalLogin) {
     modal.style.display = "none";
-      modalLogin.style.display = "none";
+    modalLogin.style.display = "none";
   }
 }
 
@@ -53,7 +61,32 @@ window.onclick = function(event) {
 // }
 
 
-function searchFunction(){
+//Likes Modal
+// Get the modal
+var modalLikes = document.getElementById("likesModal");
+
+// Get the button that opens the modal
+var btnLikes = document.getElementById("editLikesId");
+
+// Get the <span> element that closes the modal
+var span3 = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+if (btnLikes != null) {
+  btnLikes.onclick = function () {
+    modalLikes.style.display = "block";
+  }
+}
+
+
+// When the user clicks on <span> (x), close the modal
+if (span3 != null) {
+  span3.onclick = function () {
+    modalLikes.style.display = "none";
+  }
+}
+
+function searchFunction() {
   var resultsForSearch;
   var input, location, genre, resultsForSearch;
 
@@ -63,8 +96,8 @@ function searchFunction(){
   genre = document.getElementById("genre-input");
   resultsForSearch = document.getElementById("result-for-search")
 
-  if(input.value != ""){
-    var string = 'Showing results for: "' + input.value +'"';
+  if (input.value != "") {
+    var string = 'Showing results for: "' + input.value + '"';
     resultsForSearch.textContent = string;
   }
 
@@ -82,10 +115,10 @@ function includeHTML() {
     if (file) {
       /* Make an HTTP request using the attribute value as the file name: */
       xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
+      xhttp.onreadystatechange = function () {
         if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+          if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
           /* Remove the attribute, and call this function once more: */
           elmnt.removeAttribute("w3-include-html");
           includeHTML();
@@ -99,10 +132,5 @@ function includeHTML() {
   }
 }
 
-
-function getJSONObject(filepath) {
-  console.log(filepath);
-  return JSON.parse(FileSystem.readFileSync(filepath));
-}
 
 
