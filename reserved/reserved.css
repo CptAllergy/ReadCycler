@@ -69,7 +69,7 @@ a:hover {
   object-fit: cover;
 }
 
-button img {
+.navbar-item-img img {
   width: 30px;
   height: 30px;
   object-fit: cover;
@@ -103,6 +103,8 @@ button img {
 .center-text {
   text-align: center;
 }
+
+/* MY TRADES CSS */
 
 .trades {
   padding-top: 15px;
@@ -139,7 +141,6 @@ button img {
 a.newTradeRight:hover {
   color: black;
 }
-
 
 
 .with {
@@ -386,6 +387,7 @@ div.desc {
   border-bottom: 1px solid black;
 }
 
+/* SEARCH PAGE CSS */
 
 
 .large-search-bar {
@@ -424,6 +426,7 @@ div.desc {
   color: black;
 }
 
+/* TRADE DETAILS CSS */
 
 
 .newTradeTitle {
@@ -542,5 +545,82 @@ div.desc {
 
 p {
   font-family: Verdana;
+}
+
+
+/* PROFILE PAGE CSS */
+
+.background-gradient {
+  background-image: url("../assets/profile_banner.png");
+  width: 100%;
+  height: 375px;
+  padding-top: 60px;
+}
+
+.profile-img {
+  border-radius: 110px;
+}
+
+.profile-name {
+  color: white;
+  font-size: 30px;
+}
+
+.profile-job {
+  font-size: 15px;
+}
+
+.profile-location {
+  color: #6d93cb;
+  font-size: 23px;
+}
+
+.profile-likes {
+  color: white;
+  font-size: 20px;
+}
+
+.space-top {
+  margin-top: 20px;
+}
+
+.profile-description {
+  color: white;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.profile-rating {
+  color: #6d93cb;
+  font-size: 22px;
+}
+
+.white-rec {
+  background-color: #d3d1d1;
+  width: 100%;
+  /*height: 300px;*/
+  border-radius: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.negative-space-top {
+  margin-top: -25px;
+}
+
+.box-title {
+  color: #585858;
+  font-size: 25px;
+}
+
+.box-text {
+  color: #6e6e6e;
+  font-size: 18px;
+}
+
+.profile-contacts {
+  color: #6d93cb;
 }
 
