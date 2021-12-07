@@ -1,23 +1,124 @@
 var trades = [
-    {
-      condition: "013567",
-      title: "A Game of Thrones",
-      genre: "Accepted",
-      by: "Joaquim Barreiros",
-      location: "10/11/2020"
-    },
-    {
-      condition: "03267",
-      title: "Lord of The Rings",
-      genre: "Pending",
-      by: "Carlos Notas",
-      location: "08/11/2020"
-    },
-    {
-      condition: "023567",
-      title: "A Game of Thrones",
-      genre: "Declined",
-      by: "Carlos Notas",
-      location: "05/10/2020"
-    }
-  ];
+  {
+    condition: "new",
+    tradeId: "918d2h",
+    title: "A Game of Thrones",
+    genre: "Fantasy",
+    by: "Joaquim Barreiros",
+    location: "Algarve",
+    returnBook: false,
+    bookByBook: true,
+    additional: "Got it and never read it."
+  },
+  {
+    condition: "used",
+    tradeId: "900d2h",
+    title: "Lord of The Rings",
+    genre: "Fantasy",
+    by: "Carlos Notas",
+    location: "Almada",
+    returnBook: false,
+    bookByBook: true,
+    additional: "Read the book once, but it's in good condition, only a few dents."
+  },
+  {
+    condition: "old",
+    tradeId: "236dee",
+    title: "A Game of Thrones",
+    genre: "Fantasy",
+    by: "Carlos Notas",
+    location: "Almada",
+    returnBook: true,
+    bookByBook: true,
+    additional: "Old book that belonged to my mom."
+  },
+  {
+    condition: "new",
+    tradeId: "h37o2h",
+    title: "Harry Potter",
+    genre: "Fantasy",
+    by: "Joaquim Barreiros",
+    location: "Caparica",
+    returnBook: false,
+    bookByBook: true,
+    additional: "Got it and never read it."
+  },
+  {
+    condition: "used",
+    tradeId: "83jdh",
+    title: "Harry Potter",
+    genre: "Fantasy",
+    by: "Carlos Notas",
+    location: "Almada",
+    returnBook: false,
+    bookByBook: true,
+    additional: "Read the book once, but it's in good condition, only a few dents."
+  },
+  {
+    condition: "old",
+    tradeId: "23h2id",
+    title: "Total Recall",
+    genre: "Biography",
+    by: "Carlos Notas",
+    location: "Almada",
+    returnBook: true,
+    bookByBook: true,
+    additional: "Old book that belonged to my mom."
+  },
+  {
+    condition: "new",
+    tradeId: "9jdjw2",
+    title: "Howard",
+    genre: "Horror",
+    by: "Joaquim Barreiros",
+    location: "Lisboa",
+    returnBook: false,
+    bookByBook: true,
+    additional: "Got it and never read it."
+  },
+  {
+    condition: "used",
+    tradeId: "87ftf2",
+    title: "Lord of The Rings",
+    genre: "Fantasy",
+    by: "Carlos Notas",
+    location: "Almada",
+    returnBook: false,
+    bookByBook: true,
+    additional: "Read the book once, but it's in good condition, only a few dents."
+  },
+  {
+    condition: "old",
+    tradeId: "cn3232",
+    title: "Lord of The Rings",
+    genre: "Fantasy",
+    by: "Carlos Notas",
+    location: "Almada",
+    returnBook: true,
+    bookByBook: true,
+    additional: "Old book that belonged to my mom."
+  },
+  {
+    condition: "new",
+    tradeId: "238f73",
+    title: "A Game of Thrones",
+    genre: "Fantasy",
+    by: "Joaquim Barreiros",
+    location: "Almada",
+    returnBook: false,
+    bookByBook: true,
+    additional: "Got it and never read it."
+  },
+  {
+    condition: "used",
+    tradeId: "dj9832",
+    title: "Harry Potter",
+    genre: "Fantasy",
+    by: "Carlos Notas",
+    location: "Almada",
+    returnBook: false,
+    bookByBook: true,
+    additional: "Read the book once, but it's in good condition, only a few dents."
+  }
+  
+];
