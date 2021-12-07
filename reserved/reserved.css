@@ -156,6 +156,8 @@ a.newTradeRight:hover {
   font-size: 18px;
 }
 
+/*NEW TRADE*/
+
 .newTradeTitle {
   background-color: rgb(252, 199, 101);
   margin-top: 50px;
@@ -191,6 +193,13 @@ a.newTradeRight:hover {
   padding-bottom: 10px;
   font-size: 18px;
   border: none;
+}
+
+.redTextFill {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+  display: none;
 }
 
 .input-field {

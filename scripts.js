@@ -94,8 +94,8 @@ function addBookToLocalStorage() {
   let condition = document.getElementById("bookConditionId").value;
   let genre = document.getElementById("genres").value;
   if (title == null || title.valueOf() == "".valueOf() || condition == null || condition.valueOf() == "".valueOf()|| genre == null || genre.valueOf() == "".valueOf()) {
-    //TODO
-    console.log("fail");
+    let redText = document.getElementById("pleaseFillText");
+    redText.style.display = "block";
   } else {
     let withvar = "";
     let status = "Pending";
