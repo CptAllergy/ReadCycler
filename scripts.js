@@ -131,6 +131,32 @@ if (span3 != null) {
   }
 }
 
+//Chat menu Modal
+// Get the modal
+var modalMenu = document.getElementById("chatMenuModal");
+
+// Get the button that opens the modal
+var btnMenu = document.getElementById("chatMenuId");
+
+// Get the <span> element that closes the modal
+var span3 = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+if (btnMenu != null) {
+  btnMenu.onclick = function () {
+    modalMenu.style.display = "block";
+  }
+}
+
+
+// When the user clicks on <span> (x), close the modal
+if (span3 != null) {
+  span3.onclick = function () {
+    modalMenu.style.display = "none";
+  }
+}
+
+
 
 
 //New trade functions
