@@ -4,7 +4,52 @@
     margin: 10,
     nav: true,
   });
+
 });
+
+
+// $('body').on('click', '.search-btn-nav', function() {
+//   console.log("search_name");
+//   var search_name = document.getElementById('search-navbar').value;
+//
+//   if (search_name != undefined && search_name != null) {
+//     window.location = '/searchPage?search=' + search_name;
+//   }
+// });
+
+
+var search_btn = document.getElementById('search-btn');
+if (search_btn != null) {
+  search_btn.onclick = function () {
+    let search_name = document.getElementById('search-input').value;
+    // console.log(search_name);
+    if (search_name != undefined && search_name != null) {
+      window.location = '/ReadCycler/reserved/searchPage.html?search=' + search_name;
+    }
+  }
+}
+
+var search_btn_nav = document.getElementById('search-btn-nav');
+if (search_btn_nav != null) {
+  search_btn_nav.onclick = function () {
+    let search_name = document.getElementById('search-navbar').value;
+    // console.log(search_name);
+    if (search_name != undefined && search_name != null) {
+      window.location = '/ReadCycler/reserved/searchPage.html?search=' + search_name;
+    }
+  }
+}
+
+
+
+
+// $('.search-btn').on('click',  function() {
+//   var search_name = document.getElementById('search-input').value;
+//   console.log(search_name);
+//   if (search_name != undefined && search_name != null) {
+//     window.location = '/searchPage?search=' + search_name;
+//   }
+// });
 
 // Get the modal
 var modal = document.getElementById("signUpModal");
