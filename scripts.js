@@ -94,8 +94,8 @@ function addBookToLocalStorage() {
   let condition = document.getElementById("bookConditionId").value;
   let genre = document.getElementById("genres").value;
   let withvar = "";
-  let status = "Pending"
-  let id = "82302"
+  let status = "Pending";
+  let id = Math.floor(Date.now() / 1000).toString(16);
   //date
   let today = new Date();
   var dd = today.getDate();
@@ -115,6 +115,8 @@ function addBookToLocalStorage() {
     status: status,
     with: withvar,
     date: today,
+    condition: condition,
+    genre: genre
   };
 
   var trades = JSON.parse(localStorage.getItem("myTrades"));
