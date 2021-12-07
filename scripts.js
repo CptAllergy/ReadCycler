@@ -5,6 +5,28 @@
     nav: true,
   });
 
+  let url = window.location.href;
+  if (url != null) {
+    let search = url.split("=");
+    let search_parameter = search.length > 1 ? search[1] : null;
+    search_parameter = decodeURI(search_parameter);
+    if (search_parameter != null) {
+      let input, location, genre, resultsForSearch;
+
+      showingResultsForSearch = document.getElementById("showing-results-for-search");
+      input = document.getElementById("search-input");
+      location = document.getElementById("location-input");
+      genre = document.getElementById("genre-input");
+      resultsForSearch = document.getElementById("result-for-search");
+      console.log(showingResultsForSearch,input, location, genre, resultsForSearch);
+      input.value = search_parameter;
+      if (input.value != "") {
+        let string = 'Showing results for: "' + input.value + '"';
+        resultsForSearch.textContent = string;
+      }
+    }
+  }
+
 });
 
 
@@ -205,8 +227,7 @@ function addBookToLocalStorage() {
 
 
 function searchFunction() {
-  var resultsForSearch;
-  var input, location, genre, resultsForSearch;
+  let input, location, genre, resultsForSearch;
 
   showingResultsForSearch = document.getElementById("showing-results-for-search");
   input = document.getElementById("search-input");
@@ -215,11 +236,12 @@ function searchFunction() {
   resultsForSearch = document.getElementById("result-for-search")
 
   if (input.value != "") {
-    var string = 'Showing results for: "' + input.value + '"';
+    let string = 'Showing results for: "' + input.value + '"';
     resultsForSearch.textContent = string;
   }
 
 }
+
 
 
 function includeHTML() {
