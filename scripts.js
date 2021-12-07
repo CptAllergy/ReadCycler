@@ -46,7 +46,8 @@ if (search_btn != null) {
     let search_name = document.getElementById('search-input').value;
     // console.log(search_name);
     if (search_name != undefined && search_name != null) {
-      window.location = '/ReadCycler/reserved/searchPage.html?search=' + search_name;
+      // window.location = '/ReadCycler/reserved/searchPage.html?search=' + search_name;
+      window.location = '/reserved/searchPage.html?search=' + search_name;
     }
   }
 }
@@ -57,7 +58,8 @@ if (search_btn_nav != null) {
     let search_name = document.getElementById('search-navbar').value;
     // console.log(search_name);
     if (search_name != undefined && search_name != null) {
-      window.location = '/ReadCycler/reserved/searchPage.html?search=' + search_name;
+      // window.location = '/ReadCycler/reserved/searchPage.html?search=' + search_name;
+      window.location = '/reserved/searchPage.html?search=' + search_name;
     }
   }
 }
