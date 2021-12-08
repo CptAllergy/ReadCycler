@@ -13,8 +13,38 @@
 
 <body>
 
+    <!--  &lt;!&ndash; Navigation Bar &ndash;&gt;-->
+    <!--  <div w3-include-html="snippets/navbar.html"></div>-->
     <!-- Navigation Bar -->
-    <div w3-include-html="../snippets/navbar.html"></div>
+    <!--  <div w3-include-html="../snippets/navbar.html"></div>-->
+    <div class="container-fluid">
+        <div class="row navbar">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a class="navbar-title" href="initialPage.html">ReadCycler</a>
+                        <!-- Search and Banner Image -->
+                        <input type="search" placeholder="Search..." id="search-navbar" style="margin-left: 50px"
+                            class="search-bar">
+                        <button type="submit" class="search-button" id="search-btn-nav">
+                            <img src="../assets/search.png">
+                        </button>
+                    </div>
+                    <span class="col-lg-6 nav-right">
+                        <a class="btn btn-link navbar-item" href="newTrade.html"><i class="fas fa-plus"></i> New
+                            Trade</a>
+                        <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
+                            Trades</a>
+                        <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
+                        <button class="btn btn-link navbar-item" id="chatMenuId"><i class="fas fa-bell"></i></button>
+                        <button class="btn btn-link navbar-item"><i class="fas fa-comments"></i></button>
+                        <a class="btn btn-link navbar-item-img" href="profile.html"><img
+                                src="../assets/discord.png" /></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="container-fluid">
@@ -39,7 +69,8 @@
                                     <p class="small-word">Posted Yesterday 16:48</p>
                                     <div class="title" x-text="trade.title"></div>
                                     <div class="average" x-text="trade.bookByBook"></div>
-                                    <div class="average">Book back after trade: <span x-text="trade.returnBook"></span></div>
+                                    <div class="average">Book back after trade: <span x-text="trade.returnBook"></span>
+                                    </div>
                                     <div class="small-word">Condition: <span x-text="trade.condition"></span></div>
                                     <div class="small-word">Genre: <span x-text="trade.genre"></span></div>
                                     <div class="title">Additional Information: <div class="average"
