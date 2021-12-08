@@ -18,7 +18,7 @@
       location = document.getElementById("location-input");
       genre = document.getElementById("genre-input");
       resultsForSearch = document.getElementById("result-for-search");
-      console.log(showingResultsForSearch,input, location, genre, resultsForSearch);
+      console.log(showingResultsForSearch, input, location, genre, resultsForSearch);
       input.value = search_parameter;
       if (input.value != "") {
         let string = 'Showing results for: "' + input.value + '"';
@@ -93,6 +93,8 @@ if (btnSignUp != null) {
     modal.style.display = "block";
   }
 }
+
+
 if (btnLogIn != null) {
   btnLogIn.onclick = function () {
     modalLogin.style.display = "block";
@@ -102,8 +104,14 @@ if (btnLogIn != null) {
 // When the user clicks on <span> (x), close the modal
 if (span != null) {
   span.onclick = function () {
-    modal.style.display = "none";
-    modalLogin.style.display = "none";
+    if (modal != null) {
+      modal.style.display = "none";
+    }
+    if (modalLogin != null) {
+      modalLogin.style.display = "none";
+    } if (modalLikes != null) {
+      modalLikes.style.display = "none";
+    }
   }
 }
 // When the user clicks on <span> (x), close the modal
@@ -137,21 +145,10 @@ var modalLikes = document.getElementById("likesModal");
 // Get the button that opens the modal
 var btnLikes = document.getElementById("editLikesId");
 
-// Get the <span> element that closes the modal
-var span3 = document.getElementsByClassName("close")[0];
-
 // When the user clicks the button, open the modal 
 if (btnLikes != null) {
   btnLikes.onclick = function () {
     modalLikes.style.display = "block";
-  }
-}
-
-
-// When the user clicks on <span> (x), close the modal
-if (span3 != null) {
-  span3.onclick = function () {
-    modalLikes.style.display = "none";
   }
 }
 
@@ -173,22 +170,13 @@ if (btnMenu != null) {
 }
 
 
-// When the user clicks on <span> (x), close the modal
-if (span3 != null) {
-  span3.onclick = function () {
-    modalMenu.style.display = "none";
-  }
-}
-
-
-
 
 //New trade functions
 function addBookToLocalStorage() {
   let title = document.getElementById("bookTitleId").value;
   let condition = document.getElementById("bookConditionId").value;
   let genre = document.getElementById("genres").value;
-  if (title == null || title.valueOf() == "".valueOf() || condition == null || condition.valueOf() == "".valueOf()|| genre == null || genre.valueOf() == "".valueOf()) {
+  if (title == null || title.valueOf() == "".valueOf() || condition == null || condition.valueOf() == "".valueOf() || genre == null || genre.valueOf() == "".valueOf()) {
     let redText = document.getElementById("pleaseFillText");
     redText.style.display = "block";
   } else {
