@@ -131,18 +131,15 @@
 
     <script charset="utf-8">
         function tradeHistory() {
-            const trade =
-            {
-                condition: "Old",
-                tradeId: "236dee",
-                title: "A Game of Thrones",
-                genre: "Fantasy",
-                by: "Carlos Notas",
-                location: "Almada",
-                returnBook: "No",
-                bookByBook: "Book by Book",
-                additional: "Old book that belonged to my mom."
-            };
+
+            let id = "918d2h";
+            let trade;
+            for (let i = 0; i < trades.length; i++) {
+                if (trades[i].tradeId.valueOf() == id.valueOf()) {
+                    trade = trades[i];
+                }
+            }
+
 
             return {
                 trade
@@ -150,12 +147,6 @@
         }
     </script>
     </div>
-
-
-
-
-
-
 
 
 </body>
@@ -173,6 +164,7 @@
     crossorigin="anonymous"></script>
 <script type="text/javascript" src="../owl-carousel/owl.carousel.min.js"></script>
 <script type="text/javascript" src="../scripts.js"></script>
+<script type="text/javascript" src="allTrades.js"></script>
 <script>includeHTML();</script>
 <!--END STYLE-->
 
