@@ -132,7 +132,7 @@
     <script charset="utf-8">
         function tradeHistory() {
 
-            let id = "918d2h";
+            let id = window.location.href.split("=")[1];
             let trade;
             for (let i = 0; i < trades.length; i++) {
                 if (trades[i].tradeId.valueOf() == id.valueOf()) {

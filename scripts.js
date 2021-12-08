@@ -7,24 +7,29 @@
 
   let url = window.location.href;
   if (url != null) {
-    let search = url.split("=");
-    let search_parameter = search.length > 1 ? search[1] : null;
-    search_parameter = decodeURI(search_parameter);
-    if (search_parameter != null) {
-      let input, location, genre, resultsForSearch;
-
-      showingResultsForSearch = document.getElementById("showing-results-for-search");
-      input = document.getElementById("search-input");
-      location = document.getElementById("location-input");
-      genre = document.getElementById("genre-input");
-      resultsForSearch = document.getElementById("result-for-search");
-      console.log(showingResultsForSearch, input, location, genre, resultsForSearch);
-      input.value = search_parameter;
-      if (input.value != "") {
-        let string = 'Showing results for: "' + input.value + '"';
-        resultsForSearch.textContent = string;
+    if(url.includes("search")) {
+      let search = url.split("=");
+      let search_parameter = search.length > 1 ? search[1] : null;
+      search_parameter = decodeURI(search_parameter);
+      if (search_parameter != null) {
+        let input, location, genre, resultsForSearch;
+  
+        showingResultsForSearch = document.getElementById("showing-results-for-search");
+        input = document.getElementById("search-input");
+        location = document.getElementById("location-input");
+        genre = document.getElementById("genre-input");
+        resultsForSearch = document.getElementById("result-for-search");
+        //console.log(showingResultsForSearch, input, location, genre, resultsForSearch);
+        input.value = search_parameter;
+        if (input.value != "") {
+          let string = 'Showing results for: "' + input.value + '"';
+          resultsForSearch.textContent = string;
+        }
       }
+    } else if(url.includes("trade")) {
+
     }
+    
   }
 
 });
@@ -211,6 +216,11 @@ function addBookToLocalStorage() {
     localStorage.setItem("myTrades", JSON.stringify(trades));
     location.href = "myTrades.html";
   }
+}
+
+//Check Trade function
+function checkTradeFunction(elem) {
+  window.location = '/reserved/tradeDetails.html?tradeId=' + elem.parentNode.getAttribute("id");
 }
 
 
