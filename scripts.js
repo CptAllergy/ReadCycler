@@ -117,6 +117,9 @@ if (span != null) {
     } if (modalLikes != null) {
       modalLikes.style.display = "none";
     }
+    if (modalChat != null) {
+      modalChat.style.display = "none";
+    }
   }
 }
 // When the user clicks on <span> (x), close the modal
@@ -157,20 +160,17 @@ if (btnLikes != null) {
   }
 }
 
-//Chat menu Modal
+//Chat Modal
 // Get the modal
-var modalMenu = document.getElementById("chatMenuModal");
+var modalChat = document.getElementById("chatModal");
 
 // Get the button that opens the modal
-var btnMenu = document.getElementById("chatMenuId");
-
-// Get the <span> element that closes the modal
-var span3 = document.getElementsByClassName("close")[0];
+var btnChat = document.getElementById("chatId");
 
 // When the user clicks the button, open the modal 
-if (btnMenu != null) {
-  btnMenu.onclick = function () {
-    modalMenu.style.display = "block";
+if (btnChat != null) {
+  btnChat.onclick = function () {
+    modalChat.style.display = "block";
   }
 }
 
