@@ -26,23 +26,25 @@
 
         <div class="row">
             <div class="col-md-8 offset-md-2 center-text">
-                <div class="row">
+                <div x-data="tradeHistory()" class="row">
 
                     <div class="col-md-7">
                         <div class="image-placeholder">
-                            <img src="../book_placerholder.jpeg" class="image-display">
+                            <img src="../assets/book_placerholder.jpeg" class="image-display">
                         </div>
 
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="image-placeholder-desc">
-                                    <p  class="small-word">Posted Yesterday 16:48</p>
-                                    <div class="title">Harry Potter</div>
-                                    <div class="average">Book by Book</div>
-                                    <div class="average">Book back after trade: No</div>
-                                    <div class="small-word">Condition: Used</div>
-                                    <div class="small-word">Genre: Fantasy</div>
-                                    <div class="title">Additional Information:</div>
+                                    <p class="small-word">Posted Yesterday 16:48</p>
+                                    <div class="title" x-text="trade.title"></div>
+                                    <div class="average" x-text="trade.bookByBook"></div>
+                                    <div class="average">Book back after trade: <span x-text="trade.returnBook"></span></div>
+                                    <div class="small-word">Condition: <span x-text="trade.condition"></span></div>
+                                    <div class="small-word">Genre: <span x-text="trade.genre"></span></div>
+                                    <div class="title">Additional Information: <div class="average"
+                                            x-text="trade.additional"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -52,10 +54,10 @@
                         <div class="image-placeholder-perfil">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="../discord.png" class="image-perfil">
+                                    <img src="../assets/discord.png" class="image-perfil">
                                 </div>
                                 <div class="col-md-9">
-                                    <div class="title">Yoda Amogus</div>
+                                    <div class="title" x-text="trade.by"></div>
                                     <div class="small-word">User Since 2021</div>
                                     <div class="small-word">Last Seen: Today</div>
                                     <div class="underline">More Trades From This User</div>
@@ -70,28 +72,26 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9">
-                                    <div style="text-align: left; margin-left: 10%;"> 4.7/5<i class="fas fa-star"></i></div>
+                                    <div style="text-align: left; margin-left: 10%;"> 4.7/5<i class="fas fa-star"></i>
+                                    </div>
                                 </div>
                             </div>
-                            
+
                             <div class="center-text">
-                                <button type="button" class="send-request" style="margin-top: 70px;">Send Request</button>
+                                <button type="button" class="send-request" style="margin-top: 70px;">Send
+                                    Request</button>
                             </div>
 
                         </div>
 
                         <div class="image-placeholder-loc">
-                            <h2 class="name" style="text-align: left; margin-left: 10%; padding-top: 10px;">Location</h2>
+                            <h2 class="name" style="text-align: left; margin-left: 10%; padding-top: 10px;">Location
+                            </h2>
+                            <div x-text="trade.location"></div>
                         </div>
 
                     </div>
-
-
-
                 </div>
-
-
-
             </div>
 
         </div>
@@ -100,39 +100,22 @@
 
     <script charset="utf-8">
         function tradeHistory() {
-            const trades = [
-                {
-                    tradeId: "013567",
-                    book: "A Game of Thrones",
-                    status: "Accepted",
-                    with: "Joaquim Barreiros",
-                    date: "10/11/2020",
-                },
-                {
-                    tradeId: "03267",
-                    book: "Lord of The Rings",
-                    status: "Pending",
-                    with: "Carlos Notas",
-                    date: "08/11/2020",
-                },
-                {
-                    tradeId: "023567",
-                    book: "A Game of Thrones",
-                    status: "Declined",
-                    with: "Carlos Notas",
-                    date: "05/10/2020",
-                },
-            ];
-
-            // initially set items on localstorage
-            const encodedBooks = JSON.stringify(trades);
-
-            // get items from localStorage
-            const storedBooks = localStorage.getItem("trades");
+            const trade =
+            {
+                condition: "Old",
+                tradeId: "236dee",
+                title: "A Game of Thrones",
+                genre: "Fantasy",
+                by: "Carlos Notas",
+                location: "Almada",
+                returnBook: "No",
+                bookByBook: "Book by Book",
+                additional: "Old book that belonged to my mom."
+            };
 
             return {
-                trades: trades,
-            };
+                trade
+            }
         }
     </script>
     </div>

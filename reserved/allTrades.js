@@ -6,8 +6,8 @@ var trades = [
     genre: "Fantasy",
     by: "Joaquim Barreiros",
     location: "Algarve",
-    returnBook: false,
-    bookByBook: true,
+    returnBook: "Yes",
+    bookByBook: "Book by Book",
     additional: "Got it and never read it."
   },
   {
@@ -17,8 +17,8 @@ var trades = [
     genre: "Fantasy",
     by: "Carlos Notas",
     location: "Almada",
-    returnBook: false,
-    bookByBook: true,
+    returnBook: "No",
+    bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents."
   },
   {
@@ -28,8 +28,8 @@ var trades = [
     genre: "Fantasy",
     by: "Carlos Notas",
     location: "Almada",
-    returnBook: true,
-    bookByBook: true,
+    returnBook: "Yes",
+    bookByBook: "Book by Book",
     additional: "Old book that belonged to my mom."
   },
   {
@@ -39,8 +39,8 @@ var trades = [
     genre: "Fantasy",
     by: "Joaquim Barreiros",
     location: "Caparica",
-    returnBook: false,
-    bookByBook: true,
+    returnBook: "No",
+    bookByBook: "Book by Book",
     additional: "Got it and never read it."
   },
   {
@@ -50,8 +50,8 @@ var trades = [
     genre: "Fantasy",
     by: "Carlos Notas",
     location: "Almada",
-    returnBook: false,
-    bookByBook: true,
+    returnBook: "No",
+    bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents."
   },
   {
@@ -61,8 +61,8 @@ var trades = [
     genre: "Biography",
     by: "Carlos Notas",
     location: "Almada",
-    returnBook: true,
-    bookByBook: true,
+    returnBook: "Yes",
+    bookByBook: "Book by Book",
     additional: "Old book that belonged to my mom."
   },
   {
@@ -72,8 +72,8 @@ var trades = [
     genre: "Horror",
     by: "Joaquim Barreiros",
     location: "Lisboa",
-    returnBook: false,
-    bookByBook: true,
+    returnBook: "No",
+    bookByBook: "Book by Book",
     additional: "Got it and never read it."
   },
   {
@@ -83,8 +83,8 @@ var trades = [
     genre: "Fantasy",
     by: "Carlos Notas",
     location: "Almada",
-    returnBook: false,
-    bookByBook: true,
+    returnBook: "No",
+    bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents."
   },
   {
@@ -94,8 +94,8 @@ var trades = [
     genre: "Fantasy",
     by: "Carlos Notas",
     location: "Almada",
-    returnBook: true,
-    bookByBook: true,
+    returnBook: "Yes",
+    bookByBook: "Book by Book",
     additional: "Old book that belonged to my mom."
   },
   {
@@ -105,8 +105,8 @@ var trades = [
     genre: "Fantasy",
     by: "Joaquim Barreiros",
     location: "Almada",
-    returnBook: false,
-    bookByBook: true,
+    returnBook: "No",
+    bookByBook: "Book by Book",
     additional: "Got it and never read it."
   },
   {
@@ -116,9 +116,9 @@ var trades = [
     genre: "Fantasy",
     by: "Carlos Notas",
     location: "Almada",
-    returnBook: false,
-    bookByBook: true,
+    returnBook: "No",
+    bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents."
   }
-  
+
 ];
