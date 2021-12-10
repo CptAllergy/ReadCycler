@@ -64,12 +64,22 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <h1 class="profile-location"><i class="fas fa-map-marker-alt"
-                                            style="color: white!important;"></i> Caparica, Setúbal, Portugal</h1>
+                                            style="color: white!important;"></i>
+                                        Caparica, Setúbal, Portugal
+
+                                    </h1>
                                 </div>
                             </div>
                             <div class="row space-top">
                                 <div class="col-lg-12">
-                                    <h1 class="profile-likes"><b>Likes:</b> Sci-Fi, Fantasy, Horror
+                                    <h1 class="profile-likes"><b>Likes:</b>
+<!--                                        Sci-Fi, Fantasy, Horror-->
+                                        <div x-data="getUserLikes()">
+                                            <template x-for="like in likes">
+                                                <span x-text="like.name"></span>
+                                            </template>
+                                        </div>
+
                                         <button class="btn btn-link" id="editLikesId"><i class="fas fa-edit"
                                                 style="color: white!important; margin-left: 10px;"></i><span>Edit your
                                                 likes</span>
@@ -183,51 +193,51 @@
 
                 <div class="row">
                     <div class="col-md-4 offset-md-2">
-                        <input type="checkbox" class="hidden-checkbox " id="bio">
+                        <input type="checkbox" class="hidden-checkbox" name="likes" id="bio" data-name="Biography">
                         <label for="bio">Biography</label>
                     </div>
                     <div class="col-md-4">
-                        <input type="checkbox" class="hidden-checkbox " id="act">
+                        <input type="checkbox" class="hidden-checkbox" name="likes" id="act" data-name="Action">
                         <label for="act">Action</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 offset-md-2">
-                        <input type="checkbox" class="hidden-checkbox " id="cla">
+                        <input type="checkbox" class="hidden-checkbox" name="likes" id="cla" data-name="Classic">
                         <label for="cla">Classic</label>
                     </div>
                     <div class="col-md-4">
-                        <input type="checkbox" class="hidden-checkbox " id="sci">
+                        <input type="checkbox" class="hidden-checkbox" name="likes" id="sci" data-name="Sci-Fi">
                         <label for="sci">Sci-Fi</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 offset-md-2">
-                        <input type="checkbox" class="hidden-checkbox " id="fan">
+                        <input type="checkbox" class="hidden-checkbox" name="likes" id="fan" data-name="Fantasy">
                         <label for="fan">Fantasy</label>
                     </div>
                     <div class="col-md-4">
-                        <input type="checkbox" class="hidden-checkbox " id="hor">
+                        <input type="checkbox" class="hidden-checkbox" name="likes" id="hor" data-name="Horror">
                         <label for="hor">Horror</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 offset-md-2">
-                        <input type="checkbox" class="hidden-checkbox " id="rom">
+                        <input type="checkbox" class="hidden-checkbox" name="likes" id="rom" data-name="Romance">
                         <label for="rom">Romance</label>
                     </div>
                     <div class="col-md-4">
-                        <input type="checkbox" class="hidden-checkbox " id="com">
+                        <input type="checkbox" class="hidden-checkbox" name="likes" id="com" data-name="Comics">
                         <label for="com">Comics</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 offset-md-2">
-                        <input type="checkbox" class="hidden-checkbox " id="his">
+                        <input type="checkbox" class="hidden-checkbox" name="likes" id="his" data-name="History">
                         <label for="his">History</label>
                     </div>
                     <div class="col-md-4">
-                        <input type="checkbox" class="hidden-checkbox " id="poe">
+                        <input type="checkbox" class="hidden-checkbox" name="likes" id="poe" data-name="Poetry">
                         <label for="poe">Poetry</label>
                     </div>
                 </div>
@@ -235,7 +245,7 @@
 
                 <div class="row margin-modal">
                     <div class="col-lg-12">
-                        <button class="modal-btn" type="submit">Submit</button>
+                        <button class="modal-btn" type="button" onclick="updateLikesLocalStorage()">Submit</button>
                     </div>
                 </div>
             </div>
@@ -248,6 +258,18 @@
 
 </body>
 <!--STYLE -->
+
+<script charset="utf-8">
+    function getUserLikes() {
+        console.log('alalala');
+
+        var likes = JSON.parse(localStorage.getItem("userLikes"));
+        return {
+            likes: likes,
+        };
+    }
+</script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -260,6 +282,7 @@
 <script type="text/javascript" src="../owl-carousel/owl.carousel.min.js"></script>
 <script type="text/javascript" src="../scripts.js"></script>
 <script>includeHTML();</script>
+
 
 
 <!--END STYLE-->

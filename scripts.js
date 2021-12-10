@@ -223,6 +223,21 @@ function checkTradeFunction(elem) {
   window.location = '/reserved/tradeDetails.html?tradeId=' + elem.parentNode.getAttribute("id");
 }
 
+function updateLikesLocalStorage() {
+
+  let likes = document.querySelectorAll('input[name=likes]:checked');
+  let processedLikes = [];
+
+  for(i = 0; i < likes.length; i++){
+    let element = likes[i];
+    // console.log(element.getAttribute('data-name'));
+    processedLikes[i] =  {name : element.getAttribute('data-name')};
+  }
+
+    localStorage.setItem("userLikes", JSON.stringify(processedLikes));
+    location.href = "profile.html";
+}
+
 
 
 
