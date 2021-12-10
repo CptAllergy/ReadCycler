@@ -25,7 +25,7 @@
           <div class="col-lg-6">
             <a class="navbar-title" href="initialPage.html">ReadCycler</a>
             <!-- Search and Banner Image -->
-            <input type="search" placeholder="Search..." id="search-navbar" style="margin-left: 50px"
+            <input type="text" placeholder="Search..." id="search-navbar" style="margin-left: 50px"
               class="search-bar">
             <button type="submit" class="search-button" id="search-btn-nav">
               <img src="../assets/search.png">
@@ -111,7 +111,7 @@
 
 
           <div x-data="readJSON()" class="table-trades">
-            <template x-for="trade in trades">
+            <template x-for="trade in filterTrades">
               <div class="row search-result-element">
 
                 <div class="col-lg-2">
@@ -170,8 +170,17 @@
 <script>
   function readJSON() {
 
+    let search = window.location.href.split("=")[1];
+    let filterTrades = [];
+
+    for (let i = 0; i < trades.length; i++) {
+      if (trades[i].title.valueOf().toLowerCase().includes(search.valueOf().toLowerCase())) {
+        filterTrades.push(trades[i]);
+      }
+    }
+
     return {
-      trades: trades,
+      filterTrades : filterTrades,
     };
   }
 </script>

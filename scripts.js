@@ -7,13 +7,13 @@
 
   let url = window.location.href;
   if (url != null) {
-    if(url.includes("search")) {
+    if (url.includes("search")) {
       let search = url.split("=");
       let search_parameter = search.length > 1 ? search[1] : null;
       search_parameter = decodeURI(search_parameter);
       if (search_parameter != null) {
         let input, location, genre, resultsForSearch;
-  
+
         showingResultsForSearch = document.getElementById("showing-results-for-search");
         input = document.getElementById("search-input");
         location = document.getElementById("location-input");
@@ -26,12 +26,38 @@
           resultsForSearch.textContent = string;
         }
       }
-    } else if(url.includes("trade")) {
+    } else if (url.includes("trade")) {
 
     }
-    
+
   }
 
+});
+
+var search_bar = document.getElementById("search-navbar");
+
+//Press enter for search
+$(search_bar).on('keyup', function (e) {
+  if (e.key === 'Enter' || e.keyCode === 13) {
+    let search_name = document.getElementById('search-navbar').value;
+    // console.log(search_name);
+    if (search_name != undefined && search_name != null) {
+      // window.location = '/ReadCycler/reserved/searchPage.html?search=' + search_name;
+      window.location = '/reserved/searchPage.html?search=' + search_name;
+    }
+  }
+});
+
+var search_bar_big = document.getElementById("search-input");
+$(search_bar_big).on('keyup', function (e) {
+  if (e.key === 'Enter' || e.keyCode === 13) {
+    let search_name = document.getElementById('search-input').value;
+    // console.log(search_name);
+    if (search_name != undefined && search_name != null) {
+      // window.location = '/ReadCycler/reserved/searchPage.html?search=' + search_name;
+      window.location = '/reserved/searchPage.html?search=' + search_name;
+    }
+  }
 });
 
 
@@ -241,14 +267,18 @@ function updateLikesLocalStorage() {
   let likes = document.querySelectorAll('input[name=likes]:checked');
   let processedLikes = [];
 
-  for(i = 0; i < likes.length; i++){
+  for (i = 0; i < likes.length; i++) {
     let element = likes[i];
     // console.log(element.getAttribute('data-name'));
-    processedLikes[i] =  {name : element.getAttribute('data-name')};
+    if (i < likes.length - 1) {
+      processedLikes[i] = { name: element.getAttribute('data-name') + ',' };
+    } else {
+      processedLikes[i] = { name: element.getAttribute('data-name') };
+    }
   }
 
-    localStorage.setItem("userLikes", JSON.stringify(processedLikes));
-    location.href = "profile.html";
+  localStorage.setItem("userLikes", JSON.stringify(processedLikes));
+  location.href = "profile.html";
 }
 
 
@@ -263,9 +293,10 @@ function searchFunction() {
   genre = document.getElementById("genre-input");
   resultsForSearch = document.getElementById("result-for-search")
 
-  if (input.value != "") {
+  if (input.value != "" && input.value != null) {
     let string = 'Showing results for: "' + input.value + '"';
     resultsForSearch.textContent = string;
+    window.location = '/reserved/searchPage.html?search=' + input.value;
   }
 
 }
