@@ -176,6 +176,19 @@ if (btnChat != null) {
 
 
 
+// Get the button that opens the modal
+var btnChat1 = document.getElementById("chatId1");
+
+// When the user clicks the button, open the modal 
+if (btnChat1 != null) {
+  btnChat1.onclick = function () {
+    modalChat.style.display = "block";
+  }
+}
+
+
+
+
 //New trade functions
 function addBookToLocalStorage() {
   let title = document.getElementById("bookTitleId").value;
