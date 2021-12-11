@@ -23,7 +23,7 @@ var trades = [
     bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents.",
     image: "../assets/lotr.jpg",
-    face:"../assets/Carlos_Notas.jpg"
+    face:"../assets/Carlos-Moedas.jpg"
   },
   {
     condition: "Old",
@@ -36,7 +36,7 @@ var trades = [
     bookByBook: "Book by Book",
     additional: "Old book that belonged to my mom.",
     image: "../assets/gameOf.jpg",
-    face:"../assets/Carlos_Notas.jpg",
+    face:"../assets/Carlos-Moedas.jpg",
   },
   {
     condition: "New",
@@ -62,7 +62,7 @@ var trades = [
     bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents.",
     image: "../assets/book_placerholder.jpeg",
-    face:"../assets/Carlos_Notas.jpg"
+    face:"../assets/Carlos-Moedas.jpg"
   },
   {
     condition: "Old",
@@ -75,7 +75,7 @@ var trades = [
     bookByBook: "Book by Book",
     additional: "Old book that belonged to my mom.",
     image: "../assets/arnold.jpg",
-    face:"../assets/Carlos_Notas.jpg"
+    face:"../assets/Carlos-Moedas.jpg"
   },
   {
     condition: "New",
@@ -101,7 +101,7 @@ var trades = [
     bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents.",
     image: "../assets/lotr.jpg",
-    face:"../assets/Carlos_Notas.jpg"
+    face:"../assets/Carlos-Moedas.jpg"
   },
   {
     condition: "Old",
@@ -114,7 +114,7 @@ var trades = [
     bookByBook: "Book by Book",
     additional: "Old book that belonged to my mom.",
     image: "../assets/lotr.jpg",
-    face:"../assets/Carlos_Notas.jpg"
+    face:"../assets/Carlos-Moedas.jpg"
   },
   {
     condition: "New",
@@ -140,7 +140,7 @@ var trades = [
     bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents.",
     image: "../assets/book_placerholder.jpeg",
-    face:"../assets/Carlos_Notas.jpg"
+    face:"../assets/Carlos-Moedas.jpg"
   }
 
 ];

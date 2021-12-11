@@ -295,8 +295,10 @@ function submitReportQuim() {
   location.href = "Joaquim_Barreiros.html?success";
 }
 
-function travelCheckDetails() {
-  location.href = "Joaquim_Barreiros.html?success";
+function travelCheckDetails(elem) {
+  let name = elem.parentNode.getAttribute("id");
+  name = name.replace(" ", "_") + ".html";
+  location.href = "../reserved/" + name;
 }
 
 

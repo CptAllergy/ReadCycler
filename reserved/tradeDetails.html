@@ -89,14 +89,14 @@
                     <div class="col-md-5">
                         <div class="image-placeholder-perfil">
                             <div class="row">
-                                <div class="col-md-3">
-                                    <img x-bind:src="trade.face" class="image-perfil" onclick="travelCheckDetails()" style="cursor: pointer;">
+                                <div class="col-md-3" x-bind:id="trade.by">
+                                    <img x-bind:src="trade.face" class="image-perfil" onclick="travelCheckDetails(this)" style="cursor: pointer;">
                                 </div>
-                                <div class="col-md-9">
-                                    <div class="title hover-name" x-text="trade.by" onclick="travelCheckDetails()" style="cursor: pointer;"></div>
+                                <div class="col-md-9" x-bind:id="trade.by">
+                                    <div class="title hover-name" x-text="trade.by" onclick="travelCheckDetails(this)" style="cursor: pointer;"></div>
                                     <div class="small-word">User Since 2021</div>
                                     <div class="small-word">Last Seen: Today</div>
-                                    <div class="underline hover-name" onclick="travelCheckDetails()" style="cursor: pointer;">More Trades From This User</div>
+                                    <div class="underline hover-name" onclick="travelCheckDetails(this)" style="cursor: pointer;">More Trades From This User</div>
 
                                 </div>
                             </div>
