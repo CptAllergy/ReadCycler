@@ -520,11 +520,18 @@ div.desc {
   width: 100%;
 }
 
+.title-book-name{
+  font-size: 30px;
+  text-align: left;
+  width: 100%;
+}
+
 .small-word{
   color: Gray;
   margin-left: 10%;
   text-align: left;
   width: 100%;
+  font-size: 16px;
 }
 
 .underline {
@@ -547,9 +554,23 @@ div.desc {
   border: none;
 }
 
+.bull-point {
+  list-style-type: square;
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 5%;
+  font-size: 20px;
+}
+
 .average {
   font-size: 20px;
   margin-left: 10%;
+  text-align: left;
+  width: 100%;
+}
+
+.average-description {
+  font-size: 16px;
   text-align: left;
   width: 100%;
 }

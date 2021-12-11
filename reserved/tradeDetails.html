@@ -66,15 +66,20 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="image-placeholder-desc">
-                                    <p class="small-word">Posted Yesterday 16:48</p>
-                                    <div class="title" x-text="trade.title"></div>
-                                    <div class="average" x-text="trade.bookByBook"></div>
-                                    <div class="average">Book back after trade: <span x-text="trade.returnBook"></span>
+                                    <p class="small-word" style="padding-top: 5%;">Posted Yesterday 16:48</p>
+                                    <div class="title">Title: <span class="title-book-name" x-text="trade.title"></span>
                                     </div>
-                                    <div class="small-word">Condition: <span x-text="trade.condition"></span></div>
-                                    <div class="small-word">Genre: <span x-text="trade.genre"></span></div>
-                                    <div class="title">Additional Information: <div class="average"
-                                            x-text="trade.additional"></div>
+                                    <div class="average">Trade Type: <span class="average" style="margin-left: 0%;"
+                                            x-text="trade.bookByBook"></span></div>
+                                    <div class="average" style="margin-top: 4px;">Book back after trade: <span
+                                            x-text="trade.returnBook"></span>
+                                    </div>
+                                    <div class="small-word" style="margin-top: 6px;">Condition: <span
+                                            x-text="trade.condition"></span></div>
+                                    <div class="small-word" style="margin-top: 6px;">Genre: <span
+                                            x-text="trade.genre"></span></div>
+                                    <div class="average" style="margin-top: 12px;">Additional Information: <div
+                                            class="average-description" x-text="trade.additional"></div>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +104,7 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="center-text">
-                                        <span type="button">Rating: </i></span>
+                                        <span type="button" style="padding-left: 50%;">Rating: </i></span>
                                     </div>
                                 </div>
                                 <div class="col-md-9">
@@ -118,7 +123,11 @@
                         <div class="image-placeholder-loc">
                             <h2 class="name" style="text-align: left; margin-left: 10%; padding-top: 10px;">Location
                             </h2>
-                            <div x-text="trade.location"></div>
+                            <ol>
+                                <li class="bull-point">
+                                    <div x-text="trade.location"></div>
+                                </li>
+                            </ol>
                         </div>
 
                     </div>
@@ -165,7 +174,6 @@
 <script type="text/javascript" src="../owl-carousel/owl.carousel.min.js"></script>
 <script type="text/javascript" src="../scripts.js"></script>
 <script type="text/javascript" src="allTrades.js"></script>
-<script>includeHTML();</script>
 <!--END STYLE-->
 
 </html>
