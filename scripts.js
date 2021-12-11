@@ -295,6 +295,10 @@ function submitReportQuim() {
   location.href = "Joaquim_Barreiros.html?success";
 }
 
+function travelCheckDetails() {
+  location.href = "Joaquim_Barreiros.html?success";
+}
+
 
 
 

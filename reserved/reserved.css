@@ -489,12 +489,12 @@ div.desc {
   margin-top: 30px;
   background-color: white;
   height: 300px;
- 
+
   width: 100%;
   border-radius: 5px;
 }
 
-.image-display{
+.image-display {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -505,7 +505,7 @@ div.desc {
 }
 
 
-.image-perfil{
+.image-perfil {
   margin-top: 10%;
   margin-left: 10%;
   width: 100px;
@@ -513,20 +513,20 @@ div.desc {
   border-radius: 50px;
 }
 
-.title{
+.title {
   font-size: 30px;
   margin-left: 10%;
   text-align: left;
   width: 100%;
 }
 
-.title-book-name{
+.title-book-name {
   font-size: 30px;
   text-align: left;
   width: 100%;
 }
 
-.small-word{
+.small-word {
   color: Gray;
   margin-left: 10%;
   text-align: left;
@@ -722,4 +722,8 @@ p {
   color: gray;
   outline: none;
   padding: 10px 35px 10px 15px;
+}
+
+.hover-name:hover {
+  color: rgb(210, 170, 90);
 }
