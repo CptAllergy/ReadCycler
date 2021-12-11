@@ -1,6 +1,6 @@
 var trades = [
   {
-    condition: "new",
+    condition: "New",
     tradeId: "918d2h",
     title: "A Game of Thrones",
     genre: "Fantasy",
@@ -8,10 +8,11 @@ var trades = [
     location: "Algarve",
     returnBook: "Yes",
     bookByBook: "Book by Book",
-    additional: "Got it and never read it."
+    additional: "Got it and never read it.",
+    image: "../assets/gameOf.jpg"
   },
   {
-    condition: "used",
+    condition: "Used",
     tradeId: "900d2h",
     title: "Lord of The Rings",
     genre: "Fantasy",
@@ -19,10 +20,11 @@ var trades = [
     location: "Almada",
     returnBook: "No",
     bookByBook: "Book by Book",
-    additional: "Read the book once, but it's in good condition, only a few dents."
+    additional: "Read the book once, but it's in good condition, only a few dents.",
+    image: "../assets/lotr.jpg"
   },
   {
-    condition: "old",
+    condition: "Old",
     tradeId: "236dee",
     title: "A Game of Thrones",
     genre: "Fantasy",
@@ -30,10 +32,11 @@ var trades = [
     location: "Almada",
     returnBook: "Yes",
     bookByBook: "Book by Book",
-    additional: "Old book that belonged to my mom."
+    additional: "Old book that belonged to my mom.",
+    image: "../assets/gameOf.jpg"
   },
   {
-    condition: "new",
+    condition: "New",
     tradeId: "h37o2h",
     title: "Harry Potter",
     genre: "Fantasy",
@@ -41,10 +44,11 @@ var trades = [
     location: "Caparica",
     returnBook: "No",
     bookByBook: "Book by Book",
-    additional: "Got it and never read it."
+    additional: "Got it and never read it.",
+    image: "../assets/book_placerholder.jpeg"
   },
   {
-    condition: "used",
+    condition: "Used",
     tradeId: "83jdh",
     title: "Harry Potter",
     genre: "Fantasy",
@@ -52,10 +56,11 @@ var trades = [
     location: "Almada",
     returnBook: "No",
     bookByBook: "Book by Book",
-    additional: "Read the book once, but it's in good condition, only a few dents."
+    additional: "Read the book once, but it's in good condition, only a few dents.",
+    image: "../assets/book_placerholder.jpeg"
   },
   {
-    condition: "old",
+    condition: "Old",
     tradeId: "23h2id",
     title: "Total Recall",
     genre: "Biography",
@@ -63,10 +68,11 @@ var trades = [
     location: "Almada",
     returnBook: "Yes",
     bookByBook: "Book by Book",
-    additional: "Old book that belonged to my mom."
+    additional: "Old book that belonged to my mom.",
+    image: "../assets/arnold.jpg"
   },
   {
-    condition: "new",
+    condition: "New",
     tradeId: "9jdjw2",
     title: "Howard",
     genre: "Horror",
@@ -74,10 +80,11 @@ var trades = [
     location: "Lisboa",
     returnBook: "No",
     bookByBook: "Book by Book",
-    additional: "Got it and never read it."
+    additional: "Got it and never read it.",
+    image: "../assets/book_placerholder.jpeg"
   },
   {
-    condition: "used",
+    condition: "Used",
     tradeId: "87ftf2",
     title: "Lord of The Rings",
     genre: "Fantasy",
@@ -85,10 +92,11 @@ var trades = [
     location: "Almada",
     returnBook: "No",
     bookByBook: "Book by Book",
-    additional: "Read the book once, but it's in good condition, only a few dents."
+    additional: "Read the book once, but it's in good condition, only a few dents.",
+    image: "../assets/lotr.jpg"
   },
   {
-    condition: "old",
+    condition: "Old",
     tradeId: "cn3232",
     title: "Lord of The Rings",
     genre: "Fantasy",
@@ -96,10 +104,11 @@ var trades = [
     location: "Almada",
     returnBook: "Yes",
     bookByBook: "Book by Book",
-    additional: "Old book that belonged to my mom."
+    additional: "Old book that belonged to my mom.",
+    image: "../assets/lotr.jpg"
   },
   {
-    condition: "new",
+    condition: "New",
     tradeId: "238f73",
     title: "A Game of Thrones",
     genre: "Fantasy",
@@ -107,10 +116,11 @@ var trades = [
     location: "Almada",
     returnBook: "No",
     bookByBook: "Book by Book",
-    additional: "Got it and never read it."
+    additional: "Got it and never read it.",
+    image: "../assets/gameOf.jpg"
   },
   {
-    condition: "used",
+    condition: "Used",
     tradeId: "dj9832",
     title: "Harry Potter",
     genre: "Fantasy",
@@ -118,7 +128,8 @@ var trades = [
     location: "Almada",
     returnBook: "No",
     bookByBook: "Book by Book",
-    additional: "Read the book once, but it's in good condition, only a few dents."
+    additional: "Read the book once, but it's in good condition, only a few dents.",
+    image: "../assets/book_placerholder.jpeg"
   }
 
 ];
