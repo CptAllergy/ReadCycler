@@ -27,8 +27,6 @@
         }
       }
     } else if (url.includes("profile") || url.includes("myTrades".toLowerCase()) || url.includes("Carlos_Notas".toLowerCase()) || url.includes("Joaquim_Barreiros".toLowerCase())) {
-      console.log(url);
-      console.log(url.includes("myTrades".toLowerCase()));
       if (url.includes("success")) {
         document.getElementById('success-alert').style.display = "block";
       }

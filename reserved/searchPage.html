@@ -174,7 +174,7 @@
     let filterTrades = [];
 
     for (let i = 0; i < trades.length; i++) {
-      if (trades[i].title.valueOf().toLowerCase().includes(search.valueOf().toLowerCase())) {
+      if (trades[i].title.valueOf().toLowerCase().replaceAll(" ", "%20").includes(search.valueOf().toLowerCase())) {
         filterTrades.push(trades[i]);
       }
     }
