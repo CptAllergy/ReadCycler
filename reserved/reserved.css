@@ -690,3 +690,15 @@ p {
 .closebtn:hover {
   color: red;
 }
+
+.report-text {
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  height: 250px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  color: gray;
+  outline: none;
+  padding: 10px 35px 10px 15px;
+}

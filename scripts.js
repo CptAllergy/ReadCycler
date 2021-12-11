@@ -28,7 +28,7 @@
       }
     } else if (url.includes("trade")) {
 
-    }else if (url.includes("profile") || url.includes("myTrades")) {
+    }else if (url.includes("profile") || url.includes("myTrades") || url.includes("Carlos_Notas")) {
       if(url.includes("success")) {
         document.getElementById('success-alert').style.display = "block";
       }
@@ -283,6 +283,12 @@ function updateLikesLocalStorage() {
 
   localStorage.setItem("userLikes", JSON.stringify(processedLikes));
   location.href = "profile.html?success";
+}
+
+
+function submitReport() {
+
+  location.href = "Carlos_Notas.html?success";
 }
 
 
