@@ -48,6 +48,11 @@
             </div>
         </div>
 
+        <div class="alert" id="success-alert" style="display: none">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            New Trade Submitted Successfully!
+        </div>
+
 
         <div class="container-fluid">
             <div class="row">
@@ -98,7 +103,6 @@
 
 <script charset="utf-8">
     function tradeHistory() {
-        console.log('lalala');
         const myTrades = [
             {
                 tradeId: "013567",

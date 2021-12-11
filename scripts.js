@@ -28,6 +28,10 @@
       }
     } else if (url.includes("trade")) {
 
+    }else if (url.includes("profile") || url.includes("myTrades")) {
+      if(url.includes("success")) {
+        document.getElementById('success-alert').style.display = "block";
+      }
     }
 
   }
@@ -253,7 +257,7 @@ function addBookToLocalStorage() {
     var trades = JSON.parse(localStorage.getItem("myTrades"));
     trades.unshift(book);
     localStorage.setItem("myTrades", JSON.stringify(trades));
-    location.href = "myTrades.html";
+    location.href = "myTrades.html?success";
   }
 }
 
@@ -278,7 +282,7 @@ function updateLikesLocalStorage() {
   }
 
   localStorage.setItem("userLikes", JSON.stringify(processedLikes));
-  location.href = "profile.html";
+  location.href = "profile.html?success";
 }
 
 
