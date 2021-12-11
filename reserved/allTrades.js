@@ -9,7 +9,8 @@ var trades = [
     returnBook: "Yes",
     bookByBook: "Book by Book",
     additional: "Got it and never read it.",
-    image: "../assets/gameOf.jpg"
+    image: "../assets/gameOf.jpg",
+    face:"../assets/Quim.png"
   },
   {
     condition: "Used",
@@ -21,7 +22,8 @@ var trades = [
     returnBook: "No",
     bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents.",
-    image: "../assets/lotr.jpg"
+    image: "../assets/lotr.jpg",
+    face:"../assets/Carlos_Notas.jpg"
   },
   {
     condition: "Old",
@@ -33,7 +35,8 @@ var trades = [
     returnBook: "Yes",
     bookByBook: "Book by Book",
     additional: "Old book that belonged to my mom.",
-    image: "../assets/gameOf.jpg"
+    image: "../assets/gameOf.jpg",
+    face:"../assets/Carlos_Notas.jpg",
   },
   {
     condition: "New",
@@ -45,7 +48,8 @@ var trades = [
     returnBook: "No",
     bookByBook: "Book by Book",
     additional: "Got it and never read it.",
-    image: "../assets/book_placerholder.jpeg"
+    image: "../assets/book_placerholder.jpeg",
+    face:"../assets/Quim.png"
   },
   {
     condition: "Used",
@@ -57,7 +61,8 @@ var trades = [
     returnBook: "No",
     bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents.",
-    image: "../assets/book_placerholder.jpeg"
+    image: "../assets/book_placerholder.jpeg",
+    face:"../assets/Carlos_Notas.jpg"
   },
   {
     condition: "Old",
@@ -69,7 +74,8 @@ var trades = [
     returnBook: "Yes",
     bookByBook: "Book by Book",
     additional: "Old book that belonged to my mom.",
-    image: "../assets/arnold.jpg"
+    image: "../assets/arnold.jpg",
+    face:"../assets/Carlos_Notas.jpg"
   },
   {
     condition: "New",
@@ -81,7 +87,8 @@ var trades = [
     returnBook: "No",
     bookByBook: "Book by Book",
     additional: "Got it and never read it.",
-    image: "../assets/book_placerholder.jpeg"
+    image: "../assets/book_placerholder.jpeg",
+    face:"../assets/Quim.png"
   },
   {
     condition: "Used",
@@ -93,7 +100,8 @@ var trades = [
     returnBook: "No",
     bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents.",
-    image: "../assets/lotr.jpg"
+    image: "../assets/lotr.jpg",
+    face:"../assets/Carlos_Notas.jpg"
   },
   {
     condition: "Old",
@@ -105,7 +113,8 @@ var trades = [
     returnBook: "Yes",
     bookByBook: "Book by Book",
     additional: "Old book that belonged to my mom.",
-    image: "../assets/lotr.jpg"
+    image: "../assets/lotr.jpg",
+    face:"../assets/Carlos_Notas.jpg"
   },
   {
     condition: "New",
@@ -117,7 +126,8 @@ var trades = [
     returnBook: "No",
     bookByBook: "Book by Book",
     additional: "Got it and never read it.",
-    image: "../assets/gameOf.jpg"
+    image: "../assets/gameOf.jpg",
+    face:"../assets/Quim.png"
   },
   {
     condition: "Used",
@@ -129,7 +139,8 @@ var trades = [
     returnBook: "No",
     bookByBook: "Book by Book",
     additional: "Read the book once, but it's in good condition, only a few dents.",
-    image: "../assets/book_placerholder.jpeg"
+    image: "../assets/book_placerholder.jpeg",
+    face:"../assets/Carlos_Notas.jpg"
   }
 
 ];

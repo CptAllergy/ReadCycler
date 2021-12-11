@@ -28,7 +28,7 @@
       }
     } else if (url.includes("trade")) {
 
-    }else if (url.includes("profile") || url.includes("myTrades") || url.includes("Carlos_Notas")) {
+    }else if (url.includes("profile") || url.includes("myTrades") || url.includes("Carlos_Notas") || url.includes("Joaquim_Barreiros")) {
       if(url.includes("success")) {
         document.getElementById('success-alert').style.display = "block";
       }
@@ -289,6 +289,10 @@ function updateLikesLocalStorage() {
 function submitReport() {
 
   location.href = "Carlos_Notas.html?success";
+}
+
+function submitReportQuim() {
+  location.href = "Joaquim_Barreiros.html?success";
 }
 
 

@@ -590,7 +590,7 @@ p {
 }
 
 .profile-img {
-  border-radius: 110px;
+  border-radius: 50%;
 }
 
 .profile-name {

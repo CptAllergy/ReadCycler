@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="reserved.css" />
+    <link rel="stylesheet" href="../owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <title>Profile</title>
+</head>
+
+
+<body>
+
+    <!--  &lt;!&ndash; Navigation Bar &ndash;&gt;-->
+    <!--  <div w3-include-html="snippets/navbar.html"></div>-->
+    <!-- Navigation Bar -->
+    <!--  <div w3-include-html="../snippets/navbar.html"></div>-->
+    <div class="container-fluid">
+        <div class="row navbar">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a class="navbar-title" href="initialPage.html">ReadCycler</a>
+                        <!-- Search and Banner Image -->
+                        <input type="text" placeholder="Search..." id="search-navbar" style="margin-left: 50px"
+                            class="search-bar">
+                        <button type="submit" class="search-button" id="search-btn-nav">
+                            <img src="../assets/search.png">
+                        </button>
+                    </div>
+                    <span class="col-lg-6 nav-right">
+                        <a class="btn btn-link navbar-item" href="newTrade.html"><i class="fas fa-plus"></i> New
+                            Trade</a>
+                        <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
+                            Trades</a>
+                        <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
+                        <button class="btn btn-link navbar-item" id="chatMenuId"><i class="fas fa-bell"></i></button>
+                        <button class="btn btn-link navbar-item"><i class="fas fa-comments"></i></button>
+                        <a class="btn btn-link navbar-item-img" href="profile.html"><img
+                                src="../assets/discord.png" /></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert" id="success-alert" style="display: none">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        Report Submitted!
+    </div>
+
+    <div class="background-gradient">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-2">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img src="../assets/Quim.png" class="img-fluid profile-img">
+
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h1 class="profile-name">Carlos Notas <span class="profile-job">(Politico)</span>
+                                    </h1>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h1 class="profile-location"><i class="fas fa-map-marker-alt"
+                                            style="color: white!important;"></i> Amadora, Lisboa, Portugal</h1>
+                                </div>
+                            </div>
+                            <div class="row space-top">
+                                <div class="col-lg-12">
+                                    <h1 class="profile-likes"><b>Likes:</b> Sci-Fi, Fantasy, Horror
+                                        <button class="btn btn-link" id="editLikesId"><i class="fas fa-edit"
+                                                style="color: white!important; margin-left: 10px;"></i><span>Report User
+                                            </span>
+                                        </button>
+                                    </h1>
+                                    <h1 class="profile-likes"><b>Nationality:</b> Portugal</h1>
+                                </div>
+                            </div>
+                            <div class="row space-top">
+                                <div class="col-lg-10">
+                                    <h1 class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit. Maecenas ut tortor eu felis dignissim vehicula sed quis massa. Morbi
+                                        semper mollis turpis sit amet tincidunt. Maecenas scelerisque viverra est, et
+                                        rutrum ligula sagittis ac. Duis pellentesque, eros sit amet iaculis ullamcorper,
+                                        mi ex varius nisl, id sagittis urna augue in tortor. Morbi pulvinar ligula
+                                        augue, nec egestas eros rhoncus quis. Integer et justo ligula. Vestibulum odio
+                                        nibh, tempus sit amet neque et, ullamcorper tincidunt nibh.</h1>
+                                </div>
+                                <div class="col-lg-2">
+                                    <h1 class="profile-rating">4.2/5 <i class="fas fa-star"
+                                            style="color: white!important;"></i></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row negative-space-top">
+            <div class="col-lg-6 offset-lg-2">
+                <div class="white-rec">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="box-title">My Books</h2>
+                            <div class="owl-carousel">
+                                <div> <img src="../assets/book_placerholder.jpeg"> </div>
+                                <div> <img src="../assets/book_placerholder.jpeg"> </div>
+                                <div> <img src="../assets/book_placerholder.jpeg"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="white-rec space-top">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="box-title">Lorem Ipsum</h2>
+                            <h3 class="box-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut
+                                tortor eu felis dignissim vehicula sed quis massa. Morbi semper mollis turpis sit amet
+                                tincidunt. Maecenas scelerisque viverra est, et rutrum ligula sagittis ac. Duis
+                                pellentesque, eros sit amet iaculis ullamcorper, mi ex varius nisl, id sagittis urna
+                                augue in tortor. Morbi pulvinar ligula augue, nec egestas eros rhoncus quis. Integer et
+                                justo ligula. Vestibulum odio nibh, tempus sit amet neque et, ullamcorper tincidunt
+                                nibh.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="white-rec">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="box-title">Contacts & Personal Info</h2>
+                            <h2 class="box-text"><i class="far fa-envelope"></i> <span
+                                    class="profile-contacts">quim_barrs@gmail.com</span></h2>
+                            <h2 class="box-text"><i class="fas fa-phone"></i> <span class="profile-contacts">+351 924
+                                    978 000</span></h2>
+                            <h2 class="box-text"><i class="fas fa-birthday-cake"></i> <span class="profile-contacts">25
+                                    de Agosto</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="white-rec space-top">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="box-title">Other Socials</h2>
+                            <h2 class="box-text"><i class="fab fa-facebook"></i> <span class="profile-contacts">
+                                    Carlos Notas</span></h2>
+                            <h2 class="box-text"><i class="fab fa-linkedin"></i> <span
+                                    class="profile-contacts">quim_b</span></h2>
+                            <h2 class="box-text"><i class="fab fa-twitter"></i> <span
+                                    class="profile-contacts">quim.b</span></h2>
+                            <h2 class="box-text"><i class="fab fa-instagram"></i> <span
+                                    class="profile-contacts">barr.quim</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="likesModal" class="modal" style="padding-top: 250px!important;">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div style="text-align: right">
+                <span class="close">&times;</span>
+            </div>
+            <div class="center-text">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="modal-title">User Report</h1>
+                        <h2 class="modal-text">Tell us what went wrong with your interaction with this user!</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <textarea name="report" id="bio" placeholder="Report Information" class="report-text"></textarea>
+                    </div>
+                </div>
+
+                <div class="row margin-modal">
+                    <div class="col-lg-12">
+                        <button class="modal-btn" onclick="submitReportQuim()" type="submit">Submit Report</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+<!--STYLE -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="../owl-carousel/owl.carousel.min.js"></script>
+<script type="text/javascript" src="../scripts.js"></script>
+<script>includeHTML();</script>
+
+
+<!--END STYLE-->
+
+</html>
