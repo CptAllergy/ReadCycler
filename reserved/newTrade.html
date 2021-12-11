@@ -81,7 +81,13 @@
                     <div class="col-md-4">
                         <input type="text" placeholder="Book Title" class="input-field" id="bookTitleId">
                         <input type="text" placeholder="Author" class="input-field" id="authorId">
-                        <input type="text" placeholder="Book Condition" class="input-field" id="bookConditionId">
+                        <select name="conditions" id="bookConditionId" class="selectGenre">
+                            <option value="" disabled selected hidden>Book Condition</option>
+                            <option value="Old">Old</option>
+                            <option value="New">New</option>
+                            <option value="Used">Used</option>
+                            <option value="Ruined">Ruined</option>
+                        </select>
 
                         <input type="radio" id="Trade" name="trades" value="Trade" class="radios">
                         <label for="Trade">Trade</label>
