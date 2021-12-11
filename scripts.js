@@ -5,7 +5,7 @@
     nav: true,
   });
 
-  let url = window.location.href;
+  let url = window.location.href.toLowerCase();
   if (url != null) {
     if (url.includes("search")) {
       let search = url.split("=");
@@ -28,7 +28,7 @@
       }
     } else if (url.includes("trade")) {
 
-    }else if (url.includes("profile") || url.includes("myTrades") || url.includes("Carlos_Notas") || url.includes("Joaquim_Barreiros")) {
+    }else if (url.includes("profile") || url.includes("myTrades".toLowerCase()) || url.includes("Carlos_Notas".toLowerCase()) || url.includes("Joaquim_Barreiros".toLowerCase())) {
       if(url.includes("success")) {
         document.getElementById('success-alert').style.display = "block";
       }
