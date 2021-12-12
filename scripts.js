@@ -166,8 +166,12 @@ if (span != null) {
 // When the user clicks on <span> (x), close the modal
 if (span2 != null) {
   span2.onclick = function () {
-    modal.style.display = "none";
-    modalLogin.style.display = "none";
+    if (modal != null)
+      modal.style.display = "none";
+    if (modalLogin != null)
+      modalLogin.style.display = "none";
+    if (modalChat != null)
+      modalChat.style.display = "none";
   }
 }
 
@@ -180,7 +184,6 @@ window.onclick = function (event) {
   if (event.target == modalChat) {
     modalChat.style.display = "none";
   }
-  console.log(event.target);
   if (event.target != document.getElementById("bellAroundId") && event.target != document.getElementById("chatMenuId")
     && event.target != document.getElementById("bell-warning") && document.getElementById("nots").style.display == "block") {
     document.getElementById("nots").style.display = "none";

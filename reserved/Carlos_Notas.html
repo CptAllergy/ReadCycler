@@ -46,23 +46,24 @@
                         <div class="dropdown navbar-item">
                             <button class="btn btn-link navbar-item ringing-bell" type="button" id="bellAroundId"
                                 aria-haspopup="true" aria-expanded="false" onclick="hideNotification()"> <i
-                                    id="chatMenuId" class='fa fa-bell faa-ring'> </i> <i id="bell-warning"
-                                    style="display: none;" class="fas fa-circle red-dot"></i></button>
+                                    id="chatMenuId" class='fa fa-bell faa-ring'> </i>
+                                <i id="bell-warning" style="display: none;" class="fas fa-circle red-dot"></i></button>
 
                             <div class="dropdown-content" id="nots" style="display: none;">
                                 <b href="#">Notification</b>
 
                                 <div x-data="notifications()">
                                     <template x-for="not in nots">
-                                        <a x-bind:id="not.notId" onclick="openChatNotification(this)"><img
-                                                x-bind:src="not.face" width="20" height="20"
-                                                style="border-radius: 50%;">&nbsp <span x-text="not.message"></span></a>
+                                        <a x-bind:id="not.notId" style="cursor: pointer;"
+                                            onclick="openChatNotification(this)"><img x-bind:src="not.face" width="20"
+                                                height="20" style="border-radius: 50%;">&nbsp <span
+                                                x-text="not.message"></span></a>
                                     </template>
                                 </div>
 
                             </div>
                         </div>
-                        <button class="btn btn-link navbar-item"><i class="fas fa-comments"></i></button>
+                        <button class="btn btn-link navbar-item" id="chatId1"><i class="fas fa-comments"></i></button>
                         <a class="btn btn-link navbar-item-img" href="profile.html"><img
                                 src="../assets/discord.png" /></a>
                     </span>
@@ -73,7 +74,7 @@
 
     <div class="alert" id="success-alert" style="display: none">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        Likes Updated Successfully!
+        Report Sent Successfully!
     </div>
 
 
@@ -117,8 +118,8 @@
                                     <h1 class="profile-likes"><b>Likes:</b>
                                         Sci-fi, Fantasy, Horror, Romance
                                         <button class="btn btn-link" id="editLikesId"><i class="fas fa-edit"
-                                            style="color: black!important; margin-left: 10px;"></i><span
-                                            style="color: #6d93cb;">Report user</span>
+                                                style="color: black!important; margin-left: 10px;"></i><span
+                                                style="color: #6d93cb;">Report user</span>
                                         </button>
                                     </h1>
                                 </div>
@@ -153,24 +154,24 @@
                         <h2 class="box-title">Carlos' Books</h2>
                         <div class="owl-carousel" id="profile-carousel" x-data="tradeHistory()">
 
-<!--                            REPLICAR ESTA MERDA-->
+                            <!--                            REPLICAR ESTA MERDA-->
 
-<!--                            <div class="col trade">-->
+                            <!--                            <div class="col trade">-->
 
-<!--                                <div class="profile-container">-->
-<!--                                    <div class="profile-book-pic">-->
-<!--                                        <img src="../assets/generic_book.jpg" >-->
-<!--                                    </div>-->
+                            <!--                                <div class="profile-container">-->
+                            <!--                                    <div class="profile-book-pic">-->
+                            <!--                                        <img src="../assets/generic_book.jpg" >-->
+                            <!--                                    </div>-->
 
-<!--                                    <div class="profile-book-desc">-->
-<!--                                        <span class="row book" >nome livro</span>-->
-<!--                                        <span class="row status" >estado</span>-->
-<!--                                        <span class="row date" >data</span>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <!--                                    <div class="profile-book-desc">-->
+                            <!--                                        <span class="row book" >nome livro</span>-->
+                            <!--                                        <span class="row status" >estado</span>-->
+                            <!--                                        <span class="row date" >data</span>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
 
-<!--                            ACABA AQUI-->
+                            <!--                            ACABA AQUI-->
 
 
                         </div>
@@ -186,7 +187,8 @@
                                 <h2 class="box-title">Contacts & Personal Info</h2>
                                 <h2 class="box-text"><i class="far fa-envelope"></i> <span
                                         class="profile-contacts">carlos_moneyz@gmail.com</span></h2>
-                                <h2 class="box-text"><i class="fas fa-phone"></i> <span class="profile-contacts">+351 924 973 000</span></h2>
+                                <h2 class="box-text"><i class="fas fa-phone"></i> <span class="profile-contacts">+351
+                                        924 973 000</span></h2>
                                 <h2 class="box-text"><i class="fas fa-birthday-cake"></i> <span
                                         class="profile-contacts">24 de Agosto</span></h2>
                             </div>
@@ -212,108 +214,146 @@
             </div>
 
         </div>
+    </div>
 
+    <div id="likesModal" class="modal" style="padding-top: 250px!important;">
 
-        <div id="likesModal" class="modal" style="padding-top: 250px!important;">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div style="text-align: right">
-                    <span class="close">&times;</span>
-                </div>
-                <div class="center-text">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="modal-title">User Report</h1>
-                            <h2 class="modal-text">Tell us what went wrong with your interaction with this user!</h2>
-                        </div>
-                    </div>
-    
-                    <div class="row">
-                        <div class="col-md-10 offset-md-1">
-                            <textarea name="report" id="bio" placeholder="Report Information"
-                                class="report-text"></textarea>
-                        </div>
-                    </div>
-    
-                    <div class="row margin-modal">
-                        <div class="col-lg-12">
-                            <button class="modal-btn" onclick="submitReportQuim()" type="submit">Submit Report</button>
-                        </div>
-                    </div>
-                </div>
-    
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div style="text-align: right">
+                <span class="close">&times;</span>
             </div>
-        </div>
-
-        <!-- The Chat Modal -->
-        <div id="chatModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content-chat container-fluid no-padding">
-
-                <div class="chat-bar no-padding">Chat
-                    <span style="text-align: right">
-                        <span class="close">&times;</span>
-                    </span>
+            <div class="center-text">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="modal-title">User Report</h1>
+                        <h2 class="modal-text">Tell us what went wrong with your interaction with this user!</h2>
+                    </div>
                 </div>
 
-                <div class="row " style="margin-left: 0%; margin-right: 0%;">
-                    <div class="col-md-10">
-                        <div class="center-text">
-                            <div class="container">
-                                <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
-                                <a>Bom dia. O que acha de trocar o livro junto à rotunda?</a>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <textarea name="report" id="bio" placeholder="Report Information"
+                            class="report-text"></textarea>
+                    </div>
+                </div>
 
+                <div class="row margin-modal">
+                    <div class="col-lg-12">
+                        <button class="modal-btn" onclick="submitReportQuim()" type="submit">Submit Report</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- The Chat Modal -->
+    <div id="chatModal" class="modal-chat">
+
+        <!-- Modal content -->
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-md-6 offset-md-6">
+                    <div class="card chat-app">
+                        <div id="plist" class="people-list">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled chat-list mt-2 mb-0">
+                                <li class="clearfix">
+                                    <img src="../assets/Carlos-Moedas.jpg" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Carlos Notas</div>
+                                        <div class="status"> <i class="fa fa-circle offline"></i> Last seen 7 mins ago
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="clearfix active">
+                                    <img src="../assets/Quim.png" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Quim Barreiros</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> Online </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="chat">
+                            <div class="chat-header clearfix">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <a href="Joaquim_Barreiros.html">
+                                            <img src="../assets/Quim.png" alt="avatar">
+                                        </a>
+                                        <div class="chat-about">
+                                            <h6 class="m-b-0">Quim Barreiros</h6>
+                                            <small>Online</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <span style="text-align: right;">
+                                            <span class="close">&times;</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="chat-history">
+                                <ul class="m-b-0">
+                                    <li class="clearfix">
+                                        <div class="message-data">
+                                            <span class="message-data-time">11:05 AM, Today</span>
+                                        </div>
+                                        <div class="message my-message">Bom dia, o que acha de trocar o livro junto à
+                                            rotunda?</div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="message-data text-right">
+                                            <span class="message-data-time">11:10 AM, Today</span>
+                                            <img src="../assets/discord.png" alt="avatar">
+                                        </div>
+                                        <div class="message other-message float-right"> Concordo! Eu devo demorar 4
+                                            meses a ler o livro.
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="message-data">
+                                            <span class="message-data-time">11:12 AM, Today</span>
+                                        </div>
+                                        <div class="message my-message"> Eu também devo demorar esse tempo. Fica
+                                            combinado? </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="message-data text-right">
+                                            <span class="message-data-time">11:15 AM, Today</span>
+                                            <img src="../assets/discord.png" alt="avatar">
+                                        </div>
+                                        <div class="message other-message float-right"> Sim fica combinado! </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chat-message clearfix">
+                                <div class="input-group mb-0">
+                                    <input type="text" class="form-control" placeholder="Enter text here...">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fa fa-send"></i></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="row  " style="margin-left: 0%; margin-right: 0%;">
-                    <div class="col-md-10 offset-md-2">
-                        <div class="container darker">
-                            <img src="../assets/discord.png" alt="Avatar" class="right" style="width:100%;">
-                            <a>Concordo! Eu devo demorar 4 meses a ler o livro.</a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row " style=" margin-left: 0%; margin-right: 0%;">
-                    <div class="col-md-10">
-                        <div class="container">
-                            <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
-                            <a>eu também devo demorar esse tempo. Fica combinado?</a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row  " style="margin-left: 0%; margin-right: 0%;">
-                    <div class="col-md-10 offset-md-2">
-                        <div class="container darker">
-                            <img src="../assets/discord.png" alt="Avatar" class="right" style="width:100%;">
-                            <a>Sim fica combinado!</a>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="reply-bar force-to-bottom avatar" style="bottom: 2.5%; padding-left: 5%; height: 50px;">
-
-                    <span style="text-align: left">
-                        <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
-                        <input type="text" placeholder="Reply...">
-                    </span>
-                </div>
-
-
             </div>
 
+
         </div>
+
+    </div>
 
 
 </body>
@@ -360,12 +400,12 @@
                     "                                    </div>\n" +
                     "\n" +
                     "                                    <div class=\"profile-book-desc\">\n" +
-                    "                                        <span class=\"row book\" >"+ book_name +"</span>\n" +
-                    "                                        <span class=\"row status\" >"+ book_status +"</span>\n" +
-                    "                                        <span class=\"row date\" >"+ book_date +"</span>\n" +
+                    "                                        <span class=\"row book\" >" + book_name + "</span>\n" +
+                    "                                        <span class=\"row status\" >" + book_status + "</span>\n" +
+                    "                                        <span class=\"row date\" >" + book_date + "</span>\n" +
                     "                                    </div>\n" +
                     "                                </div>\n" +
-                    "                            </div>" ;
+                    "                            </div>";
 
             }
 
