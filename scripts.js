@@ -371,11 +371,11 @@ function searchFunction() {
 }
 
 function hideNotification() {
-  if (document.getElementById("nots") != null) {
-    if (document.getElementById("nots").style.display == "none") {
-      document.getElementById("nots").style.display = "block";
+  if (modalNots != null) {
+    if (modalNots.style.display == "none") {
+      modalNots.style.display = "block";
     } else {
-      document.getElementById("nots").style.display = "none";
+      modalNots.style.display = "none";
     }
   }
 
