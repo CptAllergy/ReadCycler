@@ -2,7 +2,7 @@
   $(".owl-carousel").owlCarousel({
     loop: true,
     margin: 10,
-    nav: true,
+    nav: false,
   });
 
   if (localStorage.getItem("notification") == null) {
