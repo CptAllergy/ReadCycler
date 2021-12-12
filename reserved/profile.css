@@ -18,6 +18,30 @@ body{
     border-bottom: 2px  solid rgba(170, 180, 220,0.4);
 }
 
+.profile-container{
+    width: 180px;
+    padding-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.profile-book-pic{
+    height: auto;
+    width: fit-content;
+}
+
+.profile-book-desc{
+    text-align: center;
+    font-size: 16px;
+    color: rgb(80, 80, 80);
+    font-weight: 500;
+}
+
+.no-margins{
+    margin-left: 0;
+    margin-right: 0;
+}
+
 
 
 

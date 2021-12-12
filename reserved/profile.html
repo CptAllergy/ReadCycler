@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="reserved.css" />
     <link rel="stylesheet" type="text/css" href="profile.css" />
     <link rel="stylesheet" href="../owl-carousel/owl.carousel.min.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Profile</title>
@@ -128,7 +131,7 @@
 
     <div class="container-fluid">
 
-        <div class="col-lg-10 offset-lg-1">
+        <div class="col-lg-8 offset-lg-2">
             <div class="row">
 
                 <div class="col-lg-8">
@@ -137,24 +140,51 @@
                         <h2 class="box-title">Your Books</h2>
                         <div class="owl-carousel">
 
+                            <div class="profile-container">
+                                <div class="profile-book-pic">
+                                    <img src="../assets/generic_book.jpg" >
+                                </div>
 
-                            <div x-data="tradeHistory()" class="row">
+                                <div class="profile-book-desc">
+                                    <span class="row no-margins">Harry Potter</span>
+                                    <span class="row no-margins">Novo</span>
+                                    <span class="row no-margins">12/12/2021</span>
+                                </div>
+                            </div>
+
+                            <div class="profile-container">
+                                <div class="profile-book-pic">
+                                    <img src="../assets/lotr.jpg" >
+                                </div>
+
+                                <div class="profile-book-desc">
+                                    <span class="row no-margins">Lord of the Rings</span>
+                                    <span class="row no-margins">Velho</span>
+                                    <span class="row no-margins">11/12/2021</span>
+                                </div>
+                            </div>
+
+                            <!-- <div x-data="tradeHistory()" class="row">
                                 <template x-for="trade in trades">
                                     <div class="col trade">
-                                        <span class="row book" x-text="trade.book"></span>
-                                        <span class="row status" x-text="trade.status"></span>
-                                        <span class="row date" x-text="trade.date"></span>
+
+                                        <div class="profile-container">
+                                            <div class="profile-book-pic">
+                                                <img src="../assets/generic_book.jpg" >
+                                            </div>
+    
+                                            <div class="profile-book-desc">
+                                                <span class="row book" x-text="trade.book"></span>
+                                                <span class="row status" x-text="trade.status"></span>
+                                                <span class="row date" x-text="trade.date"></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </template>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
-
-
-                    
-
-
 
 
                 </div>
