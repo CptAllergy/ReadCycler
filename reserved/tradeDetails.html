@@ -2,289 +2,287 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="reserved.css" />
-    <link rel="stylesheet" type="text/css" href="homepage.css" />
-    <link rel="stylesheet" href="../owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="reserved.css" />
+  <link rel="stylesheet" type="text/css" href="homepage.css" />
+  <link rel="stylesheet" href="../owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
 
-    <!--  &lt;!&ndash; Navigation Bar &ndash;&gt;-->
-    <!--  <div w3-include-html="snippets/navbar.html"></div>-->
-    <!-- Navigation Bar -->
-    <!--  <div w3-include-html="../snippets/navbar.html"></div>-->
-    <div class="container-fluid">
-        <div class="row navbar">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <a class="navbar-title" href="homePage.html">ReadCycler</a>
-                        <!-- Search and Banner Image -->
-                        <input type="text" placeholder="Search..." id="search-navbar" style="margin-left: 50px"
-                            class="search-bar">
-                        <button type="submit" class="search-button" id="search-btn-nav">
-                            <img src="../assets/search.png">
-                        </button>
-                    </div>
-                    <span class="col-lg-6 nav-right">
-                        <a class="btn btn-link navbar-item" href="newTrade.html"><i class="fas fa-plus"></i> New
-                            Trade</a>
-                        <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
-                            Trades</a>
-                        <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
-                        <div class="dropdown navbar-item">
-                            <button class="btn btn-link navbar-item ringing-bell" type="button" aria-haspopup="true"
-                                aria-expanded="false" onclick="hideNotification()"> <i id="chatMenuId"
-                                    class='fa fa-bell faa-ring'> </i> <i id="bell-warning" style="display: none;"
-                                    class="fas fa-circle red-dot"></i></button>
-
-                            <div class="dropdown-content" id="nots" style="display: none;">
-                                <b href="#">Notification</b>
-
-                                <div x-data="notifications()">
-                                    <template x-for="not in nots">
-                                        <a x-bind:id="not.notId" onclick="openChatNotification(this)"><img
-                                                x-bind:src="not.face" width="20" height="20"
-                                                style="border-radius: 50%;">&nbsp <span x-text="not.message"></span></a>
-                                    </template>
-                                </div>
-
-                            </div>
-                        </div>
-                        <button class="btn btn-link navbar-item" id="chatId1"><i class="fas fa-comments"></i></button>
-                        <a class="btn btn-link navbar-item-img" href="profile.html"><img
-                                src="../assets/discord.png" /></a>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="alert" id="success-alert" style="display: none">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        Request Sent!
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <h1 class="newTradeTitle"></h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 offset-md-2 center-text">
-                <div x-data="tradeHistory()" class="row">
-
-                    <div class="col-md-7">
-                        <div class="image-placeholder">
-                            <img x-bind:src="trade.image" class="image-display">
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="image-placeholder-desc">
-                                    <p class="small-word" style="padding-top: 5%;">Posted Yesterday 16:48</p>
-                                    <div class="title">Title: <span class="title-book-name" x-text="trade.title"></span>
-                                    </div>
-                                    <div class="average">Trade Type: <span class="average" style="margin-left: 0%;"
-                                            x-text="trade.bookByBook"></span></div>
-                                    <div class="average" style="margin-top: 4px;">Book back after trade: <span
-                                            x-text="trade.returnBook"></span>
-                                    </div>
-                                    <div class="small-word" style="margin-top: 6px;">Condition: <span
-                                            x-text="trade.condition"></span></div>
-                                    <div class="small-word" style="margin-top: 6px;">Genre: <span
-                                            x-text="trade.genre"></span></div>
-                                    <div class="average" style="margin-top: 12px;">Additional Information: <div
-                                            class="average-description" x-text="trade.additional"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-5">
-                        <div class="image-placeholder-perfil">
-                            <div class="row">
-                                <div class="col-md-3" x-bind:id="trade.by">
-                                    <img x-bind:src="trade.face" class="image-perfil" onclick="travelCheckDetails(this)"
-                                        style="cursor: pointer;">
-                                </div>
-                                <div class="col-md-9" x-bind:id="trade.by">
-                                    <div class="title hover-name" x-text="trade.by" onclick="travelCheckDetails(this)"
-                                        style="cursor: pointer;"></div>
-                                    <div class="small-word">User Since 2021</div>
-                                    <div class="small-word">Last Seen: Today</div>
-                                    <div class="underline hover-name" onclick="travelCheckDetails(this)"
-                                        style="cursor: pointer;">More Trades From This User</div>
-
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="center-text">
-                                        <span type="button" style="padding-left: 50%;">Rating: </i></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div style="text-align: left; margin-left: 10%;"> 4.7/5<i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="center-text">
-                                <button x-bind:id="trade.by" type="button" class="send-request"
-                                    style="margin-top: 70px;" onclick="sendRequest(this)">Send
-                                    Request</button>
-                            </div>
-
-                        </div>
-
-                        <div class="image-placeholder-loc">
-                            <h2 class="name" style="text-align: left; margin-left: 10%; padding-top: 10px;">Location
-                            </h2>
-                            <ol>
-                                <li class="bull-point">
-                                    <div x-text="trade.location"></div>
-                                </li>
-                            </ol>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    </div>
-
-    <!-- The Chat Modal -->
-<div id="chatModal" class="modal">
-
-  <!-- Modal content -->
+  <!--  &lt;!&ndash; Navigation Bar &ndash;&gt;-->
+  <!--  <div w3-include-html="snippets/navbar.html"></div>-->
+  <!-- Navigation Bar -->
+  <!--  <div w3-include-html="../snippets/navbar.html"></div>-->
   <div class="container-fluid">
-    <div class="row clearfix">
-      <div class="col-md-6 offset-md-6">
-        <div class="card chat-app">
-          <div id="plist" class="people-list">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search...">
-              <div class="input-group-append">
-                <span class="input-group-text"><i class="fa fa-search"></i></span>
-              </div>
-            </div>
-            <ul class="list-unstyled chat-list mt-2 mb-0">
-              <li class="clearfix">
-                <img src="../assets/Carlos-Moedas.jpg" alt="avatar">
-                <div class="about">
-                  <div class="name">Carlos Notas</div>
-                  <div class="status"> <i class="fa fa-circle offline"></i> Last seen 7 mins ago </div>
-                </div>
-              </li>
-              <li class="clearfix active">
-                <img src="../assets/Quim.png" alt="avatar">
-                <div class="about">
-                  <div class="name">Quim Barreiros</div>
-                  <div class="status"> <i class="fa fa-circle online"></i> Online </div>
-                </div>
-              </li>
-            </ul>
+    <div class="row navbar">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-6">
+            <a class="navbar-title" href="homePage.html">ReadCycler</a>
+            <!-- Search and Banner Image -->
+            <input type="text" placeholder="Search..." id="search-navbar" style="margin-left: 50px" class="search-bar">
+            <button type="submit" class="search-button" id="search-btn-nav">
+              <img src="../assets/search.png">
+            </button>
           </div>
+          <span class="col-lg-6 nav-right">
+            <a class="btn btn-link navbar-item" href="newTrade.html"><i class="fas fa-plus"></i> New
+              Trade</a>
+            <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
+              Trades</a>
+            <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
+            <div class="dropdown navbar-item">
+              <button class="btn btn-link navbar-item ringing-bell" type="button" aria-haspopup="true"
+                aria-expanded="false" onclick="hideNotification()"> <i id="chatMenuId" class='fa fa-bell faa-ring'> </i>
+                <i id="bell-warning" style="display: none;" class="fas fa-circle red-dot"></i></button>
 
-          <div class="chat">
-            <div class="chat-header clearfix">
-              <div class="row">
-                <div class="col-lg-6">
-                  <a href="Joaquim_Barreiros.html">
-                    <img src="../assets/Quim.png" alt="avatar">
-                  </a>
-                  <div class="chat-about">
-                    <h6 class="m-b-0">Quim Barreiros</h6>
-                    <small>Online</small>
-                  </div>
+              <div class="dropdown-content" id="nots" style="display: none;">
+                <b href="#">Notification</b>
+
+                <div x-data="notifications()">
+                  <template x-for="not in nots">
+                    <a x-bind:id="not.notId" style="cursor: pointer;" onclick="openChatNotification(this)"><img x-bind:src="not.face" width="20"
+                        height="20" style="border-radius: 50%;">&nbsp <span x-text="not.message"></span></a>
+                  </template>
                 </div>
 
-                <div class="col-lg-6">
-                  <span style="text-align: right;">
-                    <span class="close">&times;</span>
-                  </span>
+              </div>
+            </div>
+            <button class="btn btn-link navbar-item" id="chatId1"><i class="fas fa-comments"></i></button>
+            <a class="btn btn-link navbar-item-img" href="profile.html"><img src="../assets/discord.png" /></a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert" id="success-alert" style="display: none">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    Request Sent!
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h1 class="newTradeTitle"></h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 offset-md-2 center-text">
+        <div x-data="tradeHistory()" class="row">
+
+          <div class="col-md-7">
+            <div class="image-placeholder">
+              <img x-bind:src="trade.image" class="image-display">
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="image-placeholder-desc">
+                  <p class="small-word" style="padding-top: 5%;">Posted Yesterday 16:48</p>
+                  <div class="title">Title: <span class="title-book-name" x-text="trade.title"></span>
+                  </div>
+                  <div class="average">Trade Type: <span class="average" style="margin-left: 0%;"
+                      x-text="trade.bookByBook"></span></div>
+                  <div class="average" style="margin-top: 4px;">Book back after trade: <span
+                      x-text="trade.returnBook"></span>
+                  </div>
+                  <div class="small-word" style="margin-top: 6px;">Condition: <span x-text="trade.condition"></span>
+                  </div>
+                  <div class="small-word" style="margin-top: 6px;">Genre: <span x-text="trade.genre"></span></div>
+                  <div class="average" style="margin-top: 12px;">Additional Information: <div
+                      class="average-description" x-text="trade.additional"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-5">
+            <div class="image-placeholder-perfil">
+              <div class="row">
+                <div class="col-md-3" x-bind:id="trade.by">
+                  <img x-bind:src="trade.face" class="image-perfil" onclick="travelCheckDetails(this)"
+                    style="cursor: pointer;">
+                </div>
+                <div class="col-md-9" x-bind:id="trade.by">
+                  <div class="title hover-name" x-text="trade.by" onclick="travelCheckDetails(this)"
+                    style="cursor: pointer;"></div>
+                  <div class="small-word">User Since 2021</div>
+                  <div class="small-word">Last Seen: Today</div>
+                  <div class="underline hover-name" onclick="travelCheckDetails(this)" style="cursor: pointer;">More
+                    Trades From This User</div>
+
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="center-text">
+                    <span type="button" style="padding-left: 50%;">Rating: </i></span>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div style="text-align: left; margin-left: 10%;"> 4.7/5<i class="fas fa-star"></i>
+                  </div>
                 </div>
               </div>
 
+              <div class="center-text">
+                <button x-bind:id="trade.by" type="button" class="send-request" style="margin-top: 70px;"
+                  onclick="sendRequest(this)">Send
+                  Request</button>
+              </div>
+
             </div>
-            <div class="chat-history">
-              <ul class="m-b-0">
-                <li class="clearfix">
-                  <div class="message-data">
-                    <span class="message-data-time">11:05 AM, Today</span>
-                  </div>
-                  <div class="message my-message">Bom dia, o que acha de trocar o livro junto à rotunda?</div>
+
+            <div class="image-placeholder-loc">
+              <h2 class="name" style="text-align: left; margin-left: 10%; padding-top: 10px;">Location
+              </h2>
+              <ol>
+                <li class="bull-point">
+                  <div x-text="trade.location"></div>
                 </li>
+              </ol>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <!-- The Chat Modal -->
+  <div id="chatModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="container-fluid">
+      <div class="row clearfix">
+        <div class="col-md-6 offset-md-6">
+          <div class="card chat-app">
+            <div id="plist" class="people-list">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fa fa-search"></i></span>
+                </div>
+              </div>
+              <ul class="list-unstyled chat-list mt-2 mb-0">
                 <li class="clearfix">
-                  <div class="message-data text-right">
-                    <span class="message-data-time">11:10 AM, Today</span>
-                    <img src="../assets/discord.png" alt="avatar">
-                  </div>
-                  <div class="message other-message float-right"> Concordo! Eu devo demorar 4 meses a ler o livro.
+                  <img src="../assets/Carlos-Moedas.jpg" alt="avatar">
+                  <div class="about">
+                    <div class="name">Carlos Notas</div>
+                    <div class="status"> <i class="fa fa-circle offline"></i> Last seen 7 mins ago </div>
                   </div>
                 </li>
-                <li class="clearfix">
-                  <div class="message-data">
-                    <span class="message-data-time">11:12 AM, Today</span>
+                <li class="clearfix active">
+                  <img src="../assets/Quim.png" alt="avatar">
+                  <div class="about">
+                    <div class="name">Quim Barreiros</div>
+                    <div class="status"> <i class="fa fa-circle online"></i> Online </div>
                   </div>
-                  <div class="message my-message"> Eu também devo demorar esse tempo. Fica combinado? </div>
-                </li>
-                <li class="clearfix">
-                  <div class="message-data text-right">
-                    <span class="message-data-time">11:15 AM, Today</span>
-                    <img src="../assets/discord.png" alt="avatar">
-                  </div>
-                  <div class="message other-message float-right"> Sim fica combinado! </div>
                 </li>
               </ul>
             </div>
-            <div class="chat-message clearfix">
-              <div class="input-group mb-0">
-                <input type="text" class="form-control" placeholder="Enter text here...">
-                <div class="input-group-append">
-                  <span class="input-group-text"><i class="fa fa-send"></i></span>
+
+            <div class="chat">
+              <div class="chat-header clearfix">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <a href="Joaquim_Barreiros.html">
+                      <img src="../assets/Quim.png" alt="avatar">
+                    </a>
+                    <div class="chat-about">
+                      <h6 class="m-b-0">Quim Barreiros</h6>
+                      <small>Online</small>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <span style="text-align: right;">
+                      <span class="close">&times;</span>
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+              <div class="chat-history">
+                <ul class="m-b-0">
+                  <li class="clearfix">
+                    <div class="message-data">
+                      <span class="message-data-time">11:05 AM, Today</span>
+                    </div>
+                    <div class="message my-message">Bom dia, o que acha de trocar o livro junto à rotunda?</div>
+                  </li>
+                  <li class="clearfix">
+                    <div class="message-data text-right">
+                      <span class="message-data-time">11:10 AM, Today</span>
+                      <img src="../assets/discord.png" alt="avatar">
+                    </div>
+                    <div class="message other-message float-right"> Concordo! Eu devo demorar 4 meses a ler o livro.
+                    </div>
+                  </li>
+                  <li class="clearfix">
+                    <div class="message-data">
+                      <span class="message-data-time">11:12 AM, Today</span>
+                    </div>
+                    <div class="message my-message"> Eu também devo demorar esse tempo. Fica combinado? </div>
+                  </li>
+                  <li class="clearfix">
+                    <div class="message-data text-right">
+                      <span class="message-data-time">11:15 AM, Today</span>
+                      <img src="../assets/discord.png" alt="avatar">
+                    </div>
+                    <div class="message other-message float-right"> Sim fica combinado! </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="chat-message clearfix">
+                <div class="input-group mb-0">
+                  <input type="text" class="form-control" placeholder="Enter text here...">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fa fa-send"></i></span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
+
+    </div>
 
   </div>
+  <script charset="utf-8">
+    function tradeHistory() {
 
-</div>
-    <script charset="utf-8">
-        function tradeHistory() {
-
-            let id = window.location.href.split("=")[1].split("?")[0];
-            let trade;
-            for (let i = 0; i < trades.length; i++) {
-                if (trades[i].tradeId.valueOf() == id.valueOf()) {
-                    trade = trades[i];
-                }
-            }
-
-
-            return {
-                trade
-            }
+      let id = window.location.href.split("=")[1].split("?")[0];
+      let trade;
+      for (let i = 0; i < trades.length; i++) {
+        if (trades[i].tradeId.valueOf() == id.valueOf()) {
+          trade = trades[i];
         }
-    </script>
-    </div>
+      }
+
+
+      return {
+        trade
+      }
+    }
+  </script>
+  </div>
 
 
 </body>
@@ -292,14 +290,11 @@
 
 <!--STYLE -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../owl-carousel/owl.carousel.min.js"></script>
 <script type="text/javascript" src="../scripts.js"></script>
 <script type="text/javascript" src="allTrades.js"></script>

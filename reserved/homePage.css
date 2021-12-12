@@ -9,12 +9,6 @@
   padding-right: 0;
 }
 
-.navbar {
-  padding-bottom: 4px;
-  padding-top: 4px;
-  background-color: rgb(35, 35, 35);
-}
-
 .navbar-glass {
   padding-bottom: 4px;
   padding-top: 4px;
@@ -23,10 +17,11 @@
   color: white;
 }
 
-.navbar-title {
+.navbar-title-glass {
   font-size: 38px;
   font-weight: bold;
   padding-left: 10px;
+  color: white;
 }
 
 .navbar-glass a:hover {

@@ -31,7 +31,7 @@
   <div class="container-fluid homepage-banner">
     <div class="row navbar-glass">
       <div class="col-md-6">
-        <a class="navbar-title" href="homePage.html">ReadCycler</a>
+        <a class="navbar-title-glass" href="homePage.html">ReadCycler</a>
       </div>
       <div class="col-md-6 nav-right">
         <a class="btn btn-link navbar-item" href="newTrade.html"><i class="fas fa-plus"></i> New
@@ -50,8 +50,9 @@
 
             <div x-data="notifications()">
               <template x-for="not in nots">
-                <a x-bind:id="not.notId" onclick="openChatNotification(this)"><img x-bind:src="not.face" width="20"
-                    height="20" style="border-radius: 50%;">&nbsp <span x-text="not.message"></span></a>
+                <a x-bind:id="not.notId" style="cursor: pointer;" onclick="openChatNotification(this)"><img
+                    x-bind:src="not.face" width="20" height="20" style="border-radius: 50%;">&nbsp <span
+                    x-text="not.message"></span></a>
               </template>
             </div>
 

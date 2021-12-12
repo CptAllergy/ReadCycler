@@ -2,148 +2,145 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="reserved.css" />
-    <link rel="stylesheet" type="text/css" href="homepage.css" />
-    <link rel="stylesheet" href="../owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="reserved.css" />
+  <link rel="stylesheet" type="text/css" href="homepage.css" />
+  <link rel="stylesheet" href="../owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
 
-    <!--  &lt;!&ndash; Navigation Bar &ndash;&gt;-->
-    <!--  <div w3-include-html="snippets/navbar.html"></div>-->
-    <!-- Navigation Bar -->
-    <!--  <div w3-include-html="../snippets/navbar.html"></div>-->
-    <div class="container-fluid">
-        <div class="row navbar">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <a class="navbar-title" href="homePage.html">ReadCycler</a>
-                        <!-- Search and Banner Image -->
-                        <input type="text" placeholder="Search..." id="search-navbar" style="margin-left: 50px"
-                            class="search-bar">
-                        <button type="submit" class="search-button" id="search-btn-nav">
-                            <img src="../assets/search.png">
-                        </button>
-                    </div>
-                    <span class="col-lg-6 nav-right">
-                        <a class="btn btn-link navbar-item" href="newTrade.html"><i class="fas fa-plus"></i> New
-                            Trade</a>
-                        <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
-                            Trades</a>
-                        <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
-                        <div class="dropdown navbar-item">
-                            <button class="btn btn-link navbar-item ringing-bell" type="button" aria-haspopup="true"
-                                aria-expanded="false" onclick="hideNotification()"> <i id="chatMenuId"
-                                    class='fa fa-bell faa-ring'> </i> <i id="bell-warning" style="display: none;"
-                                    class="fas fa-circle red-dot"></i></button>
+  <!--  &lt;!&ndash; Navigation Bar &ndash;&gt;-->
+  <!--  <div w3-include-html="snippets/navbar.html"></div>-->
+  <!-- Navigation Bar -->
+  <!--  <div w3-include-html="../snippets/navbar.html"></div>-->
+  <div class="container-fluid">
+    <div class="row navbar">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-6">
+            <a class="navbar-title" href="homePage.html">ReadCycler</a>
+            <!-- Search and Banner Image -->
+            <input type="text" placeholder="Search..." id="search-navbar" style="margin-left: 50px" class="search-bar">
+            <button type="submit" class="search-button" id="search-btn-nav">
+              <img src="../assets/search.png">
+            </button>
+          </div>
+          <span class="col-lg-6 nav-right">
+            <a class="btn btn-link navbar-item" href="newTrade.html"><i class="fas fa-plus"></i> New
+              Trade</a>
+            <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
+              Trades</a>
+            <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
+            <div class="dropdown navbar-item">
+              <button class="btn btn-link navbar-item ringing-bell" type="button" aria-haspopup="true"
+                aria-expanded="false" onclick="hideNotification()"> <i id="chatMenuId" class='fa fa-bell faa-ring'> </i>
+                <i id="bell-warning" style="display: none;" class="fas fa-circle red-dot"></i></button>
 
-                            <div class="dropdown-content" id="nots" style="display: none;">
-                                <b href="#">Notification</b>
+              <div class="dropdown-content" id="nots" style="display: none;">
+                <b href="#">Notification</b>
 
-                                <div x-data="notifications()">
-                                    <template x-for="not in nots">
-                                        <a x-bind:id="not.notId" onclick="openChatNotification(this)"><img
-                                                x-bind:src="not.face" width="20" height="20"
-                                                style="border-radius: 50%;">&nbsp <span x-text="not.message"></span></a>
-                                    </template>
-                                </div>
-
-                            </div>
-                        </div>
-                        <button class="btn btn-link navbar-item" id="chatId1"><i  class="fas fa-comments"></i></button>
-                        <a class="btn btn-link navbar-item-img" href="profile.html"><img
-                                src="../assets/discord.png" /></a>
-                    </span>
+                <div x-data="notifications()">
+                  <template x-for="not in nots">
+                    <a x-bind:id="not.notId" style="cursor: pointer;" onclick="openChatNotification(this)"><img x-bind:src="not.face" width="20"
+                        height="20" style="border-radius: 50%;">&nbsp <span x-text="not.message"></span></a>
+                  </template>
                 </div>
+
+              </div>
             </div>
+            <button class="btn btn-link navbar-item" id="chatId1"><i class="fas fa-comments"></i></button>
+            <a class="btn btn-link navbar-item-img" href="profile.html"><img src="../assets/discord.png" /></a>
+          </span>
         </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 pull-left">
+        <h1 class="newTradeTitle">Create New Trade for Other Users to See</h1>
+      </div>
     </div>
 
-
-    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 center-text">
         <div class="row">
-            <div class="col-md-8 offset-md-2 pull-left">
-                <h1 class="newTradeTitle">Create New Trade for Other Users to See</h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 offset-md-2 center-text">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="image-placeholder-add-photo">
-                                    <h4>Add Photo</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 center-text">
-                                <button class="createTrade" id="newTradeBtn" onclick="addBookToLocalStorage()">Create
-                                    Trade</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 redTextFill" id="pleaseFillText">
-                                <span>*Please fill all required fields</span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" placeholder="Book Title" class="input-field" id="bookTitleId">
-                        <input type="text" placeholder="Author" class="input-field" id="authorId">
-                        <select name="conditions" id="bookConditionId" class="selectGenre">
-                            <option value="" disabled selected hidden>Book Condition</option>
-                            <option value="Old">Old</option>
-                            <option value="New">New</option>
-                            <option value="Used">Used</option>
-                            <option value="Ruined">Ruined</option>
-                        </select>
-
-                        <input type="radio" id="Trade" name="trades" value="Trade" class="radios">
-                        <label for="Trade">Trade</label>
-                        <input type="radio" id="Offer" name="trades" value="Offer" style="margin-left: 20%"
-                            class="radios">
-                        <label for="Offer">Offer</label>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <select name="genres" id="genres" class="selectGenre">
-                                    <option value="" disabled selected hidden>Genre</option>
-                                    <option value="Romance">Romance</option>
-                                    <option value="Biography">Biography</option>
-                                    <option value="Fiction">Fiction</option>
-                                    <option value="Sci-fi">Sci-fi</option>
-                                </select>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4">
-                        <textarea type="text" placeholder="Additional Information"
-                            class="input-field-textarea"></textarea>
-                        <div class="row">
-                            <div class="col-md-10 bookBackText">
-                                <label for="Offer">Would you like the book back after the trade?</label>
-                            </div>
-                            <div class="col-md-2 bookBackCheckbox">
-                                <input type="checkbox" id="BookBack" name="BookBack" value="BookBack">
-                            </div>
-                        </div>
-                    </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="image-placeholder-add-photo">
+                  <h4>Add Photo</h4>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
+            <div class="row">
+              <div class="col-md-12 center-text">
+                <button class="createTrade" id="newTradeBtn" onclick="addBookToLocalStorage()">Create
+                  Trade</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 redTextFill" id="pleaseFillText">
+                <span>*Please fill all required fields</span>
+              </div>
+            </div>
 
-    <!-- The Chat Modal -->
+          </div>
+          <div class="col-md-4">
+            <input type="text" placeholder="Book Title" class="input-field" id="bookTitleId">
+            <input type="text" placeholder="Author" class="input-field" id="authorId">
+            <select name="conditions" id="bookConditionId" class="selectGenre">
+              <option value="" disabled selected hidden>Book Condition</option>
+              <option value="Old">Old</option>
+              <option value="New">New</option>
+              <option value="Used">Used</option>
+              <option value="Ruined">Ruined</option>
+            </select>
+
+            <input type="radio" id="Trade" name="trades" value="Trade" class="radios">
+            <label for="Trade">Trade</label>
+            <input type="radio" id="Offer" name="trades" value="Offer" style="margin-left: 20%" class="radios">
+            <label for="Offer">Offer</label>
+            <div class="row">
+              <div class="col-md-12">
+                <select name="genres" id="genres" class="selectGenre">
+                  <option value="" disabled selected hidden>Genre</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Biography">Biography</option>
+                  <option value="Fiction">Fiction</option>
+                  <option value="Sci-fi">Sci-fi</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" placeholder="Additional Information" class="input-field-textarea"></textarea>
+            <div class="row">
+              <div class="col-md-10 bookBackText">
+                <label for="Offer">Would you like the book back after the trade?</label>
+              </div>
+              <div class="col-md-2 bookBackCheckbox">
+                <input type="checkbox" id="BookBack" name="BookBack" value="BookBack">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Chat Modal -->
   <div id="chatModal" class="modal">
 
     <!-- Modal content -->
@@ -250,14 +247,11 @@
 
 <!--STYLE -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../owl-carousel/owl.carousel.min.js"></script>
 <script type="text/javascript" src="../scripts.js"></script>
 <script>includeHTML();</script>
