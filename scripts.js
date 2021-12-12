@@ -14,7 +14,7 @@
     if (value) {
       showNotification();
     } else {
-      hideNotification();
+      hideNotification2();
     }
   }
 
@@ -173,12 +173,12 @@ if (span2 != null) {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-  if (event.target == modal || event.target == modalLogin ) {
+  if (event.target == modal || event.target == modalLogin) {
     modal.style.display = "none";
     modalLogin.style.display = "none";
-    
+
   }
-  if(event.target == modalChat){
+  if (event.target == modalChat) {
     modalChat.style.display = "none";
   }
 }
@@ -209,15 +209,13 @@ if (btnLikes != null) {
 // Get the modal
 var modalChat = document.getElementById("chatModal");
 
-// Get the button that opens the modal
-var btnChat = document.getElementById("chatId");
-
 // When the user clicks the button, open the modal 
-if (btnChat != null) {
-  btnChat.onclick = function () {
+function openChatNotification(elem) {
+  if (modalChat != null && elem.getAttribute("id").includes("chatId")) {
     modalChat.style.display = "block";
   }
 }
+
 
 
 
@@ -316,7 +314,34 @@ function travelCheckDetails(elem) {
   location.href = "../reserved/" + name;
 }
 
-function sendRequest() {
+function sendRequest(elem) {
+  let by = elem.getAttribute("id");
+  let notification;
+  if (by.includes("Joaquim")) {
+
+    notification = {
+      notId: "chatId",
+      message: "Joaquim accepted your request",
+      face: "../assets/Quim.png"
+    };
+
+  } else if (by.includes("Carlos")) {
+
+    notification = {
+      notId: "noChat",
+      message: "Carlos denied your request",
+      face: "../assets/Carlos-Moedas.jpg"
+    };
+
+  }
+
+  let notifs = JSON.parse(localStorage.getItem("notifications"));
+  if (notifs.length >= 5) {
+    notifs.pop();
+  }
+  notifs.unshift(notification);
+  localStorage.setItem("notifications", JSON.stringify(notifs));
+
   document.getElementById('success-alert').style.display = "block";
 
   let value = JSON.stringify(true);
@@ -344,6 +369,21 @@ function searchFunction() {
 }
 
 function hideNotification() {
+  if (document.getElementById("nots") != null) {
+    if (document.getElementById("nots").style.display == "none") {
+      document.getElementById("nots").style.display = "block";
+    } else {
+      document.getElementById("nots").style.display = "none";
+    }
+  }
+
+  let value = JSON.stringify(false);
+  localStorage.setItem("notification", value);
+  document.getElementById("bell-warning").style.display = "none";
+  document.getElementById("chatMenuId").classList.remove('animated');
+}
+
+function hideNotification2() {
   let value = JSON.stringify(false);
   localStorage.setItem("notification", value);
   document.getElementById("bell-warning").style.display = "none";
@@ -353,6 +393,7 @@ function hideNotification() {
 function showNotification() {
   document.getElementById("bell-warning").style.display = "inline";
   document.getElementById("chatMenuId").classList.add('animated');
+  document.getElementById("nots").style.display = "none";
 }
 
 
@@ -384,6 +425,38 @@ function includeHTML() {
     }
   }
 }
+
+
+function notifications() {
+  var nots = [
+    {
+      notId: "noChat",
+      message: "You have no notifications",
+      face: "../assets/discord.png"
+    }
+  ];
+
+
+  let notifs = localStorage.getItem("notifications");
+  notifs = JSON.parse(notifs);
+
+  if (notifs == null || notifs.length == 0) {
+    empty = [];
+    localStorage.setItem("notifications", JSON.stringify(empty))
+    return {
+      nots: nots,
+    };
+  } else {
+    return {
+      nots: notifs,
+    };
+  }
+
+
+
+
+}
+
 
 
 

@@ -168,7 +168,7 @@
 
 .dropdown-content {
   right: 0;
-  display: none;
+  display: block;
   position: absolute;
  
   min-width: 300px;
@@ -199,9 +199,6 @@
 
 .dropdown-content a:hover {background-color: rgb(80, 80, 80);}
 
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: transparent;}
 
 /* Chat of Notifications Style */
 

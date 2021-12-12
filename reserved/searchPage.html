@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="reserved.css" />
+  <link rel="stylesheet" type="text/css" href="homepage.css" />
   <link rel="stylesheet" href="owl-carousel/owl.carousel.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -36,9 +37,23 @@
             <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
               Trades</a>
             <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
-            <button class="btn btn-link navbar-item ringing-bell" href="newTrade.html" onclick="hideNotification()"> <i
-                id="chatMenuId" class='fa fa-bell faa-ring'> </i> <i id="bell-warning" style="display: none;"
-                class="fas fa-circle red-dot"></i></button>
+            <div class="dropdown navbar-item">
+              <button class="btn btn-link navbar-item ringing-bell" type="button" aria-haspopup="true"
+                aria-expanded="false" onclick="hideNotification()"> <i id="chatMenuId" class='fa fa-bell faa-ring'> </i>
+                <i id="bell-warning" style="display: none;" class="fas fa-circle red-dot"></i></button>
+
+              <div class="dropdown-content" id="nots" style="display: none;">
+                <b href="#">Notification</b>
+
+                <div x-data="notifications()">
+                  <template x-for="not in nots">
+                    <a x-bind:id="not.notId" onclick="openChatNotification(this)"><img x-bind:src="not.face" width="20"
+                        height="20" style="border-radius: 50%;">&nbsp <span x-text="not.message"></span></a>
+                  </template>
+                </div>
+
+              </div>
+            </div>
             <button class="btn btn-link navbar-item"><i class="fas fa-comments"></i></button>
             <a class="btn btn-link navbar-item-img" href="profile.html"><img src="../assets/discord.png" /></a>
           </span>
@@ -155,6 +170,74 @@
   </div>
 </body>
 
+<!-- The Chat Modal -->
+<div id="chatModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content-chat container-fluid no-padding">
+
+    <div class="chat-bar no-padding">Chat
+      <span style="text-align: right">
+        <span class="close">&times;</span>
+      </span>
+    </div>
+
+    <div class="row " style="margin-left: 0%; margin-right: 0%;">
+      <div class="col-md-10">
+        <div class="center-text">
+          <div class="container">
+            <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
+            <a>Bom dia. O que acha de trocar o livro junto à rotunda?</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row  " style="margin-left: 0%; margin-right: 0%;">
+      <div class="col-md-10 offset-md-2">
+        <div class="container darker">
+          <img src="../assets/discord.png" alt="Avatar" class="right" style="width:100%;">
+          <a>Concordo! Eu devo demorar 4 meses a ler o livro.</a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row " style=" margin-left: 0%; margin-right: 0%;">
+      <div class="col-md-10">
+        <div class="container">
+          <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
+          <a>eu também devo demorar esse tempo. Fica combinado?</a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row  " style="margin-left: 0%; margin-right: 0%;">
+      <div class="col-md-10 offset-md-2">
+        <div class="container darker">
+          <img src="../assets/discord.png" alt="Avatar" class="right" style="width:100%;">
+          <a>Sim fica combinado!</a>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="reply-bar force-to-bottom avatar" style="bottom: 2.5%; padding-left: 5%; height: 50px;">
+
+      <span style="text-align: left">
+        <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
+        <input type="text" placeholder="Reply...">
+      </span>
+    </div>
+
+
+  </div>
+
+</div>
 
 
 <!-- STYLE -->

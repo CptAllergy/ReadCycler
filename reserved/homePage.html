@@ -39,20 +39,25 @@
         <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
           Trades</a>
         <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
+
         <div class="dropdown navbar-item">
-          <button class="btn btn-link navbar-item ringing-bell" href="newTrade.html" onclick="hideNotification()"> <i
-              id="chatMenuId" class='fa fa-bell faa-ring'> </i> <i id="bell-warning" style="display: none;"
-              class="fas fa-circle red-dot"></i></button>
-          <div class="dropdown-content">
+          <button class="btn btn-link navbar-item ringing-bell" type="button" aria-haspopup="true" aria-expanded="false"
+            onclick="hideNotification()"> <i id="chatMenuId" class='fa fa-bell faa-ring'> </i> <i id="bell-warning"
+              style="display: none;" class="fas fa-circle red-dot"></i></button>
+
+          <div class="dropdown-content" id="nots" style="display: none;">
             <b href="#">Notification</b>
-            <a button="bla" id="chatId"><img src="../assets/discord.png" width="20" height="20"
-                style="border-radius: 50%;">&nbsp YODA sent you a message</a>
-            <a href="#"><img src="../assets/discord.png" width="20" height="20" style="border-radius: 50%;">&nbsp Quim
-              send you a message</a>
-            <a href="#"><img src="../assets/discord.png" width="20" height="20" style="border-radius: 50%;">&nbsp We
-              welcome you to ReadCycler, feel free to explore!</a>
+
+            <div x-data="notifications()">
+              <template x-for="not in nots">
+                <a x-bind:id="not.notId" onclick="openChatNotification(this)"><img x-bind:src="not.face" width="20" height="20" style="border-radius: 50%;">&nbsp <span
+                    x-text="not.message"></span></a>
+              </template>
+            </div>
+
           </div>
         </div>
+
         <button class="btn btn-link navbar-item" id="chatId1"><i class="fas fa-comments"></i></button>
         <a class="btn btn-link navbar-item-img" href="profile.html"><img src="../assets/discord.png" /></a>
       </div>
