@@ -274,10 +274,6 @@ div.gallery {
   width: 180px;
 }
 
-div.gallery:hover {
-  /*border: 1px solid #777;*/
-}
-
 div.gallery img {
   width: 100%;
   height: auto;
@@ -585,31 +581,33 @@ p {
 .background-gradient {
   background-image: url("../assets/profile_banner.png");
   width: 100%;
-  height: 375px;
   padding-top: 60px;
 }
 
 .profile-img {
   border-radius: 50%;
-  border: 2px solid #000;
+  border: 4px solid rgb(255, 255, 255);
 }
 
 .profile-name {
-  color: white;
-  font-size: 30px;
+  color: rgb(45, 45, 45);
+  font-size: 32px;
+  font-weight: 500;
 }
 
 .profile-job {
-  font-size: 15px;
+  font-size: 22px;
+  color: rgb(80, 80, 80);
+  font-weight: 500;
 }
 
 .profile-location {
-  color: #6d93cb;
-  font-size: 23px;
+  color: rgb(80, 80, 80);
+  font-size: 22px;
 }
 
 .profile-likes {
-  color: white;
+  color: rgb(80, 80, 80);
   font-size: 20px;
 }
 
