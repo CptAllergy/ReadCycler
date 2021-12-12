@@ -2,21 +2,31 @@ body {
   background-color: rgb(242, 242, 242);
   padding-top: 0px;
   padding-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+  background-image: url("assets/big_banner.png");
 }
 
 
 
-/*.navbar {*/
-/*  width: 100%;*/
-/*  padding: 13px 16px;*/
-/*  overflow: hidden;*/
-/*  background-color: rgb(71, 71, 71);*/
-/*}*/
+
+
+
+
+.main-text {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  font-size: 48px;
+  font-weight: 300;
+  margin-top: 15%;
+
+}
 
 .navbar {
   padding-bottom: 6px;
   padding-top: 4px;
-  background-color: rgb(35, 35, 35);
+  background-color: rgba(35, 35, 35, 0.45);
 }
 
 .navbar-title {
@@ -110,10 +120,6 @@ div.gallery {
   /*border: 1px solid #ccc;*/
   float: left;
   width: 180px;
-}
-
-div.gallery:hover {
-  /*border: 1px solid #777;*/
 }
 
 div.gallery img {
