@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="reserved.css" />
+    <link rel="stylesheet" type="text/css" href="profile.css" />
+    <link rel="stylesheet" type="text/css" href="homepage.css" />
+    <link rel="stylesheet" href="../owl-carousel/owl.carousel.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="reserved.css" />
-    <link rel="stylesheet" type="text/css" href="homepage.css" />
-    <link rel="stylesheet" href="../owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Profile</title>
@@ -43,20 +44,19 @@
                             Trades</a>
                         <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
                         <div class="dropdown navbar-item">
-                            <button class="btn btn-link navbar-item ringing-bell" type="button" id="bellAroundId" aria-haspopup="true"
-                                aria-expanded="false" onclick="hideNotification()"> <i id="chatMenuId"
-                                    class='fa fa-bell faa-ring'> </i> <i id="bell-warning" style="display: none;"
-                                    class="fas fa-circle red-dot"></i></button>
+                            <button class="btn btn-link navbar-item ringing-bell" type="button" id="bellAroundId"
+                                aria-haspopup="true" aria-expanded="false" onclick="hideNotification()"> <i
+                                    id="chatMenuId" class='fa fa-bell faa-ring'> </i> <i id="bell-warning"
+                                    style="display: none;" class="fas fa-circle red-dot"></i></button>
 
                             <div class="dropdown-content" id="nots" style="display: none;">
                                 <b href="#">Notification</b>
 
                                 <div x-data="notifications()">
                                     <template x-for="not in nots">
-                                        <a x-bind:id="not.notId" style="cursor: pointer;"
-                                            onclick="openChatNotification(this)"><img x-bind:src="not.face" width="20"
-                                                height="20" style="border-radius: 50%;">&nbsp <span
-                                                x-text="not.message"></span></a>
+                                        <a x-bind:id="not.notId" onclick="openChatNotification(this)"><img
+                                                x-bind:src="not.face" width="20" height="20"
+                                                style="border-radius: 50%;">&nbsp <span x-text="not.message"></span></a>
                                     </template>
                                 </div>
 
@@ -73,53 +73,65 @@
 
     <div class="alert" id="success-alert" style="display: none">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        Report Submitted!
+        Likes Updated Successfully!
     </div>
 
-    <div class="background-gradient">
+
+    <div class="background-gradient"></div>
+    <div class="white-strip">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 offset-lg-2">
+                <div class="col-lg-8 offset-lg-2">
                     <div class="row">
-                        <div class="col-lg-3">
-                            <img src="../assets/Carlos-Moedas.jpg" class="img-fluid profile-img">
+                        <div class="col-lg-2">
+                            <img src="../assets/Carlos-Moedas.jpg" class="img-fluid profile-img weak-shadow-box"
+                                style="margin-top: -20%;">
 
                         </div>
-                        <div class="col-lg-9">
-                            <div class="row">
+                        <div class="col-lg-10">
+                            <div class="row  space-top">
                                 <div class="col-lg-6">
-                                    <h1 class="profile-name">Carlos Notas <span class="profile-job">(Politico)</span>
-                                    </h1>
-                                </div>
-                                <div class="col-lg-6">
-                                    <h1 class="profile-location"><i class="fas fa-map-marker-alt"
-                                            style="color: white!important;"></i> Amadora, Lisboa, Portugal</h1>
+                                    <h1 class="profile-name"> Carlos Notas </h1>
                                 </div>
                             </div>
-                            <div class="row space-top">
+
+                            <div class="row">
+
+
+                                <div class="col-lg-4">
+                                    <h1 class="profile-job"> Político </h1>
+                                </div>
+                                <div class="col-lg-8">
+                                    <h1 class="profile-location"><i class="fas fa-map-marker-alt"
+                                            style="color: orange!important;"></i>
+                                        Amadora, Lisboa, Portugal
+
+                                    </h1>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
                                 <div class="col-lg-12">
-                                    <h1 class="profile-likes"><b>Likes:</b> Sci-Fi, Fantasy, Horror
+                                    <h1 class="profile-likes"><b>Likes:</b>
+                                        Sci-fi, Fantasy, Horror, Romance
                                         <button class="btn btn-link" id="editLikesId"><i class="fas fa-edit"
-                                                style="color: white!important; margin-left: 10px;"></i><span>Report User
-                                            </span>
+                                            style="color: black!important; margin-left: 10px;"></i><span
+                                            style="color: #6d93cb;">Report user</span>
                                         </button>
                                     </h1>
-                                    <h1 class="profile-likes"><b>Nationality:</b> Portugal</h1>
                                 </div>
                             </div>
-                            <div class="row space-top">
-                                <div class="col-lg-10">
-                                    <h1 class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit. Maecenas ut tortor eu felis dignissim vehicula sed quis massa. Morbi
-                                        semper mollis turpis sit amet tincidunt. Maecenas scelerisque viverra est, et
-                                        rutrum ligula sagittis ac. Duis pellentesque, eros sit amet iaculis ullamcorper,
-                                        mi ex varius nisl, id sagittis urna augue in tortor. Morbi pulvinar ligula
-                                        augue, nec egestas eros rhoncus quis. Integer et justo ligula. Vestibulum odio
-                                        nibh, tempus sit amet neque et, ullamcorper tincidunt nibh.</h1>
+                            <div class="row space-bot">
+
+                                <div class="col-lg-4 pull-left">
+                                    <h1 class="profile-likes"><b>Nationality:</b> Portugal</h1>
                                 </div>
+
                                 <div class="col-lg-2">
                                     <h1 class="profile-rating">3.7/5 <i class="fas fa-star"
-                                            style="color: white!important;"></i></h1>
+                                            style="color: orange!important;"></i></h1>
                                 </div>
                             </div>
                         </div>
@@ -131,175 +143,244 @@
     </div>
 
     <div class="container-fluid">
-        <div class="row negative-space-top">
-            <div class="col-lg-6 offset-lg-2">
-                <div class="white-rec">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2 class="box-title">My Books</h2>
-                            <div class="owl-carousel">
-                                <div> <img src="../assets/book_placerholder.jpeg"> </div>
-                                <div> <img src="../assets/book_placerholder.jpeg"> </div>
-                                <div> <img src="../assets/book_placerholder.jpeg"> </div>
+
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row">
+
+                <div class="col-lg-8">
+
+                    <div class="white-rec space-top weak-shadow-box">
+                        <h2 class="box-title">Carlos' Books</h2>
+                        <div class="owl-carousel" id="profile-carousel" x-data="tradeHistory()">
+
+<!--                            REPLICAR ESTA MERDA-->
+
+<!--                            <div class="col trade">-->
+
+<!--                                <div class="profile-container">-->
+<!--                                    <div class="profile-book-pic">-->
+<!--                                        <img src="../assets/generic_book.jpg" >-->
+<!--                                    </div>-->
+
+<!--                                    <div class="profile-book-desc">-->
+<!--                                        <span class="row book" >nome livro</span>-->
+<!--                                        <span class="row status" >estado</span>-->
+<!--                                        <span class="row date" >data</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            ACABA AQUI-->
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="white-rec space-top weak-shadow-box">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2 class="box-title">Contacts & Personal Info</h2>
+                                <h2 class="box-text"><i class="far fa-envelope"></i> <span
+                                        class="profile-contacts">carlos_moneyz@gmail.com</span></h2>
+                                <h2 class="box-text"><i class="fas fa-phone"></i> <span class="profile-contacts">+351 924 973 000</span></h2>
+                                <h2 class="box-text"><i class="fas fa-birthday-cake"></i> <span
+                                        class="profile-contacts">24 de Agosto</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="white-rec space-top weak-shadow-box">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2 class="box-title">Other Socials</h2>
+                                <h2 class="box-text"><i class="fab fa-facebook"></i> <span
+                                        class="profile-contacts">Carlos Notas</span></h2>
+                                <h2 class="box-text"><i class="fab fa-linkedin"></i> <span
+                                        class="profile-contacts">notinhas_c</span></h2>
+                                <h2 class="box-text"><i class="fab fa-twitter"></i> <span
+                                        class="profile-contacts">notas.c</span></h2>
+                                <h2 class="box-text"><i class="fab fa-instagram"></i> <span
+                                        class="profile-contacts">notas.carlos</span></h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="white-rec space-top">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2 class="box-title">Lorem Ipsum</h2>
-                            <h3 class="box-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut
-                                tortor eu felis dignissim vehicula sed quis massa. Morbi semper mollis turpis sit amet
-                                tincidunt. Maecenas scelerisque viverra est, et rutrum ligula sagittis ac. Duis
-                                pellentesque, eros sit amet iaculis ullamcorper, mi ex varius nisl, id sagittis urna
-                                augue in tortor. Morbi pulvinar ligula augue, nec egestas eros rhoncus quis. Integer et
-                                justo ligula. Vestibulum odio nibh, tempus sit amet neque et, ullamcorper tincidunt
-                                nibh.</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="white-rec">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2 class="box-title">Contacts & Personal Info</h2>
-                            <h2 class="box-text"><i class="far fa-envelope"></i> <span
-                                    class="profile-contacts">carlos_moneyz@gmail.com</span></h2>
-                            <h2 class="box-text"><i class="fas fa-phone"></i> <span class="profile-contacts">+351 924
-                                    973 000</span></h2>
-                            <h2 class="box-text"><i class="fas fa-birthday-cake"></i> <span class="profile-contacts">24
-                                    de Agosto</span></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="white-rec space-top">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2 class="box-title">Other Socials</h2>
-                            <h2 class="box-text"><i class="fab fa-facebook"></i> <span class="profile-contacts">
-                                    Carlos Notas</span></h2>
-                            <h2 class="box-text"><i class="fab fa-linkedin"></i> <span
-                                    class="profile-contacts">notinhas_c</span></h2>
-                            <h2 class="box-text"><i class="fab fa-twitter"></i> <span
-                                    class="profile-contacts">notas.c</span></h2>
-                            <h2 class="box-text"><i class="fab fa-instagram"></i> <span
-                                    class="profile-contacts">notas.carlos</span></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-
-    <div id="likesModal" class="modal" style="padding-top: 250px!important;">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div style="text-align: right">
-                <span class="close">&times;</span>
-            </div>
-            <div class="center-text">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="modal-title">User Report</h1>
-                        <h2 class="modal-text">Tell us what went wrong with your interaction with this user!</h2>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-10 offset-md-1">
-                        <textarea name="report" id="bio" placeholder="Report Information"
-                            class="report-text"></textarea>
-                    </div>
-                </div>
-
-                <div class="row margin-modal">
-                    <div class="col-lg-12">
-                        <button class="modal-btn" onclick="submitReport()" type="submit">Submit Report</button>
-                    </div>
-                </div>
             </div>
 
         </div>
-    </div>
 
-    <!-- The Chat Modal -->
-    <div id="chatModal" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content-chat container-fluid no-padding">
+        <div id="likesModal" class="modal" style="padding-top: 250px!important;">
 
-            <div class="chat-bar no-padding">Chat
-                <span style="text-align: right">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div style="text-align: right">
                     <span class="close">&times;</span>
-                </span>
+                </div>
+                <div class="center-text">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="modal-title">User Report</h1>
+                            <h2 class="modal-text">Tell us what went wrong with your interaction with this user!</h2>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1">
+                            <textarea name="report" id="bio" placeholder="Report Information"
+                                class="report-text"></textarea>
+                        </div>
+                    </div>
+    
+                    <div class="row margin-modal">
+                        <div class="col-lg-12">
+                            <button class="modal-btn" onclick="submitReportQuim()" type="submit">Submit Report</button>
+                        </div>
+                    </div>
+                </div>
+    
             </div>
+        </div>
 
-            <div class="row " style="margin-left: 0%; margin-right: 0%;">
-                <div class="col-md-10">
-                    <div class="center-text">
+        <!-- The Chat Modal -->
+        <div id="chatModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content-chat container-fluid no-padding">
+
+                <div class="chat-bar no-padding">Chat
+                    <span style="text-align: right">
+                        <span class="close">&times;</span>
+                    </span>
+                </div>
+
+                <div class="row " style="margin-left: 0%; margin-right: 0%;">
+                    <div class="col-md-10">
+                        <div class="center-text">
+                            <div class="container">
+                                <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
+                                <a>Bom dia. O que acha de trocar o livro junto à rotunda?</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row  " style="margin-left: 0%; margin-right: 0%;">
+                    <div class="col-md-10 offset-md-2">
+                        <div class="container darker">
+                            <img src="../assets/discord.png" alt="Avatar" class="right" style="width:100%;">
+                            <a>Concordo! Eu devo demorar 4 meses a ler o livro.</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row " style=" margin-left: 0%; margin-right: 0%;">
+                    <div class="col-md-10">
                         <div class="container">
                             <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
-                            <a>Bom dia. O que acha de trocar o livro junto à rotunda?</a>
+                            <a>eu também devo demorar esse tempo. Fica combinado?</a>
 
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row  " style="margin-left: 0%; margin-right: 0%;">
-                <div class="col-md-10 offset-md-2">
-                    <div class="container darker">
-                        <img src="../assets/discord.png" alt="Avatar" class="right" style="width:100%;">
-                        <a>Concordo! Eu devo demorar 4 meses a ler o livro.</a>
+                <div class="row  " style="margin-left: 0%; margin-right: 0%;">
+                    <div class="col-md-10 offset-md-2">
+                        <div class="container darker">
+                            <img src="../assets/discord.png" alt="Avatar" class="right" style="width:100%;">
+                            <a>Sim fica combinado!</a>
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row " style=" margin-left: 0%; margin-right: 0%;">
-                <div class="col-md-10">
-                    <div class="container">
+
+
+                <div class="reply-bar force-to-bottom avatar" style="bottom: 2.5%; padding-left: 5%; height: 50px;">
+
+                    <span style="text-align: left">
                         <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
-                        <a>eu também devo demorar esse tempo. Fica combinado?</a>
-
-                    </div>
+                        <input type="text" placeholder="Reply...">
+                    </span>
                 </div>
+
+
             </div>
-
-            <div class="row  " style="margin-left: 0%; margin-right: 0%;">
-                <div class="col-md-10 offset-md-2">
-                    <div class="container darker">
-                        <img src="../assets/discord.png" alt="Avatar" class="right" style="width:100%;">
-                        <a>Sim fica combinado!</a>
-
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="reply-bar force-to-bottom avatar" style="bottom: 2.5%; padding-left: 5%; height: 50px;">
-
-                <span style="text-align: left">
-                    <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
-                    <input type="text" placeholder="Reply...">
-                </span>
-            </div>
-
 
         </div>
-
-    </div>
-
-
 
 
 </body>
 <!--STYLE -->
+
+<script charset="utf-8">
+    function getUserLikes() {
+
+        var likes = JSON.parse(localStorage.getItem("userLikes"));
+        return {
+            likes: likes,
+        };
+    }
+</script>
+
+
+<script charset="utf-8">
+    function tradeHistory() {
+        // get items from localStorage
+        var trades = JSON.parse(localStorage.getItem("myTrades"));
+        let filtered = [];
+        for (let i = 0; i < trades.length; i++) {
+            if (trades[i].with == "") {
+                filtered.push(trades[i]);
+            }
+        }
+
+
+        let carousel = document.getElementById('profile-carousel');
+
+        if (carousel != null) {
+
+            for (let i = 0; i < filtered.length; i++) {
+
+                let book_name = filtered[i]['book'];
+                let book_status = filtered[i]['status'];
+                let book_date = filtered[i]['date'];
+
+                carousel.innerHTML += "<div class=\"col trade\">\n" +
+                    "\n" +
+                    "                                <div class=\"profile-container\">\n" +
+                    "                                    <div class=\"profile-book-pic\">\n" +
+                    "                                        <img src=\"../assets/generic_book.jpg\" >\n" +
+                    "                                    </div>\n" +
+                    "\n" +
+                    "                                    <div class=\"profile-book-desc\">\n" +
+                    "                                        <span class=\"row book\" >"+ book_name +"</span>\n" +
+                    "                                        <span class=\"row status\" >"+ book_status +"</span>\n" +
+                    "                                        <span class=\"row date\" >"+ book_date +"</span>\n" +
+                    "                                    </div>\n" +
+                    "                                </div>\n" +
+                    "                            </div>" ;
+
+            }
+
+
+        }
+
+
+        return {
+            trades: filtered
+        };
+    }
+</script>
+
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -311,7 +392,10 @@
     crossorigin="anonymous"></script>
 <script type="text/javascript" src="../owl-carousel/owl.carousel.min.js"></script>
 <script type="text/javascript" src="../scripts.js"></script>
+
 <script>includeHTML();</script>
+
+
 
 
 <!--END STYLE-->
