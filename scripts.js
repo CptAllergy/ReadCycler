@@ -5,6 +5,20 @@
     nav: true,
   });
 
+  if (localStorage.getItem("notification") == null) {
+    // initially set items on localstorage
+    let value = JSON.stringify(false);
+    localStorage.setItem("notification", value);
+  } else {
+    let value = JSON.parse(localStorage.getItem("notification"));
+    if (value) {
+      showNotification();
+    } else {
+      hideNotification();
+    }
+  }
+
+
   let url = window.location.href.toLowerCase();
   if (url != null) {
     if (url.includes("search")) {
@@ -27,8 +41,6 @@
         }
       }
     } else if (url.includes("profile") || url.includes("myTrades".toLowerCase()) || url.includes("Carlos_Notas".toLowerCase()) || url.includes("Joaquim_Barreiros".toLowerCase())) {
-      console.log(url);
-      console.log(url.includes("myTrades".toLowerCase()));
       if (url.includes("success")) {
         document.getElementById('success-alert').style.display = "block";
       }
@@ -300,6 +312,13 @@ function travelCheckDetails(elem) {
   location.href = "../reserved/" + name;
 }
 
+function sendRequest() {
+  document.getElementById('success-alert').style.display = "block";
+
+  let value = JSON.stringify(true);
+  localStorage.setItem("notification", value);
+}
+
 
 
 
@@ -318,6 +337,18 @@ function searchFunction() {
     window.location = '/reserved/searchPage.html?search=' + input.value;
   }
 
+}
+
+function hideNotification() {
+  let value = JSON.stringify(false);
+  localStorage.setItem("notification", value);
+  document.getElementById("bell-warning").style.display = "none";
+  document.getElementById("chatMenuId").classList.remove('animated');
+}
+
+function showNotification() {
+  document.getElementById("bell-warning").style.display = "inline";
+  document.getElementById("chatMenuId").classList.add('animated');
 }
 
 
