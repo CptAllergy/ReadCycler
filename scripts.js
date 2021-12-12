@@ -173,9 +173,13 @@ if (span2 != null) {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-  if (event.target == modal || event.target == modalLogin) {
+  if (event.target == modal || event.target == modalLogin ) {
     modal.style.display = "none";
     modalLogin.style.display = "none";
+    
+  }
+  if(event.target == modalChat){
+    modalChat.style.display = "none";
   }
 }
 
