@@ -66,7 +66,7 @@
 
                         </div>
                         <div class="col-lg-10">
-                            <div class="row">
+                            <div class="row  space-top">
                                 <div class="col-lg-6">
                                     <h1 class="profile-name"> Roberto Carlos </h1>
                                 </div>
@@ -89,7 +89,7 @@
                                 
                             </div>
 
-                            <div class="row space-top">
+                            <div class="row">
                                 <div class="col-lg-12">
                                     <h1 class="profile-likes"><b>Likes:</b>
                                         <!--Sci-Fi, Fantasy, Horror-->
@@ -100,14 +100,14 @@
                                         <!--</div>-->
 
                                         <button class="btn btn-link" id="editLikesId"><i class="fas fa-edit"
-                                                style="color: black!important; margin-left: 10px;"></i><span>Edit your
+                                                style="color: black!important; margin-left: 10px;"></i><span style="color: #6d93cb;">Edit your
                                                 likes</span>
                                         </button>
                                     </h1>
                                     
                                 </div>
                             </div>
-                            <div class="row space-top">
+                            <div class="row space-bot">
 
                                 <div class="col-lg-4 pull-left">
                                     <h1 class="profile-likes"><b>Nationality:</b> Portugal</h1>
@@ -115,7 +115,7 @@
                                     
                                 <div class="col-lg-2">
                                     <h1 class="profile-rating">4.3/5 <i class="fas fa-star"
-                                            style="color: white!important;"></i></h1>
+                                            style="color: orange!important;"></i></h1>
                                 </div>
                             </div>
                         </div>
@@ -128,133 +128,71 @@
 
     <div class="container-fluid">
 
+        <div class="col-lg-10 offset-lg-1">
+            <div class="row">
 
-        <div x-data="tradeHistory" class="row">
-            <template x-for="trade in trades">
-                <div class="col trade">
-                    <span class="row tradeId" x-text="trade.tradeId"></span>
-                    <span class="row book" x-text="trade.book"></span>
-                    <span class="row status" x-text="trade.status"></span>
-                    <span class="row date" x-text="trade.date"></span>
-                    <span class="row checkbox"><input type="checkbox"></input></span>
-                </div>
-            </template>
-        </div>
+                <div class="col-lg-8">
+
+                    <div class="white-rec space-top weak-shadow-box">
+                        <h2 class="box-title">Your Books</h2>
+                        <div class="owl-carousel">
 
 
-
-        <div class="row negative-space-top">
-            <div class="col-lg-6 offset-lg-2">
-                <div class="white-rec weak-shadow-box">
-
-
-                    <div x-data="tradeHistory" class="row">
-                        <template x-for="trade in trades">
-                            <div class="col trade">
-                                <span class="row tradeId" x-text="trade.tradeId"></span>
-                                <span class="row book" x-text="trade.book"></span>
-                                <span class="row status" x-text="trade.status"></span>
-                                <span class="row date" x-text="trade.date"></span>
-                                <span class="row checkbox"><input type="checkbox"></input></span>
+                            <div x-data="tradeHistory()" class="row">
+                                <template x-for="trade in trades">
+                                    <div class="col trade">
+                                        <span class="row book" x-text="trade.book"></span>
+                                        <span class="row status" x-text="trade.status"></span>
+                                        <span class="row date" x-text="trade.date"></span>
+                                    </div>
+                                </template>
                             </div>
-                        </template>
+
+                        </div>
                     </div>
 
-
-
-
-
-
-
-
-                    <div class="row">
-
-
-                        
 
                     
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                </div>
+    
+                <div class="col-lg-4">
+                    <div class="white-rec space-top weak-shadow-box">
                         <div class="row">
                             <div class="col-lg-12">
-
-
-                                <h2 class="box-title">My Books</h2>
-                                <div class="owl-carousel">
-
-
-                                    <div x-data="tradeHistory" class="row">
-                                        <template x-for="trade in trades">
-                                            <div> <img src="../assets/book_placerholder.jpeg"> <span class="row book" x-text="trade.book"></span> </div>
-                                        </template>
-                                    </div>
-
-
-
-                                    
-                                    <div> <img src="../assets/book_placerholder.jpeg"> </div>
-                                    <div> <img src="../assets/book_placerholder.jpeg"> </div>
-                                    <div> <img src="../assets/book_placerholder.jpeg"> </div>
-
-                                </div>
-
+                                <h2 class="box-title">Contacts & Personal Info</h2>
+                                <h2 class="box-text"><i class="far fa-envelope"></i> <span
+                                        class="profile-contacts">roberto_carlos@gmail.com</span></h2>
+                                <h2 class="box-text"><i class="fas fa-phone"></i> <span class="profile-contacts">+351 924
+                                        973 000</span></h2>
+                                <h2 class="box-text"><i class="fas fa-birthday-cake"></i> <span class="profile-contacts">24
+                                        de Agosto</span></h2>
                             </div>
                         </div>
-
-
                     </div>
-                </div>
-            <div class="col-lg-2">
-                <div class="white-rec weak-shadow-box">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2 class="box-title">Contacts & Personal Info</h2>
-                            <h2 class="box-text"><i class="far fa-envelope"></i> <span
-                                    class="profile-contacts">roberto_carlos@gmail.com</span></h2>
-                            <h2 class="box-text"><i class="fas fa-phone"></i> <span class="profile-contacts">+351 924
-                                    973 000</span></h2>
-                            <h2 class="box-text"><i class="fas fa-birthday-cake"></i> <span class="profile-contacts">24
-                                    de Agosto</span></h2>
+                    <div class="white-rec space-top weak-shadow-box">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2 class="box-title">Other Socials</h2>
+                                <h2 class="box-text"><i class="fab fa-facebook"></i> <span class="profile-contacts">Roberto
+                                        Carlos</span></h2>
+                                <h2 class="box-text"><i class="fab fa-linkedin"></i> <span
+                                        class="profile-contacts">rob_carlos</span></h2>
+                                <h2 class="box-text"><i class="fab fa-twitter"></i> <span
+                                        class="profile-contacts">roberto.c</span></h2>
+                                <h2 class="box-text"><i class="fab fa-instagram"></i> <span
+                                        class="profile-contacts">roberto_c</span></h2>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="white-rec space-top weak-shadow-box">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2 class="box-title">Other Socials</h2>
-                            <h2 class="box-text"><i class="fab fa-facebook"></i> <span class="profile-contacts">Roberto
-                                    Carlos</span></h2>
-                            <h2 class="box-text"><i class="fab fa-linkedin"></i> <span
-                                    class="profile-contacts">rob_carlos</span></h2>
-                            <h2 class="box-text"><i class="fab fa-twitter"></i> <span
-                                    class="profile-contacts">roberto.c</span></h2>
-                            <h2 class="box-text"><i class="fab fa-instagram"></i> <span
-                                    class="profile-contacts">roberto_c</span></h2>
-                        </div>
-                    </div>
-                </div>
+
             </div>
+            
         </div>
-    </div>
 
 
     <div id="likesModal" class="modal">
@@ -354,48 +292,17 @@
 
 <script charset="utf-8">
     function tradeHistory() {
-        const myTrades = [
-            {
-                tradeId: "643567",
-                book: "Harry Potter",
-                status: "Pending",
-                with: "",
-                date: "10/11/2021",
-            },
-            {
-                tradeId: "013567",
-                book: "A Game of Thrones",
-                status: "Accepted",
-                with: "Joaquim Barreiros",
-                date: "10/11/2020",
-            },
-            {
-                tradeId: "03267",
-                book: "Lord of The Rings",
-                status: "Accepted",
-                with: "Carlos Notas",
-                date: "08/11/2020",
-            },
-            {
-                tradeId: "023567",
-                book: "A Game of Thrones",
-                status: "Declined",
-                with: "Carlos Notas",
-                date: "05/10/2020",
-            },
-        ];
-
-        if (localStorage.getItem("myTrades") == null) {
-            // initially set items on localstorage
-            var encodedBooks = JSON.stringify(myTrades);
-            localStorage.setItem("myTrades", encodedBooks);
-        }
-
         // get items from localStorage
         var trades = JSON.parse(localStorage.getItem("myTrades"));
+        let filtered = [];
+        for(let i = 0; i<trades.length; i++){
+            if(trades[i].with == ""){
+                filtered.push(trades[i]);
+            }
+        }
 
         return {
-            trades: trades,
+            trades: filtered
         };
     }
 </script>
@@ -415,24 +322,7 @@
 <script type="text/javascript" src="../scripts.js"></script>
 
 <script>includeHTML();</script>
-<script src="allTrades.js"></script>
-<script>
-  function readJSON() {
 
-    let search = window.location.href.split("=")[1];
-    let filterTrades = [];
-
-    for (let i = 0; i < trades.length; i++) {
-      if (trades[i].title.valueOf().toLowerCase().replaceAll(" ", "%20").includes(search.valueOf().toLowerCase())) {
-        filterTrades.push(trades[i]);
-      }
-    }
-
-    return {
-      filterTrades: filterTrades,
-    };
-  }
-</script>
 
 
 
