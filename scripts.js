@@ -329,7 +329,7 @@ function sendRequest(elem) {
       message: "Joaquim accepted your request",
       face: "../assets/Quim.png"
     };
-    addToStorageTradeQuim();
+    addToStorageTrade("Joaquim Barreiros", "Accepted");
   } else if (by.includes("Carlos")) {
 
     notification = {
@@ -338,6 +338,7 @@ function sendRequest(elem) {
       face: "../assets/Carlos-Moedas.jpg"
     };
 
+    addToStorageTrade("Carlos Notas", "Declined");
   }
 
   let notifs = JSON.parse(localStorage.getItem("notifications"));
@@ -353,13 +354,13 @@ function sendRequest(elem) {
   localStorage.setItem("notification", value);
 }
 
-function addToStorageTradeQuim() {
+function addToStorageTrade(name, deal) {
   let title = document.getElementById("detailTitle").innerHTML;
   let condition = "New";
   let genre = "Fantasy";
 
-  let withvar = "Joaquim Barreiros";
-  let status = "Accepted";
+  let withvar = name;
+  let status = deal;
   let id = Math.floor(Date.now() / 1000).toString(16);
   //date
   let today = new Date();
