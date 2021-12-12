@@ -4,13 +4,7 @@ body {
   padding-bottom: 30px;
 }
 
-.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 13px 16px;
-  overflow: hidden;
-  background-color: rgb(71, 71, 71);
-}
+
 
 /*.navbar {*/
 /*  width: 100%;*/
@@ -22,12 +16,14 @@ body {
 .navbar {
   padding-bottom: 6px;
   padding-top: 4px;
-  background-color: rgb(71, 71, 71);
+  background-color: rgb(35, 35, 35);
 }
 
 .navbar-title {
   color: white;
   text-decoration: none;
+  text-align: center;
+  position: relative;
   font-size: 28px;
   font-weight: bold;
 }
@@ -47,11 +43,12 @@ body {
 }
 
 .navbar a:hover {
-  color: red;
+  color: rgb(210, 170, 90);
+  text-decoration: none;
 }
 
 .navbar button:hover {
-  color: red;
+  color: rgb(210, 170, 90);
   text-decoration: none;
 }
 

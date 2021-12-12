@@ -182,7 +182,7 @@ window.onclick = function (event) {
   }
   console.log(event.target);
   if (event.target != document.getElementById("bellAroundId") && event.target != document.getElementById("chatMenuId")
-    && document.getElementById("nots").style.display == "block") {
+  && event.target != document.getElementById("bell-warning") && document.getElementById("nots").style.display == "block") {
     document.getElementById("nots").style.display = "none";
   }
 }
