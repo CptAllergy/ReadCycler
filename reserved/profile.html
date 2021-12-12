@@ -159,50 +159,27 @@
 
                     <div class="white-rec space-top weak-shadow-box">
                         <h2 class="box-title">Your Books</h2>
-                        <div class="owl-carousel">
+                        <div class="owl-carousel" id="profile-carousel" x-data="tradeHistory()">
 
-                            <div class="profile-container">
-                                <div class="profile-book-pic">
-                                    <img src="../assets/generic_book.jpg">
-                                </div>
+<!--                            REPLICAR ESTA MERDA-->
+                            
+<!--                            <div class="col trade">-->
 
-                                <div class="profile-book-desc">
-                                    <span class="row no-margins">Harry Potter</span>
-                                    <span class="row no-margins">Novo</span>
-                                    <span class="row no-margins">12/12/2021</span>
-                                </div>
-                            </div>
+<!--                                <div class="profile-container">-->
+<!--                                    <div class="profile-book-pic">-->
+<!--                                        <img src="../assets/generic_book.jpg" >-->
+<!--                                    </div>-->
 
-                            <div class="profile-container">
-                                <div class="profile-book-pic">
-                                    <img src="../assets/lotr.jpg">
-                                </div>
+<!--                                    <div class="profile-book-desc">-->
+<!--                                        <span class="row book" >nome livro</span>-->
+<!--                                        <span class="row status" >estado</span>-->
+<!--                                        <span class="row date" >data</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
-                                <div class="profile-book-desc">
-                                    <span class="row no-margins">Lord of the Rings</span>
-                                    <span class="row no-margins">Velho</span>
-                                    <span class="row no-margins">11/12/2021</span>
-                                </div>
-                            </div>
+<!--                            ACABA AQUI-->
 
-                            <!-- <div x-data="tradeHistory()" class="row">
-                                <template x-for="trade in trades">
-                                    <div class="col trade">
-
-                                        <div class="profile-container">
-                                            <div class="profile-book-pic">
-                                                <img src="../assets/generic_book.jpg" >
-                                            </div>
-    
-                                            <div class="profile-book-desc">
-                                                <span class="row book" x-text="trade.book"></span>
-                                                <span class="row status" x-text="trade.status"></span>
-                                                <span class="row date" x-text="trade.date"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </template>
-                            </div> -->
 
                         </div>
                     </div>
@@ -422,6 +399,38 @@
                 filtered.push(trades[i]);
             }
         }
+
+
+        let carousel = document.getElementById('profile-carousel');
+
+        if (carousel != null) {
+
+            for (let i = 0; i < filtered.length; i++) {
+
+                let book_name = filtered[i]['book'];
+                let book_status = filtered[i]['status'];
+                let book_date = filtered[i]['date'];
+
+                carousel.innerHTML += "<div class=\"col trade\">\n" +
+                    "\n" +
+                    "                                <div class=\"profile-container\">\n" +
+                    "                                    <div class=\"profile-book-pic\">\n" +
+                    "                                        <img src=\"../assets/generic_book.jpg\" >\n" +
+                    "                                    </div>\n" +
+                    "\n" +
+                    "                                    <div class=\"profile-book-desc\">\n" +
+                    "                                        <span class=\"row book\" >"+ book_name +"</span>\n" +
+                    "                                        <span class=\"row status\" >"+ book_status +"</span>\n" +
+                    "                                        <span class=\"row date\" >"+ book_date +"</span>\n" +
+                    "                                    </div>\n" +
+                    "                                </div>\n" +
+                    "                            </div>" ;
+
+            }
+
+
+        }
+
 
         return {
             trades: filtered
