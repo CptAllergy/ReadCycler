@@ -7,10 +7,11 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="reserved.css" />
     <link rel="stylesheet" type="text/css" href="profile.css" />
+    <link rel="stylesheet" type="text/css" href="homepage.css" />
     <link rel="stylesheet" href="../owl-carousel/owl.carousel.min.css">
     <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Profile</title>
@@ -42,7 +43,25 @@
                         <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
                             Trades</a>
                         <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
-                        <button class="btn btn-link navbar-item ringing-bell" href="newTrade.html" onclick="hideNotification()"> <i id="chatMenuId" class='fa fa-bell faa-ring'> </i> <i id="bell-warning" style="display: none;" class="fas fa-circle red-dot"></i></button>
+                        <div class="dropdown navbar-item">
+                            <button class="btn btn-link navbar-item ringing-bell" type="button" id="bellAroundId"
+                                aria-haspopup="true" aria-expanded="false" onclick="hideNotification()"> <i
+                                    id="chatMenuId" class='fa fa-bell faa-ring'> </i> <i id="bell-warning"
+                                    style="display: none;" class="fas fa-circle red-dot"></i></button>
+
+                            <div class="dropdown-content" id="nots" style="display: none;">
+                                <b href="#">Notification</b>
+
+                                <div x-data="notifications()">
+                                    <template x-for="not in nots">
+                                        <a x-bind:id="not.notId" onclick="openChatNotification(this)"><img
+                                                x-bind:src="not.face" width="20" height="20"
+                                                style="border-radius: 50%;">&nbsp <span x-text="not.message"></span></a>
+                                    </template>
+                                </div>
+
+                            </div>
+                        </div>
                         <button class="btn btn-link navbar-item"><i class="fas fa-comments"></i></button>
                         <a class="btn btn-link navbar-item-img" href="profile.html"><img
                                 src="../assets/discord.png" /></a>
@@ -65,7 +84,8 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="row">
                         <div class="col-lg-2">
-                            <img src="../assets/discord.png" class="img-fluid profile-img weak-shadow-box" style="margin-top: -20%;">
+                            <img src="../assets/discord.png" class="img-fluid profile-img weak-shadow-box"
+                                style="margin-top: -20%;">
 
                         </div>
                         <div class="col-lg-10">
@@ -89,7 +109,7 @@
                                     </h1>
                                 </div>
 
-                                
+
                             </div>
 
                             <div class="row">
@@ -97,17 +117,18 @@
                                     <h1 class="profile-likes"><b>Likes:</b>
                                         <!--Sci-Fi, Fantasy, Horror-->
                                         <!--<div >-->
-                                            <template x-data="getUserLikes()" x-for="like in likes">
-                                                <span x-text="like.name" style="margin-right: 10px;"></span>
-                                            </template>
+                                        <template x-data="getUserLikes()" x-for="like in likes">
+                                            <span x-text="like.name" style="margin-right: 10px;"></span>
+                                        </template>
                                         <!--</div>-->
 
                                         <button class="btn btn-link" id="editLikesId"><i class="fas fa-edit"
-                                                style="color: black!important; margin-left: 10px;"></i><span style="color: #6d93cb;">Edit your
+                                                style="color: black!important; margin-left: 10px;"></i><span
+                                                style="color: #6d93cb;">Edit your
                                                 likes</span>
                                         </button>
                                     </h1>
-                                    
+
                                 </div>
                             </div>
                             <div class="row space-bot">
@@ -115,7 +136,7 @@
                                 <div class="col-lg-4 pull-left">
                                     <h1 class="profile-likes"><b>Nationality:</b> Portugal</h1>
                                 </div>
-                                    
+
                                 <div class="col-lg-2">
                                     <h1 class="profile-rating">4.3/5 <i class="fas fa-star"
                                             style="color: orange!important;"></i></h1>
@@ -142,7 +163,7 @@
 
                             <div class="profile-container">
                                 <div class="profile-book-pic">
-                                    <img src="../assets/generic_book.jpg" >
+                                    <img src="../assets/generic_book.jpg">
                                 </div>
 
                                 <div class="profile-book-desc">
@@ -154,7 +175,7 @@
 
                             <div class="profile-container">
                                 <div class="profile-book-pic">
-                                    <img src="../assets/lotr.jpg" >
+                                    <img src="../assets/lotr.jpg">
                                 </div>
 
                                 <div class="profile-book-desc">
@@ -188,7 +209,7 @@
 
 
                 </div>
-    
+
                 <div class="col-lg-4">
                     <div class="white-rec space-top weak-shadow-box">
                         <div class="row">
@@ -196,9 +217,11 @@
                                 <h2 class="box-title">Contacts & Personal Info</h2>
                                 <h2 class="box-text"><i class="far fa-envelope"></i> <span
                                         class="profile-contacts">roberto_carlos@gmail.com</span></h2>
-                                <h2 class="box-text"><i class="fas fa-phone"></i> <span class="profile-contacts">+351 924
+                                <h2 class="box-text"><i class="fas fa-phone"></i> <span class="profile-contacts">+351
+                                        924
                                         973 000</span></h2>
-                                <h2 class="box-text"><i class="fas fa-birthday-cake"></i> <span class="profile-contacts">24
+                                <h2 class="box-text"><i class="fas fa-birthday-cake"></i> <span
+                                        class="profile-contacts">24
                                         de Agosto</span></h2>
                             </div>
                         </div>
@@ -207,7 +230,8 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <h2 class="box-title">Other Socials</h2>
-                                <h2 class="box-text"><i class="fab fa-facebook"></i> <span class="profile-contacts">Roberto
+                                <h2 class="box-text"><i class="fab fa-facebook"></i> <span
+                                        class="profile-contacts">Roberto
                                         Carlos</span></h2>
                                 <h2 class="box-text"><i class="fab fa-linkedin"></i> <span
                                         class="profile-contacts">rob_carlos</span></h2>
@@ -221,89 +245,157 @@
                 </div>
 
             </div>
-            
-        </div>
-
-
-    <div id="likesModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div style="text-align: right">
-                <span class="close">&times;</span>
-            </div>
-            <div class="center-text">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="modal-title">Show us what you like</h1>
-                        <h2 class="modal-text">Select the genres/categories you want to read and get recommended!</h2>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-md-4 offset-md-2">
-                        <input type="checkbox" class="hidden-checkbox" name="likes" id="bio" data-name="Biography">
-                        <label for="bio">Biography</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="checkbox" class="hidden-checkbox" name="likes" id="act" data-name="Action">
-                        <label for="act">Action</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 offset-md-2">
-                        <input type="checkbox" class="hidden-checkbox" name="likes" id="cla" data-name="Classic">
-                        <label for="cla">Classic</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="checkbox" class="hidden-checkbox" name="likes" id="sci" data-name="Sci-Fi">
-                        <label for="sci">Sci-Fi</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 offset-md-2">
-                        <input type="checkbox" class="hidden-checkbox" name="likes" id="fan" data-name="Fantasy">
-                        <label for="fan">Fantasy</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="checkbox" class="hidden-checkbox" name="likes" id="hor" data-name="Horror">
-                        <label for="hor">Horror</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 offset-md-2">
-                        <input type="checkbox" class="hidden-checkbox" name="likes" id="rom" data-name="Romance">
-                        <label for="rom">Romance</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="checkbox" class="hidden-checkbox" name="likes" id="com" data-name="Comics">
-                        <label for="com">Comics</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 offset-md-2">
-                        <input type="checkbox" class="hidden-checkbox" name="likes" id="his" data-name="History">
-                        <label for="his">History</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="checkbox" class="hidden-checkbox" name="likes" id="poe" data-name="Poetry">
-                        <label for="poe">Poetry</label>
-                    </div>
-                </div>
-
-
-                <div class="row margin-modal">
-                    <div class="col-lg-12">
-                        <button class="modal-btn" type="button" onclick="updateLikesLocalStorage()">Submit</button>
-                    </div>
-                </div>
-            </div>
 
         </div>
-    </div>
 
 
+        <div id="likesModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div style="text-align: right">
+                    <span class="close">&times;</span>
+                </div>
+                <div class="center-text">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="modal-title">Show us what you like</h1>
+                            <h2 class="modal-text">Select the genres/categories you want to read and get recommended!
+                            </h2>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-4 offset-md-2">
+                            <input type="checkbox" class="hidden-checkbox" name="likes" id="bio" data-name="Biography">
+                            <label for="bio">Biography</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="checkbox" class="hidden-checkbox" name="likes" id="act" data-name="Action">
+                            <label for="act">Action</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 offset-md-2">
+                            <input type="checkbox" class="hidden-checkbox" name="likes" id="cla" data-name="Classic">
+                            <label for="cla">Classic</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="checkbox" class="hidden-checkbox" name="likes" id="sci" data-name="Sci-Fi">
+                            <label for="sci">Sci-Fi</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 offset-md-2">
+                            <input type="checkbox" class="hidden-checkbox" name="likes" id="fan" data-name="Fantasy">
+                            <label for="fan">Fantasy</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="checkbox" class="hidden-checkbox" name="likes" id="hor" data-name="Horror">
+                            <label for="hor">Horror</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 offset-md-2">
+                            <input type="checkbox" class="hidden-checkbox" name="likes" id="rom" data-name="Romance">
+                            <label for="rom">Romance</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="checkbox" class="hidden-checkbox" name="likes" id="com" data-name="Comics">
+                            <label for="com">Comics</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 offset-md-2">
+                            <input type="checkbox" class="hidden-checkbox" name="likes" id="his" data-name="History">
+                            <label for="his">History</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="checkbox" class="hidden-checkbox" name="likes" id="poe" data-name="Poetry">
+                            <label for="poe">Poetry</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row margin-modal">
+                        <div class="col-lg-12">
+                            <button class="modal-btn" type="button" onclick="updateLikesLocalStorage()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- The Chat Modal -->
+        <div id="chatModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content-chat container-fluid no-padding">
+
+                <div class="chat-bar no-padding">Chat
+                    <span style="text-align: right">
+                        <span class="close">&times;</span>
+                    </span>
+                </div>
+
+                <div class="row " style="margin-left: 0%; margin-right: 0%;">
+                    <div class="col-md-10">
+                        <div class="center-text">
+                            <div class="container">
+                                <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
+                                <a>Bom dia. O que acha de trocar o livro junto à rotunda?</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row  " style="margin-left: 0%; margin-right: 0%;">
+                    <div class="col-md-10 offset-md-2">
+                        <div class="container darker">
+                            <img src="../assets/discord.png" alt="Avatar" class="right" style="width:100%;">
+                            <a>Concordo! Eu devo demorar 4 meses a ler o livro.</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row " style=" margin-left: 0%; margin-right: 0%;">
+                    <div class="col-md-10">
+                        <div class="container">
+                            <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
+                            <a>eu também devo demorar esse tempo. Fica combinado?</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row  " style="margin-left: 0%; margin-right: 0%;">
+                    <div class="col-md-10 offset-md-2">
+                        <div class="container darker">
+                            <img src="../assets/discord.png" alt="Avatar" class="right" style="width:100%;">
+                            <a>Sim fica combinado!</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="reply-bar force-to-bottom avatar" style="bottom: 2.5%; padding-left: 5%; height: 50px;">
+
+                    <span style="text-align: left">
+                        <img src="../assets/discord.png" alt="Avatar" style="width:100%;">
+                        <input type="text" placeholder="Reply...">
+                    </span>
+                </div>
+
+
+            </div>
+
+        </div>
 
 
 </body>
@@ -325,8 +417,8 @@
         // get items from localStorage
         var trades = JSON.parse(localStorage.getItem("myTrades"));
         let filtered = [];
-        for(let i = 0; i<trades.length; i++){
-            if(trades[i].with == ""){
+        for (let i = 0; i < trades.length; i++) {
+            if (trades[i].with == "") {
                 filtered.push(trades[i]);
             }
         }

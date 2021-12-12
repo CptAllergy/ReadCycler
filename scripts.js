@@ -124,7 +124,7 @@ if (search_btn_nav != null) {
 // Get the modal
 var modal = document.getElementById("signUpModal");
 var modalLogin = document.getElementById("logInModal");
-var modalNots = document.getElementById("nots");
+
 // Get the button that opens the modal
 var btnSignUp = document.getElementById("signUp");
 var btnLogIn = document.getElementById("logIn");
@@ -180,8 +180,10 @@ window.onclick = function (event) {
   if (event.target == modalChat) {
     modalChat.style.display = "none";
   }
-  if (event.target == modalNots) {
-    modalNots.style.display = "none";
+  console.log(event.target);
+  if (event.target != document.getElementById("bellAroundId") && event.target != document.getElementById("chatMenuId")
+    && document.getElementById("nots").style.display == "block") {
+    document.getElementById("nots").style.display = "none";
   }
 }
 
@@ -371,11 +373,11 @@ function searchFunction() {
 }
 
 function hideNotification() {
-  if (modalNots != null) {
-    if (modalNots.style.display == "none") {
-      modalNots.style.display = "block";
+  if (document.getElementById("nots") != null) {
+    if (document.getElementById("nots").style.display == "none") {
+      document.getElementById("nots").style.display = "block";
     } else {
-      modalNots.style.display = "none";
+      document.getElementById("nots").style.display = "none";
     }
   }
 
@@ -395,7 +397,6 @@ function hideNotification2() {
 function showNotification() {
   document.getElementById("bell-warning").style.display = "inline";
   document.getElementById("chatMenuId").classList.add('animated');
-  document.getElementById("nots").style.display = "none";
 }
 
 
