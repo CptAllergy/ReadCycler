@@ -182,7 +182,7 @@ window.onclick = function (event) {
   }
   console.log(event.target);
   if (event.target != document.getElementById("bellAroundId") && event.target != document.getElementById("chatMenuId")
-  && event.target != document.getElementById("bell-warning") && document.getElementById("nots").style.display == "block") {
+    && event.target != document.getElementById("bell-warning") && document.getElementById("nots").style.display == "block") {
     document.getElementById("nots").style.display = "none";
   }
 }
@@ -217,6 +217,7 @@ var modalChat = document.getElementById("chatModal");
 function openChatNotification(elem) {
   if (modalChat != null && elem.getAttribute("id").includes("chatId")) {
     modalChat.style.display = "block";
+
   }
 }
 
@@ -328,7 +329,7 @@ function sendRequest(elem) {
       message: "Joaquim accepted your request",
       face: "../assets/Quim.png"
     };
-
+    addToStorageTradeQuim();
   } else if (by.includes("Carlos")) {
 
     notification = {
@@ -350,6 +351,43 @@ function sendRequest(elem) {
 
   let value = JSON.stringify(true);
   localStorage.setItem("notification", value);
+}
+
+function addToStorageTradeQuim() {
+  let title = document.getElementById("detailTitle").innerHTML;
+  let condition = "New";
+  let genre = "Fantasy";
+
+  let withvar = "Joaquim Barreiros";
+  let status = "Accepted";
+  let id = Math.floor(Date.now() / 1000).toString(16);
+  //date
+  let today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1;
+  var yyyy = today.getFullYear();
+  if (dd < 10) {
+    dd = '0' + dd;
+  }
+  if (mm < 10) {
+    mm = '0' + mm;
+  }
+  today = dd + '/' + mm + '/' + yyyy;
+
+  var book = {
+    tradeId: id,
+    book: title,
+    status: status,
+    with: withvar,
+    date: today,
+    condition: condition,
+    genre: genre
+  };
+
+  var trades = JSON.parse(localStorage.getItem("myTrades"));
+  trades.unshift(book);
+  localStorage.setItem("myTrades", JSON.stringify(trades));
+
 }
 
 
