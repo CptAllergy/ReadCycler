@@ -13,7 +13,7 @@
 
 <body>
 
-    <!-- &lt;!&ndash; Navigation Bar &ndash;&gt;-->
+    <!--  &lt;!&ndash; Navigation Bar &ndash;&gt;-->
     <!--  <div w3-include-html="snippets/navbar.html"></div>-->
     <!-- Navigation Bar -->
     <!--  <div w3-include-html="../snippets/navbar.html"></div>-->
@@ -33,11 +33,12 @@
                     <span class="col-lg-6 nav-right">
                         <a class="btn btn-link navbar-item" href="newTrade.html"><i class="fas fa-plus"></i> New
                             Trade</a>
-                        <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i>
-                            My
+                        <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
                             Trades</a>
                         <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
-                        <button class="btn btn-link navbar-item" id="chatMenuId"><i class="fas fa-bell"></i></button>
+                        <button class="btn btn-link navbar-item ringing-bell" href="newTrade.html"
+                            onclick="hideNotification()"> <i id="chatMenuId" class='fa fa-bell faa-ring'> </i> <i
+                                id="bell-warning" style="display: none;" class="fas fa-circle red-dot"></i></button>
                         <button class="btn btn-link navbar-item"><i class="fas fa-comments"></i></button>
                         <a class="btn btn-link navbar-item-img" href="profile.html"><img
                                 src="../assets/discord.png" /></a>

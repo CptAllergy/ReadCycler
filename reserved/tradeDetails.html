@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="reserved.css" />
-    <link rel="stylesheet" href="owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -36,7 +36,9 @@
                         <a class="btn btn-link navbar-item" href="myTrades.html"><i class="fas fa-exchange-alt"></i> My
                             Trades</a>
                         <!--button class="btn btn-link navbar-item"><i class="far fa-bookmark"></i></button-->
-                        <button class="btn btn-link navbar-item" id="chatMenuId"><i class="fas fa-bell"></i></button>
+                        <button class="btn btn-link navbar-item ringing-bell" href="newTrade.html"
+                            onclick="hideNotification()"> <i id="chatMenuId" class='fa fa-bell faa-ring'> </i> <i
+                                id="bell-warning" style="display: none;" class="fas fa-circle red-dot"></i></button>
                         <button class="btn btn-link navbar-item"><i class="fas fa-comments"></i></button>
                         <a class="btn btn-link navbar-item-img" href="profile.html"><img
                                 src="../assets/discord.png" /></a>
@@ -46,6 +48,10 @@
         </div>
     </div>
 
+    <div class="alert" id="success-alert" style="display: none">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        Request Sent!
+    </div>
 
     <div class="container-fluid">
         <div class="row">
@@ -90,13 +96,16 @@
                         <div class="image-placeholder-perfil">
                             <div class="row">
                                 <div class="col-md-3" x-bind:id="trade.by">
-                                    <img x-bind:src="trade.face" class="image-perfil" onclick="travelCheckDetails(this)" style="cursor: pointer;">
+                                    <img x-bind:src="trade.face" class="image-perfil" onclick="travelCheckDetails(this)"
+                                        style="cursor: pointer;">
                                 </div>
                                 <div class="col-md-9" x-bind:id="trade.by">
-                                    <div class="title hover-name" x-text="trade.by" onclick="travelCheckDetails(this)" style="cursor: pointer;"></div>
+                                    <div class="title hover-name" x-text="trade.by" onclick="travelCheckDetails(this)"
+                                        style="cursor: pointer;"></div>
                                     <div class="small-word">User Since 2021</div>
                                     <div class="small-word">Last Seen: Today</div>
-                                    <div class="underline hover-name" onclick="travelCheckDetails(this)" style="cursor: pointer;">More Trades From This User</div>
+                                    <div class="underline hover-name" onclick="travelCheckDetails(this)"
+                                        style="cursor: pointer;">More Trades From This User</div>
 
                                 </div>
                             </div>
@@ -114,7 +123,8 @@
                             </div>
 
                             <div class="center-text">
-                                <button type="button" class="send-request" style="margin-top: 70px;">Send
+                                <button type="button" class="send-request" style="margin-top: 70px;"
+                                    onclick="sendRequest()">Send
                                     Request</button>
                             </div>
 
@@ -141,7 +151,7 @@
     <script charset="utf-8">
         function tradeHistory() {
 
-            let id = window.location.href.split("=")[1];
+            let id = window.location.href.split("=")[1].split("?")[0];
             let trade;
             for (let i = 0; i < trades.length; i++) {
                 if (trades[i].tradeId.valueOf() == id.valueOf()) {
