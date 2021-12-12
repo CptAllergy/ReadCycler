@@ -31,7 +31,7 @@
   <div class="container-fluid homepage-banner">
     <div class="row navbar-glass">
       <div class="col-md-6">
-        <a class="navbar-title" href="initialPage.html">ReadCycler</a>
+        <a class="navbar-title" href="homePage.html">ReadCycler</a>
       </div>
       <div class="col-md-6 nav-right">
         <a class="btn btn-link navbar-item" href="newTrade.html"><i class="fas fa-plus"></i> New
@@ -261,9 +261,87 @@
       }
     ];
 
-    return {
-      trades: trades,
-    };
+    var trades2 = [
+      {
+        condition: "Old",
+        tradeId: "23h2id",
+        title: "Total Recall",
+        genre: "Biography",
+        by: "Carlos Notas",
+        location: "Almada",
+        returnBook: "Yes",
+        bookByBook: "Book by Book",
+        additional: "Old book that belonged to my mom.",
+        image: "../assets/arnold.jpg",
+        face: "../assets/Carlos-Moedas.jpg"
+      },
+      {
+        condition: "Used",
+        tradeId: "900d2h",
+        title: "Lord of The Rings",
+        genre: "Fantasy",
+        by: "Carlos Notas",
+        location: "Almada",
+        returnBook: "No",
+        bookByBook: "Book by Book",
+        additional: "Read the book once, but it's in good condition, only a few dents.",
+        image: "../assets/lotr.jpg",
+        face: "../assets/Carlos-Moedas.jpg"
+      },
+      {
+        condition: "Old",
+        tradeId: "236dee",
+        title: "A Game of Thrones",
+        genre: "Fantasy",
+        by: "Carlos Notas",
+        location: "Almada",
+        returnBook: "Yes",
+        bookByBook: "Book by Book",
+        additional: "Old book that belonged to my mom.",
+        image: "../assets/gameOf.jpg",
+        face: "../assets/Carlos-Moedas.jpg",
+      },
+      {
+        condition: "New",
+        tradeId: "h37o2h",
+        title: "Harry Potter",
+        genre: "Fantasy",
+        by: "Joaquim Barreiros",
+        location: "Caparica",
+        returnBook: "No",
+        bookByBook: "Book by Book",
+        additional: "Got it and never read it.",
+        image: "../assets/book_placerholder.jpeg",
+        face: "../assets/Quim.png"
+      },
+      {
+        condition: "New",
+        tradeId: "918d2h",
+        title: "A Game of Thrones",
+        genre: "Fantasy",
+        by: "Joaquim Barreiros",
+        location: "Algarve",
+        returnBook: "Yes",
+        bookByBook: "Book by Book",
+        additional: "Got it and never read it.",
+        image: "../assets/gameOf.jpg",
+        face: "../assets/Quim.png"
+      }
+    ];
+
+    let likes = localStorage.getItem("userLikes");
+
+    if (likes == null) {
+      return {
+        trades: trades,
+      };
+    } else {
+      return {
+        trades: trades2,
+      };
+    }
+
+
   }
 </script>
 
