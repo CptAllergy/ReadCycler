@@ -81,7 +81,7 @@
         <div x-data="tradeHistory()" class="row">
 
           <div class="col-md-7">
-            <div class="image-placeholder">
+            <div class="image-placeholder-trade">
               <img x-bind:src="trade.image" class="image-display">
             </div>
 
@@ -99,7 +99,7 @@
                   <div class="small-word" style="margin-top: 6px;">Condition: <span x-text="trade.condition"></span>
                   </div>
                   <div class="small-word" style="margin-top: 6px;">Genre: <span x-text="trade.genre"></span></div>
-                  <div class="average" style="margin-top: 12px;">Additional Information: <div
+                  <div class="average" style="margin-top: 12px; margin-bottom: 60px">Additional Information: <div
                       class="average-description" x-text="trade.additional"></div>
                   </div>
                 </div>

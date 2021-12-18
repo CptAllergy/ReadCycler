@@ -149,10 +149,6 @@ a.newTradeRight:hover {
   color: RoyalBlue;
 }
 
-.tradeId {
-  color: RoyalBlue;
-}
-
 .tableColumns {
   margin-top: 20px;
   font-size: 18px;
@@ -438,8 +434,8 @@ div.desc {
 
 .newTradeTitle {
   background-color: rgb(252, 199, 101);
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   padding-left: 15px;
   padding-right: 25px;
   padding-top: 8px;
@@ -453,6 +449,15 @@ div.desc {
   display: flex;
   height: 500px;
   margin: 5px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.image-placeholder-trade {
+  background-color: white;
+  display: flex;
+  height: 500px;
+  margin-top: 5px;
   width: 100%;
   border-radius: 5px;
 }
@@ -474,7 +479,7 @@ div.desc {
 .image-placeholder-desc {
   margin-top: 30px;
   background-color: white;
-  height: 300px;
+  
 
   width: 100%;
   text-align: left;
@@ -484,7 +489,6 @@ div.desc {
 .image-placeholder-loc {
   margin-top: 30px;
   background-color: white;
-  height: 300px;
 
   width: 100%;
   border-radius: 5px;
